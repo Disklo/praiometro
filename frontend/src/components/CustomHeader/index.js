@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image } from 'react-native';
+import { View, Image } from 'react-native';
 import LogoPraiometro from '../../../assets/images/LogoPraiometro.png';
 import styles from './styles';
 

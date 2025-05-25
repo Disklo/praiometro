@@ -2,16 +2,16 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
-      height: 120,
-      paddingHorizontal: 16,
-      paddingTop: 12,
+      height: 130,
+      paddingHorizontal: 18,
+      paddingTop: 16,
       backgroundColor: '#015486',
       justifyContent: 'center',
       flexDirection: 'row',
     },
     logo: {
       width: 200,
-      height: 165,
+      height: 170,
       resizeMode: 'contain',
     },
   });

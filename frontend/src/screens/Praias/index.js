@@ -35,6 +35,11 @@ export default function Praias() {
                     <BeachCard/>
                     <BeachCard/>
                     <BeachCard/>
+                    <BeachCard/>
+                    <BeachCard/>
+                    <BeachCard/>
+                    <BeachCard/>
+                    <BeachCard/>
                 </View>
             </ScrollView>
         </View>
