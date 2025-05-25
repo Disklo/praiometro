@@ -18,14 +18,14 @@ export default StyleSheet.create({
         marginLeft: 12,
         gap: 2,
     },
-    beachTitle: {
+    beachName: {
         fontSize: 16,
         fontWeight: '400',
         color: '#015486',
     },
-    location: {
+    especificLocation: {
         fontSize: 14,
         fontWeight: '400',
         color: '#98A4AE',
-    },
+    }
 })

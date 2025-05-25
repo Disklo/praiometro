@@ -1,0 +1,69 @@
+{
+    "beaches": [
+        {
+            "id": 1,
+            "name": "Praia de Icaraí",
+            "especificLocation": ""
+        },
+        {
+          "id": 2,
+          "name": "Praia de São Francisco",
+          "especificLocation": "Igreja de São Francisco"
+        },
+        {
+          "id": 3,
+          "name": "Praia de São Francisco",
+          "especificLocation": "Rua Caraíbas"
+        },
+        {
+          "id": 4,
+          "name": "Praia de Charitas",
+          "especificLocation": ""
+        },
+        {
+          "id": 5,
+          "name": "Praia do Forte",
+          "especificLocation": ""
+        },
+        {
+          "id": 6,
+          "name": "Praia de Piratininga",
+          "especificLocation": "Avenida Doutor Acúrcio Torres"
+        },
+        {
+          "id": 7,
+          "name": "Praia do Piratininga",
+          "especificLocation": "Rua General Rubens Rosada Teixeira"
+        },
+        {
+          "id": 8,
+          "name": "Praia do Piratininga",
+          "especificLocation": "Rua João Gomes da Silva"
+        },
+        {
+          "id": 9,
+          "name": "Praia do Sossego",
+          "especificLocation": ""
+        },
+        {
+          "id": 10,
+          "name": "Praia de Camboinhas",
+          "especificLocation": ""
+        },
+        {
+          "id": 11,
+          "name": "Praia de Itaipu",
+          "especificLocation": ""
+        },
+        {
+          "id": 12,
+          "name": "Praia de Itacoatiara",
+          "especificLocation": ""
+        },
+        {
+          "id": 13,
+          "name": "Praia do Sossego",
+          "especificLocation": ""
+        }
+    ]
+}

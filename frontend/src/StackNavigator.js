@@ -6,12 +6,35 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Home from './screens/Home';
 import Praias from './screens/Praias';
+import Praia from './screens/Praia';
 import Clima from './screens/Clima';
 import CustomHeader from './components/CustomHeader';
 import SobreNos from './screens/SobreNos';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+const PraiasStack = createNativeStackNavigator();
+
+function PraiasStackScreen() {
+  return (
+    <PraiasStack.Navigator>
+      <PraiasStack.Screen
+        name="Praias"
+        component={Praias}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <PraiasStack.Screen
+        name="Praia"
+        component={Praia}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </PraiasStack.Navigator>
+  );
+}
 
 function MainTabs() {
   return (
@@ -37,7 +60,7 @@ function MainTabs() {
       })}
     >
       <Tab.Screen name='Home' component={Home} />
-      <Tab.Screen name='Praias' component={Praias} />
+      <Tab.Screen name='Praias' component={PraiasStackScreen} />
       <Tab.Screen name='Clima' component={Clima} />
       <Tab.Screen name='SobreNos' component={SobreNos} />
     </Tab.Navigator>

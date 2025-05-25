@@ -40,7 +40,7 @@ export default StyleSheet.create({
     description: {
         fontSize: 12,
         fontWeight: '400',
-        color: '#98A4AE',
+        color: '#454A4C',
         textAlign: 'center',
         marginTop: 6,
         width: '85%',

@@ -47,10 +47,11 @@ export default StyleSheet.create({
     recommendationsText: {
         fontSize: 14,
         fontWeight: '400',
-        color: '#98A4AE',
+        color: '#454A4C',
         marginTop: 6,
         width: '85%',
         marginHorizontal: 'auto',
+        textAlign: 'right',
     },
     infoContainer: {
         flexDirection: 'row',
