@@ -5,7 +5,7 @@ import BeachCard from '../../components/BeachCard';
 
 export default function Praias() {
     return (
-        <ScrollView bounces={false} overScrollMode='never' contentContainerStyle={styles.container}>
+        <View style={styles.container}>
             <View style={styles.header}>
                 <View style={styles.searchBarContainer}>
                     <Ionicons 
@@ -20,17 +20,23 @@ export default function Praias() {
                     />
                 </View>
             </View>
-            <View style={styles.cardContainer}>
-                <BeachCard/>
-                <BeachCard/>
-                <BeachCard/>
-                <BeachCard/>
-                <BeachCard/>
-                <BeachCard/>
-                <BeachCard/>
-                <BeachCard/>
-                <BeachCard/>
-            </View>
-        </ScrollView>
+            <ScrollView
+                bounces={false}
+                overScrollMode='never'
+                contentContainerStyle={styles.container}
+            >
+                <View style={styles.cardContainer}>
+                    <BeachCard/>
+                    <BeachCard/>
+                    <BeachCard/>
+                    <BeachCard/>
+                    <BeachCard/>
+                    <BeachCard/>
+                    <BeachCard/>
+                    <BeachCard/>
+                    <BeachCard/>
+                </View>
+            </ScrollView>
+        </View>
     )
 }

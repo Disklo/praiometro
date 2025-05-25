@@ -8,8 +8,8 @@ export const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 10,
-        marginBottom: 20,
+        marginTop: 15,
+        marginBottom: 15,
         gap: 16,
     },
     searchBarContainer: {
@@ -30,6 +30,6 @@ export const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         gap: 12,
-        marginBottom: 20,
+        marginBottom: 85,
     }
 })
