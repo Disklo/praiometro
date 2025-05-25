@@ -4,12 +4,14 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#015486',
-        paddingTop: 50,
+        paddingTop: 20,
     },
 
     header: {
         backgroundColor: '#fff',
-        padding: 16,
+        paddingHorizontal: 16,
+        paddingTop: 16,
+        paddingBottom: 8,
         borderRadius: 12,
         marginHorizontal: 20,
     },
@@ -66,9 +68,13 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         color: '#015486',
     },
-
-    logoUFF: {
-        width: 100,
+    logoIC: {
+        width: 140,
         height: 100,
+    },
+    logosContainer: {
+        width: '100%',
+        alignItems: 'center',
+        marginTop: 10
     }
 });

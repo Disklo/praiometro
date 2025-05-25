@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Linking, Image } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import logoUFF from '../../../assets/images/logo-uff-azul.png';
+import logoIC from '../../../assets/images/logo-ic.png';
 import styles from './styles';
 
 export default function SobreNos() {
@@ -11,11 +11,9 @@ export default function SobreNos() {
                 <Text style={styles.description}>
                     Somos alunos da Universidade Federal Fluminense (UFF) e desenvolvemos este projeto de extensão para criar uma plataforma digital que reúne dados sobre as condições ambientais e marítimas das praias de Niterói - RJ. Nosso objetivo é facilitar o acesso a informações como balneabilidade da água, altura e período das ondas, chuva e temperatura, promovento o uso seguro e consciente das praias.
                 </Text>
-                
-                <View>
-                    <Image source={logoUFF} style={styles.logoUFF}/>       
+                <View style={styles.logosContainer}>
+                    <Image source={logoIC} style={styles.logoIC}/>     
                 </View>
-
             </View>
 
             <View style={styles.buttonsContainer}>
