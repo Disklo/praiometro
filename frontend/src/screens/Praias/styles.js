@@ -8,14 +8,9 @@ export const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 70,
+        marginTop: 10,
         marginBottom: 20,
         gap: 16,
-    },
-    title: {
-        fontSize: 20,
-        fontWight: 'bold',
-        color: '#FAFAFA',
     },
     searchBarContainer: {
         width: '90%',
@@ -35,5 +30,6 @@ export const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         gap: 12,
+        marginBottom: 20,
     }
 })

@@ -7,7 +7,7 @@ export default function BeachCard() {
         <View style={styles.container}>
             <FontAwesome6 name="location-dot" size={25} color="#015486" />
             <View style={styles.textContainer}>
-                <Text style={styles.beachTitle}>Praia de Piratininga</Text>  
+                <Text style={styles.beachTitle}>Praia de Piratininga</Text>
                 <Text style={styles.location}>Niterói, Rio de Janeiro</Text>  
             </View>
         </View>

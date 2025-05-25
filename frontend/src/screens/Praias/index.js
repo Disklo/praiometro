@@ -5,9 +5,8 @@ import BeachCard from '../../components/BeachCard';
 
 export default function Praias() {
     return (
-        <ScrollView contentContainerStyle={styles.container}>
+        <ScrollView bounces={false} overScrollMode='never' contentContainerStyle={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.title}>PRAIAS</Text>
                 <View style={styles.searchBarContainer}>
                     <Ionicons 
                         name="search" 
