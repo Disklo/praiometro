@@ -9,7 +9,7 @@ export default function SobreNos() {
             <View style={styles.header}>
                 <Text style={styles.title}>Sobre o Praiômetro</Text>
                 <Text style={styles.description}>
-                    Somos alunos da Universidade Federal Fluminense (UFF) e desenvolvemos este projeto de extensão para criar uma plataforma digital que reúne dados sobre as condições ambientais e marítimas das praias de Niterói - RJ. Nosso objetivo é facilitar o acesso a informações como balneabilidade da água, altura e período das ondas, chuva e temperatura, promovento o uso seguro e consciente das praias.
+                O Praiômetro é um projeto de extensão da Universidade Federal Fluminense (UFF), desenvolvido por alunos de Sistemas de Informação. A plataforma reúne dados atualizados sobre as praias de Niterói – RJ, como balneabilidade da água, altura e período das ondas, chuva, temperatura e outras informações oceanográficas e meteorológicas. O objetivo é facilitar o acesso a esses dados e incentivar o uso seguro e consciente das praias.
                 </Text>
                 <View style={styles.logosContainer}>
                     <Image source={logoIC} style={styles.logoIC}/>     

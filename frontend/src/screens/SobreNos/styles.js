@@ -27,7 +27,6 @@ export default StyleSheet.create({
         fontSize: 16,
         fontWeight: '400',
         color: '#555',
-        textAlign: 'justify',
     },
 
     buttonsContainer: {
