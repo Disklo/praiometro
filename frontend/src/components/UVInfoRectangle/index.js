@@ -15,7 +15,7 @@ export default function UVInfoRectangle() {
                 <Text style={styles.uvScale}>Moderado</Text>
             </View>
             <View style={styles.recommendationsContainer}>
-                <Text style={styles.recommendationsText}>Recomendado a utilização de protetor solar e boné ou chapéu.</Text>
+                <Text style={styles.recommendationsText}>Recomendado a utilização de protetor solar e boné ou chapéu</Text>
             </View>
         </View>
     </View>
