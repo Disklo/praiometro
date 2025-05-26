@@ -30,6 +30,12 @@ export const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         gap: 12,
-        marginBottom: 85,
-    }
+        paddingBottom: 80,
+    },
+    noBeachesText: {
+        color: '#FAFAFA',
+        fontSize: 16,
+        textAlign: 'center',
+        marginTop: 20
+    },  
 })

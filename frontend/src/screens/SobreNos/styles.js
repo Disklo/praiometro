@@ -19,12 +19,13 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 10,
         color: '#015486',
+        textAlign: 'center',
     },
     description: {
         fontSize: 16,
         fontWeight: '400',
         color: '#555',
-        textAlign: 'justify',
+        textAlign: 'center',
     },
     buttonsContainer: {
         flexDirection: 'row',
@@ -63,6 +64,7 @@ export default StyleSheet.create({
     logoIC: {
         width: 140,
         height: 100,
+        marginVertical: 15,
     },
     logosContainer: {
         width: '100%',
