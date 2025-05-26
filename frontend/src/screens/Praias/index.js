@@ -2,8 +2,9 @@ import { Text, TextInput, ScrollView, View, ActivityIndicator } from 'react-nati
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import BeachCard from '../../components/BeachCard';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import {styles} from './styles';
+import { api } from '../../api/api';
+
 
 export default function Praias({ navigation }) {
     const [beaches, setBeaches] = useState([]);
@@ -15,7 +16,7 @@ export default function Praias({ navigation }) {
             try {
                 setLoading(true);
                 setError(null);
-                const response = await axios.get('http://c0ea-2804-d41-ab0f-7f00-1086-fb20-653d-5f52.ngrok-free.app/pontos');
+                const response = await api.get('/pontos');
                 setBeaches(response.data.pontos);
             } catch (error) {
                 console.error('Erro ao buscar praias:', error);

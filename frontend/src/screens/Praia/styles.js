@@ -12,13 +12,13 @@ const styles = StyleSheet.create({
         gap: 4,
         paddingVertical: 12,
     },
-    headerText: {
+    locationText: {
         color: '#FAFAFA',
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: '500',
         textAlign: 'center',
     },
-    dateText: {
+    specificLocationText: {
         color: '#FAFAFA',
         fontSize: 14,
         fontWeight: '400',
