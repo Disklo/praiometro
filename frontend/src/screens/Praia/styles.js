@@ -35,6 +35,11 @@ const styles = StyleSheet.create({
         width: '85%',
         justifyContent: 'space-between',
     },
+    feedbackContainer: {
+        width: '85%',
+        backgroundColor: '#FAFAFA',
+        borderRadius: 12,
+    }
 })
 
 export default styles;

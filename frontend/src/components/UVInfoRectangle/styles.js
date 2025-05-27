@@ -11,7 +11,7 @@ export default StyleSheet.create({
     header: {
         flexDirection: 'row',
         marginTop: 16,
-        gap: 6,
+        gap: 4,
         alignItems: 'center',
         marginLeft: 16,
         width: '100%',

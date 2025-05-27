@@ -73,7 +73,7 @@ export default function Praia() {
                         : <Entypo name="emoji-sad" size={55} color="#015486" />
                     }
                 </InfoRectangle>
-                <InfoRectangle title="Altura da onda" description={`${beach.leitura_atual?.wave_height ?? '-'} metros`} danger={beach.leitura_atual?.wave_height > 1.5}>
+                <InfoRectangle title="Altura da onda" description={`${beach.leitura_atual?.wave_height ?? '-'} metros`} danger={beach.leitura_atual?.wave_height > 2}>
                     <MaterialIcons name="waves" size={55} color="#015486"/>
                 </InfoRectangle>
                 <View style={styles.smallInfoRectanglesContainer}>
@@ -83,6 +83,9 @@ export default function Praia() {
                     <SmallInfoRectangle title="Vento" description={`${beach.leitura_atual?.wind_speed_10m ?? '-'}km/h`}>
                         <Feather name="wind" size={55} color="#015486" />
                     </SmallInfoRectangle>
+                </View>
+                <View style={styles.feedbackContainer}>
+                    
                 </View>
             </ScrollView>
         </View>

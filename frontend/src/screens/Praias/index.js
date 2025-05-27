@@ -1,15 +1,16 @@
-import { Text, TextInput, ScrollView, View, ActivityIndicator } from 'react-native';
+import { Text, TextInput, ScrollView, View, ActivityIndicator, Pressable } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import BeachCard from '../../components/BeachCard';
-import { useEffect, useState } from 'react';
-import {styles} from './styles';
+import { useEffect, useState, useRef } from 'react';
+import { styles } from './styles';
 import { api } from '../../api/api';
-
 
 export default function Praias({ navigation }) {
     const [beaches, setBeaches] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [search, setSearch] = useState('');
+    const inputRef = useRef(null);
 
     useEffect(() => {
         const fetchBeaches = async () => {
@@ -28,15 +29,25 @@ export default function Praias({ navigation }) {
         fetchBeaches();
     }, []);
 
+    const filteredBeaches = beaches.filter((beach) => {
+        const nome = Array.isArray(beach.nome) ? beach.nome[0] : beach.nome;
+        if (!nome) return false;
+        return nome.toLowerCase().includes(search.toLowerCase());
+    });
+
     return (
-        <View 
-          style={[
-            styles.container,
-            (loading || error) && { flex: 1 }
-          ]}
+        <View
+            style={[
+                styles.container,
+                { flex: 1, backgroundColor: '#015486' },
+                (loading || error) && { flex: 1 }
+            ]}
         >
             <View style={styles.header}>
-                <View style={styles.searchBarContainer}>
+                <Pressable
+                    style={styles.searchBarContainer}
+                    onPress={() => inputRef.current && inputRef.current.focus()}
+                >
                     <Ionicons
                         name="search"
                         size={25}
@@ -44,27 +55,31 @@ export default function Praias({ navigation }) {
                         style={styles.icon}
                     />
                     <TextInput
+                        ref={inputRef}
                         style={styles.searchBar}
                         placeholder="Digite o nome da praia..."
+                        value={search}
+                        onChangeText={setSearch}
                     />
-                </View>
+                </Pressable>
             </View>
             <ScrollView
+                style={{ flex: 1 }}
                 bounces={false}
                 overScrollMode='never'
-                contentContainerStyle={styles.container}
+                contentContainerStyle={styles.scrollContainer}
             >
                 <View style={styles.cardContainer}>
                     {loading ? (
-                        <ActivityIndicator style={{marginTop: '200'}} size="large" color="#FAFAFA" />
+                        <ActivityIndicator style={{ marginTop: 200 }} size="large" color="#FAFAFA" />
                     ) : error ? (
                         <Text style={styles.noBeachesText}>{error}</Text>
-                    ) : beaches.length !== 0 ? (
-                        beaches.map((beach) => (
+                    ) : filteredBeaches.length !== 0 ? (
+                        filteredBeaches.map((beach) => (
                             <BeachCard
                                 key={beach.codigo}
-                                beachName='Praia de Icaraí'
-                                especificLocation='Localização específica'
+                                beachName={Array.isArray(beach.nome) ? beach.nome[0] : 'Praia'}
+                                especificLocation={Array.isArray(beach.specific_location) ? beach.specific_location[0] : 'Sem localização específica'}
                                 id={beach.codigo}
                                 navigation={navigation}
                             />

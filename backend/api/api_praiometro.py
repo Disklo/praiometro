@@ -41,7 +41,8 @@ def listar_pontos():
     lista = [
         {
             "codigo": codigo,
-            "nome": info.get("nome"),
+            "nome": info.get("nomes"),
+            "specific_location": info.get("specific_location"),
             "coordenadas": info.get("coordenadas_decimais"),
             "ultima_leitura": info.get("leitura_atual", {}).get("timestamp")
         }

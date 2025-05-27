@@ -11,14 +11,14 @@ export default StyleSheet.create({
     headerUmidade: {
         flexDirection: 'row',
         marginTop: 16,
-        gap: 4,
+        gap: 2,
         alignItems: 'center',
         marginLeft: 16,
     },
     headerSensacao: {
         flexDirection: 'row',
         marginTop: 16,
-        gap: 7,
+        gap: 5,
         alignItems: 'center',
         marginLeft: 16,
     },
