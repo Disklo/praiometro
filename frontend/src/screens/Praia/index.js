@@ -7,9 +7,11 @@ import InfoRectangle from '../../components/InfoRectangle';
 import SmallInfoRectangle from '../../components/SmallInfoRectangle';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Feather from '@expo/vector-icons/Feather';
+import Fontisto from '@expo/vector-icons/Fontisto';
 import { useRoute } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { api } from '../../api/api';
+import FeedbackSection from '../../components/FeedbackSection';
 
 export default function Praia() {
     const route = useRoute();
@@ -27,7 +29,7 @@ export default function Praia() {
                 setBeach(response.data);
             } catch (error) {
                 console.error('Erro ao buscar praia:', error);
-                setError('Erro ao tentar carregar a praia.');
+                setError('Erro ao tentar carregar a praia...');
             } finally {
                 setLoading(false);
             }
@@ -38,7 +40,7 @@ export default function Praia() {
     if (loading) {
         return (
             <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
-                <ActivityIndicator size="large" color="#015486" />
+                <ActivityIndicator size="large" color="#FAFAFA" />
             </View>
         );
     }
@@ -46,7 +48,9 @@ export default function Praia() {
     if (error) {
         return (
             <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
-                <Text style={{ color: '#fff', fontSize: 18 }}>{error}</Text>
+                <Text style={{ color: '#FAFAFA', fontSize: 18 }}>{error}</Text>
+                <Text style={{ color: '#FAFAFA', fontSize: 18 }}>Tente novamente mais tarde!</Text>
+                <Fontisto style={{marginTop: 20}} name="beach-slipper" size={100} color="#FAFAFA" />
             </View>
         );
     }
@@ -60,13 +64,13 @@ export default function Praia() {
             <View style={styles.headerContainer}>
                 <Text style={styles.locationText}>{beach.nomes?.[0] || 'Praia'}</Text>
                 <Text style={styles.specificLocationText}>{beach.specific_location?.[0] || ''}</Text>
-                <FontAwesome5 name="umbrella-beach" size={100} color="#FAFAFA" style={{marginTop: 20}}/>
             </View>
             <ScrollView 
                 bounces={false}           
                 overScrollMode='never'           
                 contentContainerStyle={styles.scrollViewContainer}
             >
+                <FontAwesome5 name="umbrella-beach" size={100} color="#FAFAFA" style={{marginBottom: 12}}/>
                 <InfoRectangle title="Qualidade da água do mar" description={beach.balneabilidade ? "Própria para banho!" : "Imprópria para banho!"}>
                     {beach.balneabilidade
                         ? <Entypo name="emoji-happy" size={55} color="#015486" />
@@ -84,9 +88,8 @@ export default function Praia() {
                         <Feather name="wind" size={55} color="#015486" />
                     </SmallInfoRectangle>
                 </View>
-                <View style={styles.feedbackContainer}>
-                    
-                </View>
+                <FeedbackSection/>
+                
             </ScrollView>
         </View>
     );

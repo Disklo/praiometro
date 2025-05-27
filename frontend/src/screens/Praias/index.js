@@ -2,6 +2,7 @@ import { Text, TextInput, ScrollView, View, ActivityIndicator, Pressable } from 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import BeachCard from '../../components/BeachCard';
 import { useEffect, useState, useRef } from 'react';
+import Fontisto from '@expo/vector-icons/Fontisto';
 import { styles } from './styles';
 import { api } from '../../api/api';
 
@@ -34,6 +35,28 @@ export default function Praias({ navigation }) {
         if (!nome) return false;
         return nome.toLowerCase().includes(search.toLowerCase());
     });
+
+    if (loading) {
+        return (
+            <View style={[styles.fullScreen, { justifyContent: 'center', alignItems: 'center' }]}>
+                <ActivityIndicator size="large" color="#FAFAFA" />
+            </View>
+        );
+    }
+
+    if (error) {
+        return (
+            <View style={[styles.fullScreen, { justifyContent: 'center', alignItems: 'center' }]}>
+                <Text style={{ color: '#FAFAFA', fontSize: 18 }}>{error}</Text>
+                <Text style={{ color: '#FAFAFA', fontSize: 16 }}>Tente novamente mais tarde!</Text>
+                <Fontisto style={{marginTop: 20}} name="beach-slipper" size={100} color="#FAFAFA" />
+            </View>
+        );
+    }
+
+    if (!beaches) {
+        return null;
+    }
 
     return (
         <View
@@ -70,11 +93,7 @@ export default function Praias({ navigation }) {
                 contentContainerStyle={styles.scrollContainer}
             >
                 <View style={styles.cardContainer}>
-                    {loading ? (
-                        <ActivityIndicator style={{ marginTop: 200 }} size="large" color="#FAFAFA" />
-                    ) : error ? (
-                        <Text style={styles.noBeachesText}>{error}</Text>
-                    ) : filteredBeaches.length !== 0 ? (
+                    {filteredBeaches.length !== 0 ? (
                         filteredBeaches.map((beach) => (
                             <BeachCard
                                 key={beach.codigo}

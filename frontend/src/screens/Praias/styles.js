@@ -36,5 +36,9 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: 'center',
         marginTop: 20
+    },
+    fullScreen: {
+        flex: 1,
+        backgroundColor: '#015486',
     }
 })

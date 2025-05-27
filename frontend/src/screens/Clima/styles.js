@@ -17,7 +17,9 @@ export default StyleSheet.create({
         color: '#FFFFFF',
         fontSize: 80,
         fontWeight: '400',
-        textAlign: 'center'
+        textAlign: 'center',
+        position: 'relative',
+        left: 16,
     },
     infoContainer: {
         marginTop: 16,

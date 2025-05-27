@@ -4,42 +4,43 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#015486',
-        paddingTop: 20,
+        paddingVertical: 20,
+        alignItems: 'center',   
     },
     header: {
         backgroundColor: '#fff',
-        paddingHorizontal: 16,
-        paddingTop: 16,
-        paddingBottom: 8,
+        paddingHorizontal: 22,
+        paddingTop: 22,
+        paddingBottom: 22,
         borderRadius: 12,
-        marginHorizontal: 20,
+        width: '90%',
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom: 10,
+        marginBottom: 8,
         color: '#015486',
-        textAlign: 'center',
     },
     description: {
         fontSize: 16,
         fontWeight: '400',
         color: '#555',
-        textAlign: 'center',
+        textAlign: 'justify',
+        lineHeight: 22,
     },
     buttonsContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginHorizontal: 20,
-        marginTop: 20,
+        width: '90%',
+        marginTop: 16,
     },
     instagramButton: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',
-        paddingVertical: 12,
-        borderRadius: 12,
+        paddingVertical: 14,
+        borderRadius: 8,
         width: '48%',
     },
     instagramButtonText: {
@@ -52,8 +53,8 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',
-        paddingVertical: 12,
-        borderRadius: 12,
+        paddingVertical: 14,
+        borderRadius: 8,
         width: '48%',
     },
     emailButtonText: {
@@ -61,14 +62,4 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         color: '#015486',
     },
-    logoIC: {
-        width: 140,
-        height: 100,
-        marginVertical: 15,
-    },
-    logosContainer: {
-        width: '100%',
-        alignItems: 'center',
-        marginTop: 10
-    }
 });

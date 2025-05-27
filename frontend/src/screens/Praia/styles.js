@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         gap: 4,
-        paddingVertical: 12,
+        paddingVertical: 14,
     },
     locationText: {
         color: '#FAFAFA',
@@ -34,11 +34,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '85%',
         justifyContent: 'space-between',
-    },
-    feedbackContainer: {
-        width: '85%',
-        backgroundColor: '#FAFAFA',
-        borderRadius: 12,
     }
 })
 

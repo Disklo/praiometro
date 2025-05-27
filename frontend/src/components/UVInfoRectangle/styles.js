@@ -11,7 +11,7 @@ export default StyleSheet.create({
     header: {
         flexDirection: 'row',
         marginTop: 16,
-        gap: 4,
+        gap: 6,
         alignItems: 'center',
         marginLeft: 16,
         width: '100%',
@@ -42,13 +42,13 @@ export default StyleSheet.create({
     },
     recommendationsContainer: {
         width: '60%',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
     },
     recommendationsText: {
         fontSize: 14,
         fontWeight: '400',
         color: '#454A4C',
-        marginTop: 6,
+
         width: '85%',
         marginHorizontal: 'auto',
         textAlign: 'right',
