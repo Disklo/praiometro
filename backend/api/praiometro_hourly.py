@@ -69,7 +69,8 @@ def buscar_dados(lat, lon):
             "apparent_temperature",
             "wind_speed_10m",
             "wind_direction_10m",
-            "uv_index"
+            "uv_index",
+            "weather_code"
         ]),
         "timezone": "auto",
         "start_date": date_start,
@@ -116,7 +117,8 @@ def buscar_dados(lat, lon):
             "wind_direction_10m": data_met.get("wind_direction_10m", [None])[idx],
             "uv_index": data_met.get("uv_index", [None])[idx],
             "wave_height": data_mar.get("wave_height", [None])[idx],
-            "wave_period": data_mar.get("wave_period", [None])[idx]
+            "wave_period": data_mar.get("wave_period", [None])[idx],
+            "weather_code": data_met.get("weather_code", [None])[idx]
         }
     else:
         print(f"Hora {key} não encontrada nos dados.")
