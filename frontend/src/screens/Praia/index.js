@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, ActivityIndicator } from 'react-native';
+import { View, Text, ScrollView, ActivityIndicator, TouchableOpacity, Linking } from 'react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
@@ -19,6 +19,13 @@ export default function Praia() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [beach, setBeach] = useState(null);
+
+    function openInMaps() {
+        if (!beach?.coordenadas_decimais) return;
+        const [lat, lng] = beach.coordenadas_decimais;
+        const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+        Linking.openURL(url);
+    }
 
     useEffect(() => {
         const fetchBeach = async () => {
@@ -87,9 +94,19 @@ export default function Praia() {
                     <SmallInfoRectangle title="Vento" description={`${beach.leitura_atual?.wind_speed_10m ?? '-'}km/h`}>
                         <Feather name="wind" size={55} color="#015486" />
                     </SmallInfoRectangle>
-                </View>
+                </View>      
                 <FeedbackSection/>
-                
+                <TouchableOpacity
+                    style={styles.mapsButton}
+                    onPress={openInMaps}
+                >
+                    <View style={styles.mapsButtonContainer}>
+                        <FontAwesome5 name="map-marked-alt" size={20} color="#015486" />
+                        <Text style={styles.mapsButtonText}>
+                            Ver no mapa
+                        </Text>
+                    </View>
+                </TouchableOpacity>
             </ScrollView>
         </View>
     );

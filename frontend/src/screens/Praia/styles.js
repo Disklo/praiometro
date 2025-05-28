@@ -34,7 +34,32 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '85%',
         justifyContent: 'space-between',
-    }
+    },
+    mapsButton: {
+        backgroundColor: '#FAFAFA',
+        paddingVertical: 14,
+        paddingHorizontal: 24,
+        width: '85%',
+        borderRadius: 10,
+        alignItems: 'center',
+        marginBottom: 32,
+        elevation: 4, 
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.18,
+        shadowRadius: 4,
+    },
+    mapsButtonText: {
+        color: '#015486',
+        fontSize: 18,
+        fontWeight: 'bold',
+        letterSpacing: 1,
+    },
+    mapsButtonContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+    },
 })
 
 export default styles;
