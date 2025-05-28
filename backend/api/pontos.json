@@ -3,7 +3,9 @@
         "nome": [
             "Praia de Gragoatá"
         ],
-        "specific_location": [],
+        "specific_location": [
+            "Sem localização específica"
+        ],
         "coordenadas_dms": "22°54'07.6\"S 43°08'11.0\"W",
         "coordenadas_decimais": [
             -22.902111,
@@ -31,7 +33,9 @@
         "nome": [
             "Praia de Boa Viagem"
         ],
-        "specific_location": [],
+        "specific_location": [
+            "Sem localização específica"
+        ],
         "coordenadas_dms": "22°54'28.9\"S 43°07'42.0\"W",
         "coordenadas_decimais": [
             -22.908028,
@@ -60,7 +64,7 @@
             "Praia das Flechas"
         ],
         "specific_location": [
-            " (rua Nilo Peçanha)"
+            "Rua Nilo Peçanha"
         ],
         "coordenadas_dms": "22°54'20.6\"S 43°07'28.2\"W",
         "coordenadas_decimais": [
@@ -90,7 +94,7 @@
             "Praia das Flechas"
         ],
         "specific_location": [
-            " (Rua Praia de Icaraí n° 163)"
+            "Rua Praia de Icaraí n° 163"
         ],
         "coordenadas_dms": "22°54'21.9\"S 43°07'16.9\"W",
         "coordenadas_decimais": [
@@ -120,7 +124,7 @@
             "Praia de Icaraí"
         ],
         "specific_location": [
-            " (À esquerda da Pedra de Itapuca)"
+            "À esquerda da Pedra de Itapuca"
         ],
         "coordenadas_dms": "22°54'17.1\"S 43°07'04.2\"W",
         "coordenadas_decimais": [
@@ -150,7 +154,7 @@
             "Praia de Icaraí"
         ],
         "specific_location": [
-            " (Praça Getúlio Vargas)"
+            "Praça Getúlio Vargas"
         ],
         "coordenadas_dms": "22°54'17.6\"S 43°06'59.5\"W",
         "coordenadas_decimais": [
@@ -180,7 +184,7 @@
             "Praia de Icaraí"
         ],
         "specific_location": [
-            " (Rua Otávio Carneiro)"
+            "Rua Otávio Carneiro"
         ],
         "coordenadas_dms": "22°54'32.0\"S 43°06'45.9\"W",
         "coordenadas_decimais": [
@@ -210,7 +214,7 @@
             "Praia de Icaraí"
         ],
         "specific_location": [
-            " (Rua Mariz e Barros)"
+            "Rua Mariz e Barros"
         ],
         "coordenadas_dms": "22°54'40.9\"S 43°06'38.7\"W",
         "coordenadas_decimais": [
@@ -240,7 +244,7 @@
             "Praia de São Francisco"
         ],
         "specific_location": [
-            " (Rua Caraíbas)"
+            "Rua Caraíbas"
         ],
         "coordenadas_dms": "22°54'56.6\"S 43°05'46.4\"W",
         "coordenadas_decimais": [
@@ -270,7 +274,7 @@
             "Praia de São Francisco"
         ],
         "specific_location": [
-            " (Avenida Quintino Bocaiúva n° 233)"
+            "Avenida Quintino Bocaiúva n° 233"
         ],
         "coordenadas_dms": "22°55'05.8\"S 43°05'44.5\"W",
         "coordenadas_decimais": [
@@ -300,7 +304,7 @@
             "Praia de São Francisco"
         ],
         "specific_location": [
-            " (Igreja São Francisco)"
+            "Igreja São Francisco"
         ],
         "coordenadas_dms": "22°55'14.1\"S 43°05'44.1\"W",
         "coordenadas_decimais": [
@@ -330,7 +334,7 @@
             "Praia de São Charitas"
         ],
         "specific_location": [
-            " (Avenida Quintino Bocaiúva n° 355)"
+            "Avenida Quintino Bocaiúva n° 355"
         ],
         "coordenadas_dms": "22°55'25.5\"S 43°05'45.8\"W",
         "coordenadas_decimais": [
@@ -360,7 +364,7 @@
             "Praia de São Charitas"
         ],
         "specific_location": [
-            " (Travessa Santa Cândida)"
+            "Travessa Santa Cândida"
         ],
         "coordenadas_dms": "22°55'51.1\"S 43°05'55.9\"W",
         "coordenadas_decimais": [
@@ -390,7 +394,7 @@
             "Praia de São Charitas"
         ],
         "specific_location": [
-            " (Lado direito do Clube Naval de Charitas)"
+            "Lado direito do Clube Naval de Charitas"
         ],
         "coordenadas_dms": "22°56'06.3\"S 43°06'19.9\"W",
         "coordenadas_decimais": [
@@ -417,10 +421,10 @@
     },
     "JR000": {
         "nome": [
-            "Jurujuba"
+            "Praia de Jurujuba"
         ],
         "specific_location": [
-            " (Saída da Alameda Mal.Pessoa Leal na Av.Carlos Ermelindo Martins, 1565)"
+            "Avenida Carlos Ermelindo Martins, 1565"
         ],
         "coordenadas_dms": "22°56'03.1\"S 43°06'45.8\"W",
         "coordenadas_decimais": [
@@ -447,10 +451,10 @@
     },
     "JR001": {
         "nome": [
-            "Jurujuba"
+            "Praia de Jurujuba"
         ],
         "specific_location": [
-            " (Avenida Carlos Ermelindo Marins n° 1935)"
+            "Avenida Carlos Ermelindo Marins n° 1935"
         ],
         "coordenadas_dms": "22°55'49.5\"S 43°07'00.5\"W",
         "coordenadas_decimais": [
@@ -479,7 +483,9 @@
         "nome": [
             "Praia de Eva"
         ],
-        "specific_location": [],
+        "specific_location": [
+            "Sem localização específica"
+        ],
         "coordenadas_dms": "22°55'46.3\"S 43°07'23.0\"W",
         "coordenadas_decimais": [
             -22.929528,
@@ -507,7 +513,9 @@
         "nome": [
             "Praia de Adão"
         ],
-        "specific_location": [],
+        "specific_location": [
+            "Sem localização específica"
+        ],
         "coordenadas_dms": "22°55'39.3\"S 43°07'23.9\"W",
         "coordenadas_decimais": [
             -22.927583,
@@ -538,7 +546,7 @@
             "Praia da Barra"
         ],
         "specific_location": [
-            " (Avenida Doutor Acúrcio Torres)"
+            "Avenida Doutor Acúrcio Torres"
         ],
         "coordenadas_dms": "22°57'12.4\"S 43°05'56.4\"W",
         "coordenadas_decimais": [
@@ -568,7 +576,7 @@
             "Praia de Piratininga"
         ],
         "specific_location": [
-            " (Rua General Rubens Rosado Teixeira)"
+            "Rua General Rubens Rosado Teixeira"
         ],
         "coordenadas_dms": "22°57'15.7\"S 43°05'43.8\"W",
         "coordenadas_decimais": [
@@ -598,7 +606,7 @@
             "Praia de Piratininga"
         ],
         "specific_location": [
-            " (Rua Orestes Barbosa)"
+            "Rua Orestes Barbosa"
         ],
         "coordenadas_dms": "22°57'18.4\"S 43°05'16.2\"W",
         "coordenadas_decimais": [
@@ -628,7 +636,7 @@
             "Praia de Piratininga"
         ],
         "specific_location": [
-            " (Rua João Gomes da Silva)"
+            "Rua João Gomes da Silva"
         ],
         "coordenadas_dms": "22°57'23.4\"S 43°04'31.3\"W",
         "coordenadas_decimais": [
@@ -657,7 +665,9 @@
         "nome": [
             "Praia do Sossego"
         ],
-        "specific_location": [],
+        "specific_location": [
+            "Sem localização específica"
+        ],
         "coordenadas_dms": "22°57'29.6\"S 43°04'12.7\"W",
         "coordenadas_decimais": [
             -22.958222,
@@ -685,7 +695,9 @@
         "nome": [
             "Praia de Camboinhas"
         ],
-        "specific_location": [],
+        "specific_location": [
+            "Sem localização específica"
+        ],
         "coordenadas_dms": "22°57'41.9\"S 43°03'28.2\"W",
         "coordenadas_decimais": [
             -22.961639,
@@ -714,7 +726,7 @@
             "Praia de Camboinhas"
         ],
         "specific_location": [
-            " (À 100m do Canal da Lagoa de Itaipu)"
+            "À 100m do Canal da Lagoa de Itaipu"
         ],
         "coordenadas_dms": "22°58'00.5\"S 43°02'55.0\"W",
         "coordenadas_decimais": [
@@ -741,10 +753,10 @@
     },
     "II000": {
         "nome": [
-            "Itaipu"
+            "Praia de Itaipu"
         ],
         "specific_location": [
-            " (Restaurante Varandão)"
+            "Restaurante Varandão"
         ],
         "coordenadas_dms": "22°58'08.1\"S 43°02'50.2\"W",
         "coordenadas_decimais": [
@@ -771,10 +783,10 @@
     },
     "II001": {
         "nome": [
-            "Itaipu"
+            "Praia de Itaipu"
         ],
         "specific_location": [
-            " (Praia de Itaipú n° 21)"
+            "Praia de Itaipú n° 21"
         ],
         "coordenadas_dms": "22°58'21.7\"S 43°02'45.7\"W",
         "coordenadas_decimais": [
@@ -801,10 +813,10 @@
     },
     "IA001": {
         "nome": [
-            "Itacoatiara"
+            "Praia de Itacoatiara"
         ],
         "specific_location": [
-            " (Rua das Azaléias)"
+            "Rua das Azaléias"
         ],
         "coordenadas_dms": "22°58'28.8\"S 43°02'11.0\"W",
         "coordenadas_decimais": [
@@ -831,10 +843,10 @@
     },
     "IA000": {
         "nome": [
-            "Itacoatiara"
+            "Praia de Itacoatiara"
         ],
         "specific_location": [
-            " (Rua das Papoulas)"
+            "Rua das Papoulas"
         ],
         "coordenadas_dms": "22°58'32.1\"S 43°01'50.9\"W",
         "coordenadas_decimais": [
