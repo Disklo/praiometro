@@ -1,11 +1,9 @@
 {
     "GR000": {
-        "nomes": [
+        "nome": [
             "Praia de Gragoatá"
         ],
-        "specific_location": [
-            "Sem localização específica"
-        ],
+        "specific_location": [],
         "coordenadas_dms": "22°54'07.6\"S 43°08'11.0\"W",
         "coordenadas_decimais": [
             -22.902111,
@@ -13,28 +11,27 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 0.84,
-            "wave_period": 9.0,
+            "wave_height": 0.62,
+            "wave_period": 8.3,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "BV001": {
-        "nomes": [
+        "nome": [
             "Praia de Boa Viagem"
         ],
-        "specific_location": [
-            "Sem localização específica"
-        ],
+        "specific_location": [],
         "coordenadas_dms": "22°54'28.9\"S 43°07'42.0\"W",
         "coordenadas_decimais": [
             -22.908028,
@@ -42,27 +39,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.7,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.6,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 86,
-            "apparent_temperature": 23.4,
-            "wind_speed_10m": 2.5,
-            "wind_direction_10m": 98,
+            "relative_humidity_2m": 64,
+            "apparent_temperature": 28.1,
+            "wind_speed_10m": 3.9,
+            "wind_direction_10m": 56,
             "uv_index": 0.0,
-            "wave_height": 0.84,
-            "wave_period": 9.0,
+            "wave_height": 0.62,
+            "wave_period": 8.3,
+            "weather_code": 3,
             "balneabilidade": true
         }
     },
     "FC001": {
-        "nomes": [
+        "nome": [
             "Praia das Flechas"
         ],
         "specific_location": [
-            "Rua Nilo Peçanha"
+            " (rua Nilo Peçanha)"
         ],
         "coordenadas_dms": "22°54'20.6\"S 43°07'28.2\"W",
         "coordenadas_decimais": [
@@ -71,27 +69,28 @@
         ],
         "balneabilidade": false,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.8,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.7,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 86,
-            "apparent_temperature": 23.5,
-            "wind_speed_10m": 2.5,
-            "wind_direction_10m": 98,
+            "relative_humidity_2m": 64,
+            "apparent_temperature": 28.2,
+            "wind_speed_10m": 3.9,
+            "wind_direction_10m": 56,
             "uv_index": 0.0,
-            "wave_height": 0.84,
-            "wave_period": 9.0,
+            "wave_height": 0.62,
+            "wave_period": 8.3,
+            "weather_code": 3,
             "balneabilidade": false
         }
     },
     "FC000": {
-        "nomes": [
+        "nome": [
             "Praia das Flechas"
         ],
         "specific_location": [
-            "Rua Praia de Icaraí n° 163"
+            " (Rua Praia de Icaraí n° 163)"
         ],
         "coordenadas_dms": "22°54'21.9\"S 43°07'16.9\"W",
         "coordenadas_decimais": [
@@ -100,27 +99,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 0.84,
-            "wave_period": 9.0,
+            "wave_height": 0.62,
+            "wave_period": 8.3,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "IC003": {
-        "nomes": [
+        "nome": [
             "Praia de Icaraí"
         ],
         "specific_location": [
-            "À esquerda da Pedra de Itapuca"
+            " (À esquerda da Pedra de Itapuca)"
         ],
         "coordenadas_dms": "22°54'17.1\"S 43°07'04.2\"W",
         "coordenadas_decimais": [
@@ -129,27 +129,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.3,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.2,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.0,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.3,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 0.84,
-            "wave_period": 9.0,
+            "wave_height": 0.62,
+            "wave_period": 8.3,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "IC00": {
-        "nomes": [
+        "nome": [
             "Praia de Icaraí"
         ],
         "specific_location": [
-            "Praça Getúlio Vargas"
+            " (Praça Getúlio Vargas)"
         ],
         "coordenadas_dms": "22°54'17.6\"S 43°06'59.5\"W",
         "coordenadas_decimais": [
@@ -158,27 +159,28 @@
         ],
         "balneabilidade": null,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.2,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.3,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 0.84,
-            "wave_period": 9.0,
+            "wave_height": 0.62,
+            "wave_period": 8.3,
+            "weather_code": 0,
             "balneabilidade": null
         }
     },
     "IC002": {
-        "nomes": [
+        "nome": [
             "Praia de Icaraí"
         ],
         "specific_location": [
-            "Rua Otávio Carneiro"
+            " (Rua Otávio Carneiro)"
         ],
         "coordenadas_dms": "22°54'32.0\"S 43°06'45.9\"W",
         "coordenadas_decimais": [
@@ -187,27 +189,28 @@
         ],
         "balneabilidade": false,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 0.84,
-            "wave_period": 9.0,
+            "wave_height": 0.62,
+            "wave_period": 8.3,
+            "weather_code": 0,
             "balneabilidade": false
         }
     },
     "IC001": {
-        "nomes": [
+        "nome": [
             "Praia de Icaraí"
         ],
         "specific_location": [
-            "Rua Mariz e Barros"
+            " (Rua Mariz e Barros)"
         ],
         "coordenadas_dms": "22°54'40.9\"S 43°06'38.7\"W",
         "coordenadas_decimais": [
@@ -216,27 +219,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 0.84,
-            "wave_period": 9.0,
+            "wave_height": 0.62,
+            "wave_period": 8.3,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "SF000": {
-        "nomes": [
+        "nome": [
             "Praia de São Francisco"
         ],
         "specific_location": [
-            "Rua Caraíbas"
+            " (Rua Caraíbas)"
         ],
         "coordenadas_dms": "22°54'56.6\"S 43°05'46.4\"W",
         "coordenadas_decimais": [
@@ -245,27 +249,28 @@
         ],
         "balneabilidade": false,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.2,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 0.84,
-            "wave_period": 9.0,
+            "wave_height": 0.62,
+            "wave_period": 8.3,
+            "weather_code": 0,
             "balneabilidade": false
         }
     },
     "SF002": {
-        "nomes": [
+        "nome": [
             "Praia de São Francisco"
         ],
         "specific_location": [
-            "Avenida Quintino Bocaiúva n° 233"
+            " (Avenida Quintino Bocaiúva n° 233)"
         ],
         "coordenadas_dms": "22°55'05.8\"S 43°05'44.5\"W",
         "coordenadas_decimais": [
@@ -274,27 +279,28 @@
         ],
         "balneabilidade": false,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 0,
             "balneabilidade": false
         }
     },
     "SF001": {
-        "nomes": [
+        "nome": [
             "Praia de São Francisco"
         ],
         "specific_location": [
-            "Igreja São Francisco"
+            " (Igreja São Francisco)"
         ],
         "coordenadas_dms": "22°55'14.1\"S 43°05'44.1\"W",
         "coordenadas_decimais": [
@@ -303,27 +309,28 @@
         ],
         "balneabilidade": false,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 0,
             "balneabilidade": false
         }
     },
     "CH002": {
-        "nomes": [
+        "nome": [
             "Praia de São Charitas"
         ],
         "specific_location": [
-            "Avenida Quintino Bocaiúva n° 355"
+            " (Avenida Quintino Bocaiúva n° 355)"
         ],
         "coordenadas_dms": "22°55'25.5\"S 43°05'45.8\"W",
         "coordenadas_decimais": [
@@ -332,27 +339,28 @@
         ],
         "balneabilidade": false,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 0,
             "balneabilidade": false
         }
     },
     "CH001": {
-        "nomes": [
+        "nome": [
             "Praia de São Charitas"
         ],
         "specific_location": [
-            "Travessa Santa Cândida"
+            " (Travessa Santa Cândida)"
         ],
         "coordenadas_dms": "22°55'51.1\"S 43°05'55.9\"W",
         "coordenadas_decimais": [
@@ -361,27 +369,28 @@
         ],
         "balneabilidade": false,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 0,
             "balneabilidade": false
         }
     },
     "CH000": {
-        "nomes": [
+        "nome": [
             "Praia de São Charitas"
         ],
         "specific_location": [
-            "Lado direito do Clube Naval de Charitas"
+            " (Lado direito do Clube Naval de Charitas)"
         ],
         "coordenadas_dms": "22°56'06.3\"S 43°06'19.9\"W",
         "coordenadas_decimais": [
@@ -390,27 +399,28 @@
         ],
         "balneabilidade": false,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 0,
             "balneabilidade": false
         }
     },
     "JR000": {
-        "nomes": [
-            "Praia de Jurujuba"
+        "nome": [
+            "Jurujuba"
         ],
         "specific_location": [
-            "Avenida Carlos Ermelindo Martins, 1565"
+            " (Saída da Alameda Mal.Pessoa Leal na Av.Carlos Ermelindo Martins, 1565)"
         ],
         "coordenadas_dms": "22°56'03.1\"S 43°06'45.8\"W",
         "coordenadas_decimais": [
@@ -419,27 +429,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.2,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "JR001": {
-        "nomes": [
-            "Praia de Jurujuba"
+        "nome": [
+            "Jurujuba"
         ],
         "specific_location": [
-            "Avenida Carlos Ermelindo Marins n° 1935"
+            " (Avenida Carlos Ermelindo Marins n° 1935)"
         ],
         "coordenadas_dms": "22°55'49.5\"S 43°07'00.5\"W",
         "coordenadas_decimais": [
@@ -448,28 +459,27 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "EA000": {
-        "nomes": [
+        "nome": [
             "Praia de Eva"
         ],
-        "specific_location": [
-            "Sem localização específica"
-        ],
+        "specific_location": [],
         "coordenadas_dms": "22°55'46.3\"S 43°07'23.0\"W",
         "coordenadas_decimais": [
             -22.929528,
@@ -477,28 +487,27 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "AD000": {
-        "nomes": [
+        "nome": [
             "Praia de Adão"
         ],
-        "specific_location": [
-            "Sem localização específica"
-        ],
+        "specific_location": [],
         "coordenadas_dms": "22°55'39.3\"S 43°07'23.9\"W",
         "coordenadas_decimais": [
             -22.927583,
@@ -506,29 +515,30 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 25.3,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 90,
-            "apparent_temperature": 23.1,
-            "wind_speed_10m": 3.6,
-            "wind_direction_10m": 84,
+            "relative_humidity_2m": 71,
+            "apparent_temperature": 28.4,
+            "wind_speed_10m": 3.7,
+            "wind_direction_10m": 61,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "PR000": {
-        "nomes": [
+        "nome": [
             "Praia de Piratininga",
             "Prainha",
             "Praia da Barra"
         ],
         "specific_location": [
-            "Avenida Doutor Acúrcio Torres"
+            " (Avenida Doutor Acúrcio Torres)"
         ],
         "coordenadas_dms": "22°57'12.4\"S 43°05'56.4\"W",
         "coordenadas_decimais": [
@@ -537,27 +547,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 21.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 27.0,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 82,
-            "apparent_temperature": 23.8,
-            "wind_speed_10m": 3.8,
-            "wind_direction_10m": 107,
+            "relative_humidity_2m": 62,
+            "apparent_temperature": 29.8,
+            "wind_speed_10m": 4.0,
+            "wind_direction_10m": 27,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 1,
             "balneabilidade": true
         }
     },
     "PR001": {
-        "nomes": [
+        "nome": [
             "Praia de Piratininga"
         ],
         "specific_location": [
-            "Rua General Rubens Rosado Teixeira"
+            " (Rua General Rubens Rosado Teixeira)"
         ],
         "coordenadas_dms": "22°57'15.7\"S 43°05'43.8\"W",
         "coordenadas_decimais": [
@@ -566,27 +577,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 21.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 27.0,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 82,
-            "apparent_temperature": 23.8,
-            "wind_speed_10m": 3.8,
-            "wind_direction_10m": 107,
+            "relative_humidity_2m": 62,
+            "apparent_temperature": 29.8,
+            "wind_speed_10m": 4.0,
+            "wind_direction_10m": 27,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 1,
             "balneabilidade": true
         }
     },
     "PR002": {
-        "nomes": [
+        "nome": [
             "Praia de Piratininga"
         ],
         "specific_location": [
-            "Rua Orestes Barbosa"
+            " (Rua Orestes Barbosa)"
         ],
         "coordenadas_dms": "22°57'18.4\"S 43°05'16.2\"W",
         "coordenadas_decimais": [
@@ -595,27 +607,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 21.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 27.0,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 82,
-            "apparent_temperature": 23.8,
-            "wind_speed_10m": 3.8,
-            "wind_direction_10m": 107,
+            "relative_humidity_2m": 62,
+            "apparent_temperature": 29.8,
+            "wind_speed_10m": 4.0,
+            "wind_direction_10m": 27,
             "uv_index": 0.0,
-            "wave_height": 1.36,
-            "wave_period": 8.5,
+            "wave_height": 1.22,
+            "wave_period": 8.15,
+            "weather_code": 1,
             "balneabilidade": true
         }
     },
     "PR003": {
-        "nomes": [
+        "nome": [
             "Praia de Piratininga"
         ],
         "specific_location": [
-            "Rua João Gomes da Silva"
+            " (Rua João Gomes da Silva)"
         ],
         "coordenadas_dms": "22°57'23.4\"S 43°04'31.3\"W",
         "coordenadas_decimais": [
@@ -624,28 +637,27 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 21.4,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 27.0,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 82,
-            "apparent_temperature": 23.8,
-            "wind_speed_10m": 3.8,
-            "wind_direction_10m": 107,
+            "relative_humidity_2m": 62,
+            "apparent_temperature": 29.8,
+            "wind_speed_10m": 4.0,
+            "wind_direction_10m": 27,
             "uv_index": 0.0,
-            "wave_height": 1.7,
-            "wave_period": 8.1,
+            "wave_height": 1.72,
+            "wave_period": 7.95,
+            "weather_code": 1,
             "balneabilidade": true
         }
     },
     "SG000": {
-        "nomes": [
+        "nome": [
             "Praia do Sossego"
         ],
-        "specific_location": [
-            "Sem localização específica"
-        ],
+        "specific_location": [],
         "coordenadas_dms": "22°57'29.6\"S 43°04'12.7\"W",
         "coordenadas_decimais": [
             -22.958222,
@@ -653,28 +665,27 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 21.3,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 26.9,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 82,
-            "apparent_temperature": 23.6,
-            "wind_speed_10m": 3.8,
-            "wind_direction_10m": 107,
+            "relative_humidity_2m": 62,
+            "apparent_temperature": 29.6,
+            "wind_speed_10m": 4.0,
+            "wind_direction_10m": 27,
             "uv_index": 0.0,
-            "wave_height": 1.7,
-            "wave_period": 8.1,
+            "wave_height": 1.72,
+            "wave_period": 7.95,
+            "weather_code": 1,
             "balneabilidade": true
         }
     },
     "CM000": {
-        "nomes": [
+        "nome": [
             "Praia de Camboinhas"
         ],
-        "specific_location": [
-            "Sem localização específica"
-        ],
+        "specific_location": [],
         "coordenadas_dms": "22°57'41.9\"S 43°03'28.2\"W",
         "coordenadas_decimais": [
             -22.961639,
@@ -682,27 +693,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 19.9,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 24.4,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 87,
-            "apparent_temperature": 21.9,
-            "wind_speed_10m": 5.6,
-            "wind_direction_10m": 75,
+            "relative_humidity_2m": 69,
+            "apparent_temperature": 26.8,
+            "wind_speed_10m": 4.9,
+            "wind_direction_10m": 54,
             "uv_index": 0.0,
-            "wave_height": 1.7,
-            "wave_period": 8.1,
+            "wave_height": 1.72,
+            "wave_period": 7.95,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "CM001": {
-        "nomes": [
+        "nome": [
             "Praia de Camboinhas"
         ],
         "specific_location": [
-            "À 100m do Canal da Lagoa de Itaipu"
+            " (À 100m do Canal da Lagoa de Itaipu)"
         ],
         "coordenadas_dms": "22°58'00.5\"S 43°02'55.0\"W",
         "coordenadas_decimais": [
@@ -711,27 +723,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.0,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 24.5,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 87,
-            "apparent_temperature": 22.0,
-            "wind_speed_10m": 5.6,
-            "wind_direction_10m": 75,
+            "relative_humidity_2m": 69,
+            "apparent_temperature": 26.8,
+            "wind_speed_10m": 4.9,
+            "wind_direction_10m": 54,
             "uv_index": 0.0,
-            "wave_height": 1.7,
-            "wave_period": 8.1,
+            "wave_height": 1.72,
+            "wave_period": 7.95,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "II000": {
-        "nomes": [
-            "Praia de Itaipu"
+        "nome": [
+            "Itaipu"
         ],
         "specific_location": [
-            "Restaurante Varandão"
+            " (Restaurante Varandão)"
         ],
         "coordenadas_dms": "22°58'08.1\"S 43°02'50.2\"W",
         "coordenadas_decimais": [
@@ -740,27 +753,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.0,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 24.5,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 87,
-            "apparent_temperature": 22.0,
-            "wind_speed_10m": 5.6,
-            "wind_direction_10m": 75,
+            "relative_humidity_2m": 69,
+            "apparent_temperature": 26.8,
+            "wind_speed_10m": 4.9,
+            "wind_direction_10m": 54,
             "uv_index": 0.0,
-            "wave_height": 1.7,
-            "wave_period": 8.1,
+            "wave_height": 1.72,
+            "wave_period": 7.95,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "II001": {
-        "nomes": [
-            "Praia de Itaipu"
+        "nome": [
+            "Itaipu"
         ],
         "specific_location": [
-            "Praia de Itaipú n° 21"
+            " (Praia de Itaipú n° 21)"
         ],
         "coordenadas_dms": "22°58'21.7\"S 43°02'45.7\"W",
         "coordenadas_decimais": [
@@ -769,27 +783,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.0,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 24.5,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 87,
-            "apparent_temperature": 22.0,
-            "wind_speed_10m": 5.6,
-            "wind_direction_10m": 75,
+            "relative_humidity_2m": 69,
+            "apparent_temperature": 26.8,
+            "wind_speed_10m": 4.9,
+            "wind_direction_10m": 54,
             "uv_index": 0.0,
-            "wave_height": 1.7,
-            "wave_period": 8.1,
+            "wave_height": 1.72,
+            "wave_period": 7.95,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "IA001": {
-        "nomes": [
-            "Praia de Itacoatiara"
+        "nome": [
+            "Itacoatiara"
         ],
         "specific_location": [
-            "Rua das Azaléias"
+            " (Rua das Azaléias)"
         ],
         "coordenadas_dms": "22°58'28.8\"S 43°02'11.0\"W",
         "coordenadas_decimais": [
@@ -798,27 +813,28 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.0,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 24.4,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 87,
-            "apparent_temperature": 22.0,
-            "wind_speed_10m": 5.6,
-            "wind_direction_10m": 75,
+            "relative_humidity_2m": 69,
+            "apparent_temperature": 26.8,
+            "wind_speed_10m": 4.9,
+            "wind_direction_10m": 54,
             "uv_index": 0.0,
-            "wave_height": 1.7,
-            "wave_period": 8.1,
+            "wave_height": 1.72,
+            "wave_period": 7.95,
+            "weather_code": 0,
             "balneabilidade": true
         }
     },
     "IA000": {
-        "nomes": [
-            "Praia de Itacoatiara"
+        "nome": [
+            "Itacoatiara"
         ],
         "specific_location": [
-            "Rua das Papoulas"
+            " (Rua das Papoulas)"
         ],
         "coordenadas_dms": "22°58'32.1\"S 43°01'50.9\"W",
         "coordenadas_decimais": [
@@ -827,18 +843,19 @@
         ],
         "balneabilidade": true,
         "leitura_atual": {
-            "timestamp": "2025-05-25T22:00",
-            "temperature_2m": 20.0,
+            "timestamp": "2025-05-28T19:00",
+            "temperature_2m": 24.4,
             "precipitation": 0.0,
             "precipitation_probability": 0,
             "rain": 0.0,
-            "relative_humidity_2m": 87,
-            "apparent_temperature": 22.0,
-            "wind_speed_10m": 5.6,
-            "wind_direction_10m": 75,
+            "relative_humidity_2m": 69,
+            "apparent_temperature": 26.8,
+            "wind_speed_10m": 4.9,
+            "wind_direction_10m": 54,
             "uv_index": 0.0,
-            "wave_height": 1.7,
-            "wave_period": 8.1,
+            "wave_height": 1.72,
+            "wave_period": 7.95,
+            "weather_code": 0,
             "balneabilidade": true
         }
     }
