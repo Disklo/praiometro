@@ -2,7 +2,9 @@ import { View, Text, ActivityIndicator } from 'react-native';
 import styles from './styles';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync, watchPositionAsync, LocationAccuracy } from 'expo-location';
 import { useEffect, useState } from 'react';
-import MapView, { Circle, Marker } from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Entypo from '@expo/vector-icons/Entypo';
 import { api } from '../../api/api';
 
 export default function Home() {
@@ -103,24 +105,15 @@ export default function Home() {
                     longitudeDelta: 0.005,
                 }}
             >
-                <Circle
-                    center={{
-                        latitude: location?.coords?.latitude,
-                        longitude: location?.coords?.longitude,
+                <Marker
+                    coordinate={{
+                        latitude: location.coords.latitude,
+                        longitude: location.coords.longitude,
                     }}
-                    radius={25}
-                    strokeColor="rgba(0,122,255,0.8)"
-                    fillColor="rgba(0,122,255,0.3)"
-                />
-                <Circle
-                    center={{
-                        latitude: location?.coords?.latitude,
-                        longitude: location?.coords?.longitude,
-                    }}
-                    radius={8}
-                    strokeColor="white"
-                    fillColor="white"
-                />
+                    title="Você está aqui!"
+                >
+                    <MaterialIcons name="person-pin-circle" size={35} color="#015486" />
+                </Marker>
                 {beaches.map((beach) =>
                     beach.coordenadas && beach.coordenadas.length === 2 ? (
                         <Marker
@@ -131,7 +124,9 @@ export default function Home() {
                             }}
                             title={beach.nome?.[0] || 'Praia'}
                             description={beach.specific_location?.[0] || ''}
-                        />
+                        >
+                            <Entypo name="location-pin" size={35} color="#E53935" />
+                        </Marker>
                     ) : null
                 )}
             </MapView>
