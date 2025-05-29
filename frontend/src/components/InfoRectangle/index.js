@@ -21,7 +21,7 @@ export default function InfoRectangle({title, description = "Sem informações",
       )}
       {safe && (
         <View style={styles.alertMessage}>
-          <FontAwesome6 name="person-swimming" size={35} color="#015486" />
+          <FontAwesome6 name="person-swimming" size={32} color="#015486" />
           <Text style={styles.alertText}>Seguro para banhistas!</Text>
         </View>
       )}

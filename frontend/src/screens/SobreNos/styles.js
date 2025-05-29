@@ -9,9 +9,7 @@ export default StyleSheet.create({
     },
     header: {
         backgroundColor: '#fff',
-        paddingHorizontal: 22,
-        paddingTop: 22,
-        paddingBottom: 22,
+        padding: 24,
         borderRadius: 12,
         width: '90%',
     },

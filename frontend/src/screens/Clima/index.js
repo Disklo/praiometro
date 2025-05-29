@@ -2,7 +2,6 @@ import { View, Text, ScrollView, ActivityIndicator } from 'react-native';
 import styles from './styles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import InfoSquare from '../../components/InfoSquare';
 import InfoRectangle from '../../components/InfoRectangle';
 import UVInfoRectangle from '../../components/UVInfoRectangle';
@@ -10,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { api } from '../../api/api';
 import WeatherIcon from '../../components/WeatherIcon';
 import { getHumidityMessage, getSensationMessage, getUVIndexLevel, getUVIndexMessage } from '../../helpers/weatherMessages';
+import { Feather } from '@expo/vector-icons';
 
 export default function Clima() {
     const [weather, setWeather] = useState(null);
@@ -46,7 +46,7 @@ export default function Clima() {
             <View style={[styles.fullScreen, { justifyContent: 'center', alignItems: 'center' }]}>
                 <Text style={{ color: '#FAFAFA', fontSize: 18 }}>{error}</Text>
                 <Text style={{ color: '#FAFAFA', fontSize: 16 }}>Tente novamente mais tarde!</Text>
-                <FontAwesome5 name="sun" style={{marginTop: 20}} size={100} color="#FAFAFA" />
+                <Feather style={{marginTop: 20}} name="sun" size={100} color='#FAFAFA' />
             </View>
         );
     }
