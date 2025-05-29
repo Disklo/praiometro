@@ -6,14 +6,13 @@ export default StyleSheet.create({
         height: 130,
         backgroundColor: '#FAFAFA',
         borderRadius: 12,
+        padding: 16,
         flexDirection: 'column',
     },
     header: {
         flexDirection: 'row',
-        marginTop: 16,
         gap: 6,
         alignItems: 'center',
-        marginLeft: 16,
         width: '100%',
     },
     headerText: {
@@ -42,15 +41,12 @@ export default StyleSheet.create({
     },
     recommendationsContainer: {
         width: '60%',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
     },
     recommendationsText: {
-        fontSize: 14,
+        fontSize: 13,
         fontWeight: '400',
         color: '#454A4C',
-
-        width: '85%',
-        marginHorizontal: 'auto',
         textAlign: 'right',
     },
     infoContainer: {

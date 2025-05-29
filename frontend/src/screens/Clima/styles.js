@@ -31,5 +31,9 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '85%',
+    },
+    fullScreen: {
+        flex: 1,
+        backgroundColor: '#015486',
     }
 })

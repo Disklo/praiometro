@@ -2,7 +2,7 @@ import { View, Text } from 'react-native';
 import styles from './styles';
 import Octicons from '@expo/vector-icons/Octicons';
 
-export default function UVInfoRectangle() {
+export default function UVInfoRectangle({uvIndex, uvLevel, uvRecommentadions}) {
   return (
     <View style={styles.container}>
         <View style={styles.header}>
@@ -11,11 +11,11 @@ export default function UVInfoRectangle() {
         </View>
         <View style={styles.infoContainer}>
             <View style={styles.uvContainer}>
-                <Text style={styles.uvNumber}>3</Text>
-                <Text style={styles.uvScale}>Moderado</Text>
+                <Text style={styles.uvNumber}>{uvIndex}</Text>
+                <Text style={styles.uvScale}>{uvLevel}</Text>
             </View>
             <View style={styles.recommendationsContainer}>
-                <Text style={styles.recommendationsText}>Recomendado a utilização de protetor solar e boné ou chapéu</Text>
+                <Text style={styles.recommendationsText}>{uvRecommentadions}</Text>
             </View>
         </View>
     </View>
