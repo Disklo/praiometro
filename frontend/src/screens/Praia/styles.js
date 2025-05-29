@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         gap: 4,
-        paddingVertical: 14,
+        paddingTop: 10,
+        paddingBottom: 18,
     },
     locationText: {
         color: '#FAFAFA',

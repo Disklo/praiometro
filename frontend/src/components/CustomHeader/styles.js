@@ -10,7 +10,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   logo: {
-    width: 200,
+    width: 180,
     height: 170,
     resizeMode: 'contain',
   },

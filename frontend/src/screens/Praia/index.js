@@ -69,7 +69,7 @@ export default function Praia() {
     return (
         <View style={styles.container}>
             <View style={styles.headerContainer}>
-                <Text style={styles.locationText}>{beach.nomes?.[0] || 'Praia'}</Text>
+                <Text style={styles.locationText}>{beach.nome?.[0] || 'Praia'}</Text>
                 <Text style={styles.specificLocationText}>{beach.specific_location?.[0] || ''}</Text>
             </View>
             <ScrollView 
