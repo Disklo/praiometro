@@ -41,7 +41,7 @@ function MainTabs() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         header: (props) => <CustomHeader {...props} />,
-        tabBarStyle: { backgroundColor: '#015486', height: 70, paddingTop: 5, borderColor: '#015486' },
+        tabBarStyle: { backgroundColor: '#015486', height: 75, paddingTop: 10, borderColor: '#015486' },
         tabBarActiveTintColor: '#fff',
         tabBarInactiveTintColor: '#98A4AE',
         tabBarShowLabel: false,
