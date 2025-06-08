@@ -61,7 +61,7 @@ def calcular_e_atualizar_medias():
     try:
         with open(PONTOS_PATH, "w", encoding="utf-8") as f:
             json.dump(pontos, f, ensure_ascii=False, indent=4)
-        print(f"[✓] {total_atualizados} praias atualizadas em {PONTOS_PATH}.")
+        print(f"{total_atualizados} praias atualizadas em {PONTOS_PATH}.")
     except Exception as e:
         print(f"Erro ao salvar {PONTOS_PATH}: {e}")
 
