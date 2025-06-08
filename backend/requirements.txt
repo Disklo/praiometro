@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pymongo
+python-dotenv
+google-auth
+schedule
+pdfplumber
+requests
