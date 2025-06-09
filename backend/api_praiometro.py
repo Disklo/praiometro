@@ -106,6 +106,7 @@ def listar_pontos():
                 "codigo": codigo,
                 "nome": info.get("nome"),
                 "coordenadas": info.get("coordenadas_decimais"),
+                "coordenadas_terra": info.get("coordenadas_terra_decimais"),
                 "ultima_leitura": info.get("leitura_atual", {}).get("timestamp"),
                 "specific_location": info.get("specific_location")
             }
