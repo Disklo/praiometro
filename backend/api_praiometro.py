@@ -159,14 +159,12 @@ def obter_dados(
     if not dados:
         raise HTTPException(status_code=204, detail="Nenhum dado disponível para o filtro solicitado")
 
-    return {"codigo": codigo, "timestamp": leitura.get("timestamp"), "dados": dados}
-
-def verificar_token_google(token: str) -> str:
-    try:
-        idinfo = id_token.verify_oauth2_token(token, google_requests.Request())
-        return idinfo["sub"]  # sub é o user_id único do Google
-    except Exception:
-        raise HTTPException(status_code=401, detail="Token Google inválido")
+    return {
+        "codigo": codigo,
+        "timestamp": leitura.get("timestamp"),
+        "dados": dados,
+        "coordenadas_terra_decimais": CACHE[codigo].get("coordenadas_terra_decimais")
+    }
 
 @app.get("/pontos/{codigo}/avaliacao", summary="Médias de avaliação da praia")
 def obter_avaliacao_media(codigo: str):
