@@ -11,6 +11,11 @@
             -22.902111,
             -43.136389
         ],
+        "coordenadas_terra_dms": "22°54'07.7\"S 43°08'09.9\"W",
+        "coordenadas_terra_decimais": [
+            -22.902147,
+            -43.136078
+        ],
         "balneabilidade": true,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -47,6 +52,11 @@
         "coordenadas_decimais": [
             -22.908028,
             -43.128333
+        ],
+        "coordenadas_terra_dms": "22°54'30.3\"S 43°07'48.5\"W",
+        "coordenadas_terra_decimais": [
+            -22.908413,
+            -43.130129
         ],
         "balneabilidade": true,
         "leitura_atual": {
@@ -85,6 +95,11 @@
             -22.905722,
             -43.1245
         ],
+        "coordenadas_terra_dms": "22°54'18.8\"S 43°07'27.5\"W",
+        "coordenadas_terra_decimais": [
+            -22.905217,
+            -43.124309
+        ],
         "balneabilidade": false,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -121,6 +136,11 @@
         "coordenadas_decimais": [
             -22.906083,
             -43.121361
+        ],
+        "coordenadas_terra_dms": "22°54'19.7\"S 43°07'16.4\"W",
+        "coordenadas_terra_decimais": [
+            -22.90547,
+            -43.12123
         ],
         "balneabilidade": true,
         "leitura_atual": {
@@ -159,6 +179,11 @@
             -22.90475,
             -43.117833
         ],
+        "coordenadas_terra_dms": "22°54'15.6\"S 43°07'04.2\"W",
+        "coordenadas_terra_decimais": [
+            -22.904336,
+            -43.117841
+        ],
         "balneabilidade": true,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -195,6 +220,11 @@
         "coordenadas_decimais": [
             -22.904889,
             -43.116528
+        ],
+        "coordenadas_terra_dms": "22°54'16.1\"S 43°06'58.3\"W",
+        "coordenadas_terra_decimais": [
+            -22.904462,
+            -43.116207
         ],
         "balneabilidade": null,
         "leitura_atual": {
@@ -233,6 +263,11 @@
             -22.908889,
             -43.11275
         ],
+        "coordenadas_terra_dms": "22°54'29.8\"S 43°06'42.4\"W",
+        "coordenadas_terra_decimais": [
+            -22.908285,
+            -43.111768
+        ],
         "balneabilidade": false,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -269,6 +304,11 @@
         "coordenadas_decimais": [
             -22.911361,
             -43.11075
+        ],
+        "coordenadas_terra_dms": "22°54'39.5\"S 43°06'35.8\"W",
+        "coordenadas_terra_decimais": [
+            -22.910977,
+            -43.109953
         ],
         "balneabilidade": true,
         "leitura_atual": {
@@ -307,6 +347,11 @@
             -22.915722,
             -43.096222
         ],
+        "coordenadas_terra_dms": "22°54'57.4\"S 43°05'43.3\"W",
+        "coordenadas_terra_decimais": [
+            -22.915933,
+            -43.095355
+        ],
         "balneabilidade": false,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -343,6 +388,11 @@
         "coordenadas_decimais": [
             -22.918278,
             -43.095694
+        ],
+        "coordenadas_terra_dms": "22°55'05.4\"S 43°05'41.4\"W",
+        "coordenadas_terra_decimais": [
+            -22.918179,
+            -43.094823
         ],
         "balneabilidade": false,
         "leitura_atual": {
@@ -381,6 +431,11 @@
             -22.920583,
             -43.095583
         ],
+        "coordenadas_terra_dms": "22°55'13.8\"S 43°05'40.3\"W",
+        "coordenadas_terra_decimais": [
+            -22.920511,
+            -43.094515
+        ],
         "balneabilidade": false,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -417,6 +472,11 @@
         "coordenadas_decimais": [
             -22.92375,
             -43.096056
+        ],
+        "coordenadas_terra_dms": "22°55'26.2\"S 43°05'42.3\"W",
+        "coordenadas_terra_decimais": [
+            -22.923943,
+            -43.095071
         ],
         "balneabilidade": false,
         "leitura_atual": {
@@ -455,6 +515,11 @@
             -22.930861,
             -43.098861
         ],
+        "coordenadas_terra_dms": "22°55'52.7\"S 43°05'53.6\"W",
+        "coordenadas_terra_decimais": [
+            -22.93131,
+            -43.098221
+        ],
         "balneabilidade": false,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -491,6 +556,11 @@
         "coordenadas_decimais": [
             -22.935083,
             -43.105528
+        ],
+        "coordenadas_terra_dms": "22°56'09.5\"S 43°06'19.9\"W",
+        "coordenadas_terra_decimais": [
+            -22.935965,
+            -43.105534
         ],
         "balneabilidade": false,
         "leitura_atual": {
@@ -529,6 +599,11 @@
             -22.934194,
             -43.112722
         ],
+        "coordenadas_terra_dms": "22°56'04.0\"S 43°06'47.0\"W",
+        "coordenadas_terra_decimais": [
+            -22.934451,
+            -43.113049
+        ],
         "balneabilidade": true,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -565,6 +640,11 @@
         "coordenadas_decimais": [
             -22.930417,
             -43.116806
+        ],
+        "coordenadas_terra_dms": "22°55'52.8\"S 43°06'59.6\"W",
+        "coordenadas_terra_decimais": [
+            -22.931322,
+            -43.116554
         ],
         "balneabilidade": true,
         "leitura_atual": {
@@ -603,6 +683,11 @@
             -22.929528,
             -43.123056
         ],
+        "coordenadas_terra_dms": "22°55'46.6\"S 43°07'21.1\"W",
+        "coordenadas_terra_decimais": [
+            -22.929624,
+            -43.122534
+        ],
         "balneabilidade": true,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -639,6 +724,11 @@
         "coordenadas_decimais": [
             -22.927583,
             -43.123306
+        ],
+        "coordenadas_terra_dms": "22°55'40.3\"S 43°07'21.6\"W",
+        "coordenadas_terra_decimais": [
+            -22.927865,
+            -43.12268
         ],
         "balneabilidade": true,
         "leitura_atual": {
@@ -679,6 +769,11 @@
             -22.953444,
             -43.099
         ],
+        "coordenadas_terra_dms": "22°57'10.2\"S 43°05'53.2\"W",
+        "coordenadas_terra_decimais": [
+            -22.952823,
+            -43.098123
+        ],
         "balneabilidade": true,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -715,6 +810,11 @@
         "coordenadas_decimais": [
             -22.954361,
             -43.0955
+        ],
+        "coordenadas_terra_dms": "22°57'13.4\"S 43°05'44.0\"W",
+        "coordenadas_terra_decimais": [
+            -22.953726,
+            -43.095542
         ],
         "balneabilidade": true,
         "leitura_atual": {
@@ -753,6 +853,11 @@
             -22.955111,
             -43.087833
         ],
+        "coordenadas_terra_dms": "22°57'16.1\"S 43°05'15.8\"W",
+        "coordenadas_terra_decimais": [
+            -22.954461,
+            -43.087731
+        ],
         "balneabilidade": true,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -789,6 +894,11 @@
         "coordenadas_decimais": [
             -22.9565,
             -43.075361
+        ],
+        "coordenadas_terra_dms": "22°57'21.7\"S 43°04'30.9\"W",
+        "coordenadas_terra_decimais": [
+            -22.956014,
+            -43.075238
         ],
         "balneabilidade": true,
         "leitura_atual": {
@@ -827,6 +937,11 @@
             -22.958222,
             -43.070194
         ],
+        "coordenadas_terra_dms": "22°57'29.1\"S 43°04'11.5\"W",
+        "coordenadas_terra_decimais": [
+            -22.958076,
+            -43.069852
+        ],
         "balneabilidade": true,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -863,6 +978,11 @@
         "coordenadas_decimais": [
             -22.961639,
             -43.057833
+        ],
+        "coordenadas_terra_dms": "22°57'41.0\"S 43°03'27.9\"W",
+        "coordenadas_terra_decimais": [
+            -22.961378,
+            -43.05776
         ],
         "balneabilidade": true,
         "leitura_atual": {
@@ -901,6 +1021,11 @@
             -22.966806,
             -43.048611
         ],
+        "coordenadas_terra_dms": "22°57'59.9\"S 43°02'53.5\"W",
+        "coordenadas_terra_decimais": [
+            -22.966637,
+            -43.048199
+        ],
         "balneabilidade": true,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -937,6 +1062,11 @@
         "coordenadas_decimais": [
             -22.968917,
             -43.047278
+        ],
+        "coordenadas_terra_dms": "22°58'07.2\"S 43°02'48.7\"W",
+        "coordenadas_terra_decimais": [
+            -22.968655,
+            -43.046871
         ],
         "balneabilidade": true,
         "leitura_atual": {
@@ -975,6 +1105,11 @@
             -22.972694,
             -43.046028
         ],
+        "coordenadas_terra_dms": "22°58'21.8\"S 43°02'44.1\"W",
+        "coordenadas_terra_decimais": [
+            -22.972734,
+            -43.045586
+        ],
         "balneabilidade": true,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -1012,6 +1147,11 @@
             -22.974667,
             -43.036389
         ],
+        "coordenadas_terra_dms": "22°58'26.9\"S 43°02'10.4\"W",
+        "coordenadas_terra_decimais": [
+            -22.974128,
+            -43.036233
+        ],
         "balneabilidade": true,
         "leitura_atual": {
             "timestamp": "2025-06-09T03:00",
@@ -1048,6 +1188,11 @@
         "coordenadas_decimais": [
             -22.975583,
             -43.030806
+        ],
+        "coordenadas_terra_dms": "22°58'30.6\"S 43°01'50.3\"W",
+        "coordenadas_terra_decimais": [
+            -22.975158,
+            -43.030642
         ],
         "balneabilidade": true,
         "leitura_atual": {
