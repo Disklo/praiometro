@@ -166,6 +166,13 @@ def obter_dados(
         "coordenadas_terra_decimais": CACHE[codigo].get("coordenadas_terra_decimais")
     }
 
+def verificar_token_google(token: str) -> str:
+    try:
+        idinfo = id_token.verify_oauth2_token(token, google_requests.Request())
+        return idinfo["sub"]  # sub é o user_id único do Google
+    except Exception:
+        raise HTTPException(status_code=401, detail="Token Google inválido")
+
 @app.get("/pontos/{codigo}/avaliacao", summary="Médias de avaliação da praia")
 def obter_avaliacao_media(codigo: str):
     if codigo not in CACHE:
