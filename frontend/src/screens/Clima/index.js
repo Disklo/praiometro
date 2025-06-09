@@ -72,11 +72,8 @@ export default function Clima() {
     } else if ([51, 53, 55].includes(code)) {
         weatherType = 'Chuvisco';
         isSafe = true;
-    } else if ([61, 63, 65].includes(code)) {
+    } else if ([61, 63, 65, 80, 81, 82].includes(code)) {
         weatherType = 'Chuva';
-        isDangerous = true;
-    } else if ([80, 81, 82].includes(code)) {
-        weatherType = 'Pancadas de chuva';
         isDangerous = true;
     } else if (code === 95) {
         weatherType = 'Trovoadas';

@@ -13,12 +13,9 @@ export default function WeatherIcon({ weatherCode, size, color }) {
     } else if ([51, 53, 55].includes(weatherCode)) {
         // Chivisco
         return <Ionicons name="rainy-outline" size={size} color={color} />;
-    } else if ([61, 63, 65].includes(weatherCode)) {
+    } else if ([61, 63, 65, 80, 81, 82].includes(weatherCode)) {
         // Chuva leve, chuva moderada, chuva intensa
         return <Ionicons name="rainy-outline" size={size} color={color} />;
-    } else if ([80, 81, 82].includes(weatherCode)) {
-        // Pancadas de chuva
-        return <Fontisto name="rains" size={size} color={color} />;
     } else if (weatherCode === 95) {
         // Trovoadas
         return <Ionicons name="thunderstorm-outline" size={size} color={color} />;

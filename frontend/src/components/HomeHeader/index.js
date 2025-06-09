@@ -60,10 +60,8 @@ export default function HomeHeader() {
         weatherType = 'Névoa';
     } else if ([51, 53, 55].includes(code)) {
         weatherType = 'Chuvisco';
-    } else if ([61, 63, 65].includes(code)) {
+    } else if ([61, 63, 65, 80, 81, 82].includes(code)) {
         weatherType = 'Chuva';
-    } else if ([80, 81, 82].includes(code)) {
-        weatherType = 'Pancadas de chuva';
     } else if (code === 95) {
         weatherType = 'Trovoadas';
     } else if ([96, 99].includes(code)) {

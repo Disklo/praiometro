@@ -1,9 +1,8 @@
 import { View, Text, Pressable } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import styles from './styles';
-import { Button } from '@react-navigation/elements';
 
-export default function FeedbackSection() {
+export default function FeedbackSection({onPress}) {
   return (
     <View style={styles.container}>
         <Text style={styles.feedbackTitle}>Avaliação dos Usuários</Text>
@@ -64,6 +63,7 @@ export default function FeedbackSection() {
                 styles.button,
                 pressed ? { opacity: 0.8 } : null
             ]}
+            onPress={onPress}
         >
             <Text style={styles.buttonText}>Envie uma avaliação!</Text>
         </Pressable>

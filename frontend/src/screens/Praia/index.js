@@ -12,11 +12,13 @@ import { useRoute } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { api } from '../../api/api';
 import FeedbackSection from '../../components/FeedbackSection';
+import FeedbackModal from '../../components/FeedbackModal';
 
 export default function Praia() {
     const route = useRoute();
     const { id } = route.params;
     const [loading, setLoading] = useState(true);
+    const [modalVisible, setModalVisible] = useState(false);
     const [error, setError] = useState(null);
     const [beach, setBeach] = useState(null);
 
@@ -95,7 +97,7 @@ export default function Praia() {
                         <Feather name="wind" size={55} color="#015486" />
                     </SmallInfoRectangle>
                 </View>      
-                <FeedbackSection/>
+                <FeedbackSection onPress={() => setModalVisible(true)}/>
                 <TouchableOpacity
                     style={styles.mapsButton}
                     onPress={openInMaps}
@@ -107,6 +109,7 @@ export default function Praia() {
                         </Text>
                     </View>
                 </TouchableOpacity>
+                <FeedbackModal visible={modalVisible} onClose={() => setModalVisible(false)} beachName={beach.nome?.[0] || 'Praia'} />
             </ScrollView>
         </View>
     );
