@@ -23,8 +23,8 @@ export default function Praia() {
     const [beach, setBeach] = useState(null);
 
     function openInMaps() {
-        if (!beach?.coordenadas_decimais) return;
-        const [lat, lng] = beach.coordenadas_decimais;
+        if (!beach?.coordenadas_terra_decimais) return;
+        const [lat, lng] = beach.coordenadas_terra_decimais;
         const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
         Linking.openURL(url);
     }

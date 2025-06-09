@@ -138,16 +138,16 @@ return (
                 fillColor="#40CFFF"
             />
             {beaches.map((beach) =>
-                beach.coordenadas && beach.coordenadas.length === 2 ? (
+                beach.coordenadas_terra && beach.coordenadas_terra.length === 2 ? (
                     <Marker
                         key={beach.codigo}
                         coordinate={{
-                            latitude: beach.coordenadas[0],
-                            longitude: beach.coordenadas[1],
+                            latitude: beach.coordenadas_terra[0],
+                            longitude: beach.coordenadas_terra[1],
                         }}
                         title={beach.nome?.[0] || 'Praia'}
                         description={beach.specific_location?.[0] || ''}
-                        anchor={{ x: 0.5, y: 1 }}
+                        anchor={{ x: 0.5, y: 0.2 }}
                     >
                         <Entypo name="location-pin" size={32} color="#2ea5e4" />
                         <Callout
