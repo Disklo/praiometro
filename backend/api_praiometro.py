@@ -11,6 +11,7 @@ from google.oauth2 import id_token
 from google.auth.transport import requests as google_requests
 from fastapi import Request, Body
 from dotenv import load_dotenv
+from datetime import datetime, timedelta
 
 load_dotenv()
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
@@ -67,9 +68,9 @@ async def schedule_cache_refresh():
     #Se não mudou, tenta a cada 1 minuto até 5 vezes antes de desistir.
     while True:
         # calcula segundos até próxima hora em minuto 2
-        utcnow = datetime.utcnow()
-        next_time = (utcnow + timedelta(hours=1)).replace(minute=2, second=0, microsecond=0)
-        delta = (next_time - utcnow).total_seconds()
+        agora = datetime.utcnow()
+        next_time = (agora + timedelta(hours=1)).replace(minute=2, second=0, microsecond=0)
+        delta = (next_time - agora).total_seconds()
         await asyncio.sleep(delta)
 
         # tentativa inicial
@@ -106,7 +107,6 @@ def listar_pontos():
                 "codigo": codigo,
                 "nome": info.get("nome"),
                 "coordenadas": info.get("coordenadas_decimais"),
-                "coordenadas_terra": info.get("coordenadas_terra_decimais"),
                 "ultima_leitura": info.get("leitura_atual", {}).get("timestamp"),
                 "specific_location": info.get("specific_location")
             }
@@ -159,12 +159,7 @@ def obter_dados(
     if not dados:
         raise HTTPException(status_code=204, detail="Nenhum dado disponível para o filtro solicitado")
 
-    return {
-        "codigo": codigo,
-        "timestamp": leitura.get("timestamp"),
-        "dados": dados,
-        "coordenadas_terra_decimais": CACHE[codigo].get("coordenadas_terra_decimais")
-    }
+    return {"codigo": codigo, "timestamp": leitura.get("timestamp"), "dados": dados}
 
 def verificar_token_google(token: str) -> str:
     try:
@@ -192,9 +187,22 @@ async def votar(
 ):
     user_id = verificar_token_google(token)
 
-    # Verifica se usuário já votou
-    if colecao_votos.find_one({"praia_id": praia_id, "user_id": user_id}):
-        raise HTTPException(status_code=403, detail="Você já votou nesta praia.")
+    # Busca voto anterior, se houver
+    voto_antigo = colecao_votos.find_one({
+        "praia_id": praia_id,
+        "user_id": user_id
+    })
+
+    agora = datetime.utcnow()
+
+    if voto_antigo:
+        data_voto = datetime.fromisoformat(voto_antigo["timestamp"])
+        # Se voto foi feito há menos de 30 dias
+        if agora < data_voto + timedelta(days=30):
+            return {"votou": True}
+
+        # Substitui voto antigo por novo
+        colecao_votos.delete_one({"_id": voto_antigo["_id"]})
 
     # Validação
     criterios_validos = {"limpeza", "acessibilidade", "infraestrutura", "seguranca", "tranquilidade"}
@@ -207,11 +215,11 @@ async def votar(
         "praia_id": praia_id,
         "user_id": user_id,
         "votos": votos,
-        "timestamp": datetime.utcnow().isoformat()
+        "timestamp": agora.isoformat()
     }
     colecao_votos.insert_one(doc)
 
-    return {"msg": "Voto registrado com sucesso"}
+    return {"msg": "Voto registrado com sucesso", "votou": False}
 
 # Execução via Uvicorn/Gunicorn
 if __name__ == "__main__":
