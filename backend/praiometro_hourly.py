@@ -104,6 +104,17 @@ def buscar_dados(lat, lon):
     key = ts_hour.strftime("%Y-%m-%dT%H:%M")
     if key in time_list:
         idx = time_list.index(key)
+        # verifica se choveu nas últimas 8 horas
+        choveu_8_horas = False
+        if "precipitation" in data_met and "time" in data_met:
+            now_idx = None
+            for i, t in enumerate(data_met["time"]):
+                if t == key:
+                    now_idx = i
+                    break
+            if now_idx is not None and now_idx >= 8:
+                ult_precip = data_met["precipitation"][now_idx-8:now_idx]
+                choveu_8_horas = any(p > 0 for p in ult_precip)
         # coleta valores
         return {
             "timestamp": key,
@@ -118,7 +129,8 @@ def buscar_dados(lat, lon):
             "uv_index": data_met.get("uv_index", [None])[idx],
             "wave_height": data_mar.get("wave_height", [None])[idx],
             "wave_period": data_mar.get("wave_period", [None])[idx],
-            "weather_code": data_met.get("weather_code", [None])[idx]
+            "weather_code": data_met.get("weather_code", [None])[idx],
+            "choveu_8_horas": choveu_8_horas
         }
     else:
         print(f"Hora {key} não encontrada nos dados.")

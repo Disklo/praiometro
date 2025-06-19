@@ -147,6 +147,7 @@ def obter_dados(
             "wind_direction_10m",
             "uv_index",
             "weather_code",
+            "choveu_8_horas",
         ]:
             if chave in leitura:
                 dados[chave] = leitura[chave]
