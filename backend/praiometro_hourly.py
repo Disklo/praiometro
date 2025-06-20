@@ -153,11 +153,16 @@ def atualizar():
             **info,
             "leitura_atual": leitura
         }
-
     # salva resultado
     with open(CAMINHO_PONTOS, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=4)
     print(f"Atualização realizada em {datetime.datetime.utcnow().isoformat()} UTC")
+    # notificar API após atualização do pontos.json
+    try:
+        resposta = requests.post("http://localhost:8000/notificar-atualizacao")  # Altere se necessário
+        print("Notificação enviada:", resposta.json())
+    except Exception as e:
+        print("Erro ao notificar API:", e)
 
 # Executa atualização imediata ao iniciar
 atualizar()

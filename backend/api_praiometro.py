@@ -63,38 +63,50 @@ async def load_cache():
     except Exception as e:
         print(f"[Cache] Erro ao carregar {PONTOS_FILE}: {e}")
 
-async def schedule_cache_refresh():
-    #Atualiza o cache sempre que o relógio marcar X:02, verificando mudança de hash.
-    #Se não mudou, tenta a cada 1 minuto até 5 vezes antes de desistir.
-    while True:
-        # calcula segundos até próxima hora em minuto 2
-        agora = datetime.utcnow()
-        next_time = (agora + timedelta(hours=1)).replace(minute=2, second=0, microsecond=0)
-        delta = (next_time - agora).total_seconds()
-        await asyncio.sleep(delta)
-
-        # tentativa inicial
-        old_hash = FILE_HASH
-        new_hash = await compute_file_hash()
-        if new_hash and new_hash != old_hash:
-            await load_cache()
-        else:
-            # retentativas a cada minuto, até 5
-            for attempt in range(1, 6):
-                print(f"[Cache] Sem mudança detectada, tentativa {attempt} de 5 em 1 minuto")
-                await asyncio.sleep(60)
-                new_hash = await compute_file_hash()
-                if new_hash and new_hash != old_hash:
-                    await load_cache()
-                    break
-            else:
-                print(f"[Cache] Desistindo após 5 tentativas, mantendo cache atual")
+#async def schedule_cache_refresh():
+#    #Atualiza o cache sempre que o relógio marcar X:02, verificando mudança de hash.
+#    #Se não mudou, tenta a cada 1 minuto até 5 vezes antes de desistir.
+#    while True:
+#        # calcula segundos até próxima hora em minuto 2
+#        agora = datetime.utcnow()
+#        next_time = (agora + timedelta(hours=1)).replace(minute=2, second=0, microsecond=0)
+#        delta = (next_time - agora).total_seconds()
+#        await asyncio.sleep(delta)
+#
+#        # tentativa inicial
+#        old_hash = FILE_HASH
+#        new_hash = await compute_file_hash()
+#        if new_hash and new_hash != old_hash:
+#            await load_cache()
+#        else:
+#            # retentativas a cada minuto, até 5
+#            for attempt in range(1, 6):
+#                print(f"[Cache] Sem mudança detectada, tentativa {attempt} de 5 em 1 minuto")
+#                await asyncio.sleep(60)
+#                new_hash = await compute_file_hash()
+#                if new_hash and new_hash != old_hash:
+#                    await load_cache()
+#                    break
+#            else:
+#                print(f"[Cache] Desistindo após 5 tentativas, mantendo cache atual")
 
 @app.on_event("startup")
 async def on_startup():
     # Carrega cache inicialmente e agenda atualização
     await load_cache()
-    asyncio.create_task(schedule_cache_refresh())
+    #asyncio.create_task(schedule_cache_refresh())
+
+@app.post("/notificar-atualizacao", summary="Notifica a API que pontos.json foi atualizado")
+async def notificar_atualizacao():
+    global FILE_HASH
+    old_hash = FILE_HASH
+    for tentativa in range(6):
+        new_hash = await compute_file_hash()
+        if new_hash and new_hash != old_hash:
+            await load_cache()
+            return {"status": "Atualizado", "tentativas": tentativa + 1}
+        await asyncio.sleep(60)
+    return {"status": "Não houve mudança no hash após 5 tentativas", "hash": FILE_HASH}
 
 # Endpoints usando cache em memória
 @app.get("/pontos", summary="Lista todos os pontos de coleta")
