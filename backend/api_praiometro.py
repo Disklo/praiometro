@@ -168,6 +168,8 @@ def obter_dados(
         for chave in ["wave_height", "wave_period"]:
             if chave in leitura:
                 dados[chave] = leitura[chave]
+        if "balneabilidade" in leitura:
+            dados["balneabilidade"] = leitura["balneabilidade"]
 
     if not dados:
         raise HTTPException(status_code=204, detail="Nenhum dado disponível para o filtro solicitado")
