@@ -11,6 +11,8 @@ from google.oauth2 import id_token
 from google.auth.transport import requests as google_requests
 from fastapi import Request, Body
 from dotenv import load_dotenv
+from datetime import datetime, timedelta
+import socket
 
 load_dotenv()
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
@@ -62,38 +64,81 @@ async def load_cache():
     except Exception as e:
         print(f"[Cache] Erro ao carregar {PONTOS_FILE}: {e}")
 
-async def schedule_cache_refresh():
-    #Atualiza o cache sempre que o relógio marcar X:02, verificando mudança de hash.
-    #Se não mudou, tenta a cada 1 minuto até 5 vezes antes de desistir.
-    while True:
-        # calcula segundos até próxima hora em minuto 2
-        utcnow = datetime.utcnow()
-        next_time = (utcnow + timedelta(hours=1)).replace(minute=2, second=0, microsecond=0)
-        delta = (next_time - utcnow).total_seconds()
-        await asyncio.sleep(delta)
-
-        # tentativa inicial
-        old_hash = FILE_HASH
-        new_hash = await compute_file_hash()
-        if new_hash and new_hash != old_hash:
-            await load_cache()
-        else:
-            # retentativas a cada minuto, até 5
-            for attempt in range(1, 6):
-                print(f"[Cache] Sem mudança detectada, tentativa {attempt} de 5 em 1 minuto")
-                await asyncio.sleep(60)
-                new_hash = await compute_file_hash()
-                if new_hash and new_hash != old_hash:
-                    await load_cache()
-                    break
-            else:
-                print(f"[Cache] Desistindo após 5 tentativas, mantendo cache atual")
+#async def schedule_cache_refresh():
+#    #Atualiza o cache sempre que o relógio marcar X:02, verificando mudança de hash.
+#    #Se não mudou, tenta a cada 1 minuto até 5 vezes antes de desistir.
+#    while True:
+#        # calcula segundos até próxima hora em minuto 2
+#        agora = datetime.utcnow()
+#        next_time = (agora + timedelta(hours=1)).replace(minute=2, second=0, microsecond=0)
+#        delta = (next_time - agora).total_seconds()
+#        await asyncio.sleep(delta)
+#
+#        # tentativa inicial
+#        old_hash = FILE_HASH
+#        new_hash = await compute_file_hash()
+#        if new_hash and new_hash != old_hash:
+#            await load_cache()
+#        else:
+#            # retentativas a cada minuto, até 5
+#            for attempt in range(1, 6):
+#                print(f"[Cache] Sem mudança detectada, tentativa {attempt} de 5 em 1 minuto")
+#                await asyncio.sleep(60)
+#                new_hash = await compute_file_hash()
+#                if new_hash and new_hash != old_hash:
+#                    await load_cache()
+#                    break
+#            else:
+#                print(f"[Cache] Desistindo após 5 tentativas, mantendo cache atual")
 
 @app.on_event("startup")
 async def on_startup():
     # Carrega cache inicialmente e agenda atualização
+    gerar_api_js()
     await load_cache()
-    asyncio.create_task(schedule_cache_refresh())
+    #asyncio.create_task(schedule_cache_refresh())
+
+def gerar_api_js():
+    def obter_ip_lan():
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        try:
+            s.connect(("8.8.8.8", 80))
+            return s.getsockname()[0]
+        except Exception:
+            return "127.0.0.1"
+        finally:
+            s.close()
+
+    ip_lan = obter_ip_lan()
+    caminho_api_js = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend", "src", "api", "api.js"))
+
+    conteudo = f"""import axios from 'axios';
+
+const API_URL = 'http://{ip_lan}:8000';
+
+export const api = axios.create({{
+    baseURL: API_URL
+}})"""
+
+    try:
+        os.makedirs(os.path.dirname(caminho_api_js), exist_ok=True)
+        with open(caminho_api_js, "w", encoding="utf-8") as f:
+            f.write(conteudo)
+        print(f"[Init] Arquivo api.js gerado com IP {ip_lan} em {caminho_api_js}")
+    except Exception as e:
+        print(f"[Init] Erro ao criar api.js: {e}")
+
+@app.post("/notificar-atualizacao", summary="Notifica a API que pontos.json foi atualizado")
+async def notificar_atualizacao():
+    global FILE_HASH
+    old_hash = FILE_HASH
+    for tentativa in range(6):
+        new_hash = await compute_file_hash()
+        if new_hash and new_hash != old_hash:
+            await load_cache()
+            return {"status": "Atualizado", "tentativas": tentativa + 1}
+        await asyncio.sleep(60)
+    return {"status": "Não houve mudança no hash após 5 tentativas", "hash": FILE_HASH}
 
 # Endpoints usando cache em memória
 @app.get("/pontos", summary="Lista todos os pontos de coleta")
@@ -106,7 +151,6 @@ def listar_pontos():
                 "codigo": codigo,
                 "nome": info.get("nome"),
                 "coordenadas": info.get("coordenadas_decimais"),
-                "coordenadas_terra": info.get("coordenadas_terra_decimais"),
                 "ultima_leitura": info.get("leitura_atual", {}).get("timestamp"),
                 "specific_location": info.get("specific_location")
             }
@@ -147,6 +191,7 @@ def obter_dados(
             "wind_direction_10m",
             "uv_index",
             "weather_code",
+            "choveu_8_horas",
         ]:
             if chave in leitura:
                 dados[chave] = leitura[chave]
@@ -155,16 +200,20 @@ def obter_dados(
         for chave in ["wave_height", "wave_period"]:
             if chave in leitura:
                 dados[chave] = leitura[chave]
+        if "balneabilidade" in leitura:
+            dados["balneabilidade"] = leitura["balneabilidade"]
 
     if not dados:
         raise HTTPException(status_code=204, detail="Nenhum dado disponível para o filtro solicitado")
 
-    return {
-        "codigo": codigo,
-        "timestamp": leitura.get("timestamp"),
-        "dados": dados,
-        "coordenadas_terra_decimais": CACHE[codigo].get("coordenadas_terra_decimais")
-    }
+    return {"codigo": codigo, "timestamp": leitura.get("timestamp"), "dados": dados}
+
+def verificar_token_google(token: str) -> str:
+    try:
+        idinfo = id_token.verify_oauth2_token(token, google_requests.Request())
+        return idinfo["sub"]  # sub é o user_id único do Google
+    except Exception:
+        raise HTTPException(status_code=401, detail="Token Google inválido")
 
 @app.get("/pontos/{codigo}/avaliacao", summary="Médias de avaliação da praia")
 def obter_avaliacao_media(codigo: str):
@@ -185,9 +234,22 @@ async def votar(
 ):
     user_id = verificar_token_google(token)
 
-    # Verifica se usuário já votou
-    if colecao_votos.find_one({"praia_id": praia_id, "user_id": user_id}):
-        raise HTTPException(status_code=403, detail="Você já votou nesta praia.")
+    # Busca voto anterior, se houver
+    voto_antigo = colecao_votos.find_one({
+        "praia_id": praia_id,
+        "user_id": user_id
+    })
+
+    agora = datetime.utcnow()
+
+    if voto_antigo:
+        data_voto = datetime.fromisoformat(voto_antigo["timestamp"])
+        # Se voto foi feito há menos de 30 dias
+        if agora < data_voto + timedelta(days=30):
+            return {"votou": True}
+
+        # Substitui voto antigo por novo
+        colecao_votos.delete_one({"_id": voto_antigo["_id"]})
 
     # Validação
     criterios_validos = {"limpeza", "acessibilidade", "infraestrutura", "seguranca", "tranquilidade"}
@@ -200,11 +262,11 @@ async def votar(
         "praia_id": praia_id,
         "user_id": user_id,
         "votos": votos,
-        "timestamp": datetime.utcnow().isoformat()
+        "timestamp": agora.isoformat()
     }
     colecao_votos.insert_one(doc)
 
-    return {"msg": "Voto registrado com sucesso"}
+    return {"msg": "Voto registrado com sucesso", "votou": False}
 
 # Execução via Uvicorn/Gunicorn
 if __name__ == "__main__":
