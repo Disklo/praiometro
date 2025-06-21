@@ -12,6 +12,7 @@ from google.auth.transport import requests as google_requests
 from fastapi import Request, Body
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
+import socket
 
 load_dotenv()
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
@@ -93,8 +94,39 @@ async def load_cache():
 @app.on_event("startup")
 async def on_startup():
     # Carrega cache inicialmente e agenda atualização
+    gerar_api_js()
     await load_cache()
     #asyncio.create_task(schedule_cache_refresh())
+
+def gerar_api_js():
+    def obter_ip_lan():
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        try:
+            s.connect(("8.8.8.8", 80))
+            return s.getsockname()[0]
+        except Exception:
+            return "127.0.0.1"
+        finally:
+            s.close()
+
+    ip_lan = obter_ip_lan()
+    caminho_api_js = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend", "src", "api", "api.js"))
+
+    conteudo = f"""import axios from 'axios';
+
+const API_URL = 'http://{ip_lan}:8000';
+
+export const api = axios.create({{
+    baseURL: API_URL
+}})"""
+
+    try:
+        os.makedirs(os.path.dirname(caminho_api_js), exist_ok=True)
+        with open(caminho_api_js, "w", encoding="utf-8") as f:
+            f.write(conteudo)
+        print(f"[Init] Arquivo api.js gerado com IP {ip_lan} em {caminho_api_js}")
+    except Exception as e:
+        print(f"[Init] Erro ao criar api.js: {e}")
 
 @app.post("/notificar-atualizacao", summary="Notifica a API que pontos.json foi atualizado")
 async def notificar_atualizacao():
