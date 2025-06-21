@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     headerContainer: {
         width: '100%',
-        height: 120,
+        height: 115,
         backgroundColor: '#015486',
         position: 'absolute',
         top: 0,
@@ -48,5 +48,5 @@ export default StyleSheet.create({
         color: '#FAFAFA',
         fontSize: 16,
         fontWeight: '400',
-    }
+    },
 });

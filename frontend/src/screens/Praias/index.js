@@ -1,4 +1,4 @@
-import { Text, TextInput, ScrollView, View, ActivityIndicator, Pressable } from 'react-native';
+import { Text, TextInput, ScrollView, View, Pressable } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import BeachCard from '../../components/BeachCard';
 import { useEffect, useState, useRef } from 'react';
@@ -39,7 +39,7 @@ export default function Praias({ navigation }) {
     if (loading) {
         return (
             <View style={[styles.fullScreen, { justifyContent: 'center', alignItems: 'center' }]}>
-                <ActivityIndicator size="large" color="#FAFAFA" />
+                <Text style={{ color: '#015486', fontSize: 18 }}>Carregando...</Text>
             </View>
         );
     }

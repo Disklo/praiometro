@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, ActivityIndicator } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import styles from './styles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
@@ -36,7 +36,7 @@ export default function Clima() {
     if (loading) {
         return (
             <View style={[styles.fullScreen, { justifyContent: 'center', alignItems: 'center' }]}>
-                <ActivityIndicator size="large" color="#FAFAFA" />
+                <Text style={{ color: '#015486', fontSize: 18 }}>Carregando...</Text>
             </View>
         );
     }

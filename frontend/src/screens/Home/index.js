@@ -1,4 +1,4 @@
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, Text } from 'react-native';
 import styles from './styles';
 import Fontisto from '@expo/vector-icons/Fontisto';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync, watchPositionAsync, LocationAccuracy } from 'expo-location';
@@ -67,6 +67,7 @@ export default function Home() {
                     }
                 );
             } catch (error) {
+                console.log('Erro ao acompanhar localização:', error);
                 setError('Erro ao acompanhar localização');
             }
         })();
@@ -78,7 +79,6 @@ export default function Home() {
     if (loading) {
         return (
             <View style={[styles.container, { justifyContent: 'center', alignItems: 'center', flex: 1 }]}>
-                <ActivityIndicator size="large" color="#015486" />
                 <Text style={{ color: '#015486', marginTop: 16 }}>Carregando...</Text>
             </View>
         );

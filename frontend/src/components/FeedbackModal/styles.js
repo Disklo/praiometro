@@ -33,15 +33,34 @@ export default StyleSheet.create({
         fontWeight: '400',
         color: '#454A4C',
     },
+    closeButton: {
+        backgroundColor: '#D1D5DB', 
+        padding: 10,
+        paddingHorizontal: 40,
+        borderRadius: 8,
+        height: 45,
+        elevation: 4,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.3,
+        shadowRadius: 4,
+    },
+    closeButtonText: {
+        color: '#026099',
+        fontSize: 16,
+        fontWeight: '500',
+        textAlign: 'center',
+    },
     button: {
         backgroundColor: '#026099', 
         padding: 10, 
+        paddingHorizontal: 40,
         borderRadius: 8, 
         height: 45,
         elevation: 4,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
+        shadowOpacity: 0.3,
         shadowRadius: 4,
     },
     buttonText: {
@@ -50,4 +69,10 @@ export default StyleSheet.create({
         fontWeight: '500',
         textAlign: 'center',
     },
+    buttonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: 16,
+        marginTop: 8,
+    }
 })

@@ -1,4 +1,4 @@
-import { Feather, FontAwesome5, Fontisto, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Feather, FontAwesome5, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function WeatherIcon({ weatherCode, size, color }) {
     if (weatherCode === 0) {

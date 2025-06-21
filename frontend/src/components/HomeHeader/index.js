@@ -1,7 +1,6 @@
 import styles from './styles';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, Text } from 'react-native';
 import { useEffect, useState } from 'react';
 import { api } from '../../api/api';
 import WeatherIcon from '../WeatherIcon';
@@ -31,7 +30,7 @@ export default function HomeHeader() {
     if (loading) {
         return (
             <View style={[styles.headerContainer, { justifyContent: 'center', alignItems: 'center' }]}>
-                <ActivityIndicator size="medium" color="#FAFAFA" />
+                <Text style={{ color: '#015486', fontSize: 18 }}>Carregando...</Text>
             </View>
         );
     }
