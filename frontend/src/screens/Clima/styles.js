@@ -29,7 +29,7 @@ export default StyleSheet.create({
     },
     squaresContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        gap: 16,
         width: '85%',
     },
     fullScreen: {

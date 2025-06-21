@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     smallInfoRectanglesContainer: {
         flexDirection: 'row',
         width: '85%',
-        justifyContent: 'space-between',
+        gap: 16,
     },
     mapsButton: {
         backgroundColor: '#FAFAFA',

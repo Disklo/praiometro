@@ -23,9 +23,6 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 8
     },
-    searchBar: {
-        height: 30,
-    },
     cardContainer: {
         flexDirection: 'column',
         alignItems: 'center',

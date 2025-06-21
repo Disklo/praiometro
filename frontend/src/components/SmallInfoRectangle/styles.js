@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
-        width: 160,
+        flexGrow: 1,
         height: 90,
         backgroundColor: '#FAFAFA',
         borderRadius: 12,

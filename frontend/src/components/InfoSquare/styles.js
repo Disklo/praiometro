@@ -5,7 +5,7 @@ export default StyleSheet.create({
         backgroundColor: '#FAFAFA',
         borderRadius: 12,
         padding: 16,
-        width: 160,
+        flexGrow: 1,
         height: 160,
         flexDirection: 'column',
     },
@@ -40,6 +40,11 @@ export default StyleSheet.create({
         color: '#454A4C',
         textAlign: 'left',
         marginTop: 6,
-        marginHorizontal: 'auto',
-    }
+        width: 120,
+    },
+    infoContainer: {
+        flexDirection: 'column',
+        gap: 8,
+        marginTop: 8,
+    },
 });
