@@ -80,8 +80,8 @@ export default function Praia() {
                 contentContainerStyle={styles.scrollViewContainer}
             >
                 <FontAwesome5 name="umbrella-beach" size={100} color="#FAFAFA" style={{marginBottom: 12}}/>
-                <InfoRectangle title="Qualidade da água do mar" description={beach.balneabilidade ? "Própria para banho!" : "Imprópria para banho!"}>
-                    {beach.balneabilidade
+                <InfoRectangle title="Qualidade da água do mar" description={beach.leitura_atual?.balneabilidade ? "Própria para banho!" : "Imprópria para banho!"}>
+                    {beach.leitura_atual.balneabilidade
                         ? <Entypo name="emoji-happy" size={55} color="#015486" />
                         : <Entypo name="emoji-sad" size={55} color="#015486" />
                     }
