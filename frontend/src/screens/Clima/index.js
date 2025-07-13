@@ -9,7 +9,9 @@ import { useEffect, useState } from 'react';
 import { api } from '../../api/api';
 import WeatherIcon from '../../components/WeatherIcon';
 import { getHumidityMessage, getSensationMessage, getUVIndexLevel, getUVIndexMessage } from '../../helpers/weatherMessages';
-import { Feather } from '@expo/vector-icons';
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import { formatDate } from '../../helpers/formatdate';
+import { formatHour } from '../../helpers/formatHour';
 
 export default function Clima() {
     const [weather, setWeather] = useState(null);
@@ -116,6 +118,10 @@ export default function Clima() {
                     uvRecommentadions={getUVIndexMessage(weather.uv_index)}
                 />
             </View>
+            <Text style={styles.update}>
+                <MaterialCommunityIcons name="update" size={12} color="#e7e9edff" />{' '}
+                Atualizado dia {formatDate(weather.timestamp)} às {formatHour(weather.timestamp)}
+            </Text>
         </ScrollView>
     );
 }

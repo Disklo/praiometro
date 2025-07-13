@@ -35,5 +35,12 @@ export default StyleSheet.create({
     fullScreen: {
         flex: 1,
         backgroundColor: '#015486',
-    }
+    },
+    update: {
+        color: '#e7e9edff',
+        fontSize: 12,
+        fontWeight: '400',
+        textAlign: 'center',
+        marginTop: 16,
+    },
 })

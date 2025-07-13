@@ -14,7 +14,7 @@ export default function SobreNos() {
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity
                     style={styles.instagramButton}
-                    onPress={() => Linking.openURL('https://www.instagram.com/')}
+                    onPress={() => Linking.openURL('https://www.instagram.com/praiometronit')}
                 >
                     <FontAwesome name="instagram" size={24} color="#015486" style={{ marginRight: 10 }} />
                     <Text style={styles.instagramButtonText}>Instagram</Text>
