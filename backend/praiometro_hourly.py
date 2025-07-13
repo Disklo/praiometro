@@ -51,7 +51,8 @@ def extrair_balneabilidade(caminho_pdf=CAMINHO_PDF):
 
 # Função que busca dados meteorológicos e marinhos para uma coordenada
 def buscar_dados(lat, lon):
-    agora = datetime.datetime.utcnow()
+    br_timezone = datetime.timezone(datetime.timedelta(hours=-3))
+    agora = datetime.datetime.now(br_timezone)
     ts_hour = agora.replace(minute=0, second=0, microsecond=0)
     date_start = ts_hour.strftime("%Y-%m-%d")
     date_end = (ts_hour + datetime.timedelta(days=1)).strftime("%Y-%m-%d")
@@ -156,7 +157,8 @@ def atualizar():
     # salva resultado
     with open(CAMINHO_PONTOS, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=4)
-    print(f"Atualização realizada em {datetime.datetime.utcnow().isoformat()} UTC")
+    br_timezone = datetime.timezone(datetime.timedelta(hours=-3))
+    print(f"Atualização realizada em {datetime.datetime.now(br_timezone).isoformat()}")
     # notificar API após atualização do pontos.json
     try:
         resposta = requests.post("http://localhost:8000/notificar-atualizacao")  # Altere se necessário
