@@ -10,7 +10,7 @@ import { api } from '../../api/api';
 import WeatherIcon from '../../components/WeatherIcon';
 import { getHumidityMessage, getSensationMessage, getUVIndexLevel, getUVIndexMessage } from '../../helpers/weatherMessages';
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { formatDate } from '../../helpers/formatdate';
+import { formatDate } from '../../helpers/formatDate';
 import { formatHour } from '../../helpers/formatHour';
 
 export default function Clima() {

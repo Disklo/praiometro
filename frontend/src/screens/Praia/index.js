@@ -28,7 +28,7 @@ import FeedbackSection from '../../components/FeedbackSection';
 import FeedbackModal from '../../components/FeedbackModal';
 import { LinearGradient } from 'expo-linear-gradient';
 import { formatHour } from '../../helpers/formatHour';
-import { formatDate } from '../../helpers/formatdate';
+import { formatDate } from '../../helpers/formatDate';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 function getBeachImage(beachName) {
