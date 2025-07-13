@@ -32,7 +32,7 @@
       [
         "@react-native-google-signin/google-signin",
         {
-          "iosUrlScheme": "com.googleusercontent.apps._some_id_here_"
+          "iosUrlScheme": "com.googleusercontent.apps.576057804831-uarlbbc4f48185jr40t4jq2mjhdett9u "
         }
       ]
     ],
@@ -43,6 +43,12 @@
       "eas": {
         "projectId": "9026eb07-0260-4076-9f46-6eceebcabc16"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/9026eb07-0260-4076-9f46-6eceebcabc16"
     }
   }
 }

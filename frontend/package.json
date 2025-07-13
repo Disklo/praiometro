@@ -5,7 +5,7 @@
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
-    "ios": "expo start --ios",   
+    "ios": "expo start --ios",
     "web": "expo start --web"
   },
   "dependencies": {
@@ -17,8 +17,10 @@
     "axios": "^1.9.0",
     "expo": "~53.0.9",
     "expo-font": "~13.3.1",
+    "expo-linear-gradient": "^14.1.5",
     "expo-location": "~18.1.5",
     "expo-status-bar": "~2.2.3",
+    "expo-updates": "~0.28.15",
     "react": "19.0.0",
     "react-native": "0.79.2",
     "react-native-gesture-handler": "^2.25.0",
@@ -30,9 +32,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@react-native-community/cli": "latest",
     "json-server": "^1.0.0-beta.3",
-    "react-native-svg-transformer": "^1.5.1",
-    "@react-native-community/cli": "latest"
+    "react-native-svg-transformer": "^1.5.1"
   },
   "private": true
 }

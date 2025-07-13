@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 4,
         paddingTop: 10,
-        paddingBottom: 18,
+        paddingBottom: 10,
     },
     locationText: {
         color: '#FAFAFA',
@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
         width: '85%',
         borderRadius: 10,
         alignItems: 'center',
-        marginBottom: 32,
         elevation: 4, 
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
@@ -60,6 +59,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         gap: 8,
+    },
+    update: {
+        color: '#e7e9edff',
+        fontSize: 12,
+        fontWeight: '400',
+        textAlign: 'center',
+        marginBottom: 28,
     },
 })
 

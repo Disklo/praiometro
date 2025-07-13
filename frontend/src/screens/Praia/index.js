@@ -1,4 +1,17 @@
-import { View, Text, ScrollView, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Linking, Image } from 'react-native';
+import adaoeva from '../../../assets/images/praias/adaoeva.jpg';
+import boaviagem from '../../../assets/images/praias/boaviagem.jpg';
+import camboinhas from '../../../assets/images/praias/camboinhas.jpg';
+import charitas from '../../../assets/images/praias/charitas.jpg';
+import flechas from '../../../assets/images/praias/flechas.webp';
+import gragoata from '../../../assets/images/praias/gragoata.jpg';
+import icarai from '../../../assets/images/praias/icarai.webp';
+import saofrancisco from '../../../assets/images/praias/saofrancisco.jpg';
+import jurujuba from '../../../assets/images/praias/jurujuba.jpg';
+import piratininga from '../../../assets/images/praias/piratininga.jpg';
+import sossego from '../../../assets/images/praias/sossego.jpg';
+import itaipu from '../../../assets/images/praias/itaipu.jpg';
+import itacoatiara from '../../../assets/images/praias/itacoatiara.jpg';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
@@ -13,6 +26,52 @@ import { useEffect, useState } from 'react';
 import { api } from '../../api/api';
 import FeedbackSection from '../../components/FeedbackSection';
 import FeedbackModal from '../../components/FeedbackModal';
+import { LinearGradient } from 'expo-linear-gradient';
+import { formatHour } from '../../helpers/formatHour';
+import { formatDate } from '../../helpers/formatdate';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+function getBeachImage(beachName) {
+    switch (beachName) {
+        case "Praia de Eva":
+            return adaoeva;
+        case "Praia de Adão":
+            return adaoeva;
+        case "Praia de Camboinhas":
+            return camboinhas;
+        case "Praia de São Charitas":
+            return charitas;
+        case "Praia das Flechas":
+            return flechas;
+        case "Praia de Gragoatá":
+            return gragoata;
+        case "Praia de Boa Viagem":
+            return boaviagem;
+        case "Praia de Icaraí":
+            return icarai;
+        case "Praia de São Francisco":  
+            return saofrancisco;
+        case "Praia de Jurujuba":
+            return jurujuba;
+        case "Praia de Piratininga":
+            return piratininga;
+        case "Praia do Sossego":
+            return sossego;
+        case "Praia de Itaipu":
+            return itaipu;
+        case "Praia de Itacoatiara":
+            return itacoatiara;
+        default:
+            return null; 
+    }
+}
+
+function formatDateToDDMM(dateString) {
+    const date = new Date(dateString);
+    const dia = String(date.getDate()).padStart(2, '0');
+    const mes = String(date.getMonth() + 1).padStart(2, '0');
+    return `${dia}/${mes}`;
+}
 
 export default function Praia() {
     const route = useRoute();
@@ -79,7 +138,32 @@ export default function Praia() {
                 overScrollMode='never'           
                 contentContainerStyle={styles.scrollViewContainer}
             >
-                <FontAwesome5 name="umbrella-beach" size={100} color="#FAFAFA" style={{marginBottom: 12}}/>
+                <View style={{ position: 'relative', width: '100%', height: 200, marginBottom: 10 }}>
+                    <Image
+                        source={getBeachImage(beach.nome?.[0])}
+                        style={{ width: '100%', height: 200 }}
+                    />
+                    <LinearGradient
+                        colors={['rgba(0,0,0,0.2)', 'transparent']}
+                        style={{
+                            position: 'absolute',
+                            left: 0,
+                            right: 0,
+                            top: 0,
+                            height: 25,
+                        }}
+                    />
+                    <LinearGradient
+                        colors={['transparent', '#015486']}
+                        style={{
+                        position: 'absolute',
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        height: 130,
+                        }}
+                    />
+                </View>
                 <InfoRectangle title="Qualidade da água do mar" description={beach.leitura_atual?.balneabilidade ? "Própria para banho!" : "Imprópria para banho!"}>
                     {beach.leitura_atual.balneabilidade
                         ? <Entypo name="emoji-happy" size={55} color="#015486" />
@@ -109,6 +193,9 @@ export default function Praia() {
                         </Text>
                     </View>
                 </TouchableOpacity>
+                <Text style={styles.update}>
+                    <MaterialCommunityIcons name="update" size={12} color="#e7e9edff" />{' '}
+                    Atualizado dia {formatDate(beach.leitura_atual.timestamp)} às {formatHour(beach.leitura_atual.timestamp)}</Text>
                 <FeedbackModal visible={modalVisible} onClose={() => setModalVisible(false)} beachName={beach.nome?.[0] || 'Praia'} />
             </ScrollView>
         </View>
