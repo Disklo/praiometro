@@ -5,6 +5,8 @@ import time
 import requests
 import pdfplumber
 import schedule
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 # Arquivos de configuração
 CAMINHO_PONTOS = "pontos.json"          # arquivo de pontos estáticos
@@ -15,6 +17,21 @@ MAPA_STATUS = {
     "Própria": True,
     "Imprópria": False
 }
+
+def criar_sessao_com_retries(retries=5, backoff_factor=1.0, status_forcelist=(500, 502, 503, 504)):
+    sessao = requests.Session()
+    retry = Retry(
+        total=retries,
+        read=retries,
+        connect=retries,
+        backoff_factor=backoff_factor,
+        status_forcelist=status_forcelist,
+        raise_on_status=False
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    sessao.mount("http://", adapter)
+    sessao.mount("https://", adapter)
+    return sessao
 
 # Carrega pontos estáticos (nomes, coordenadas e histórico de balneabilidade)
 def carregar_pontos(caminho=CAMINHO_PONTOS):
@@ -85,20 +102,22 @@ def buscar_dados(lat, lon):
         "start_date": date_start,
         "end_date": date_end
     }
-    # requisição meteorológica
+    sessao = criar_sessao_com_retries()
+    # requisição metereológica
     try:
-        r_met = requests.get("https://api.open-meteo.com/v1/forecast", params=met_params)
+        r_met = sessao.get("https://api.open-meteo.com/v1/forecast", params=met_params, timeout=10)
         data_met = r_met.json().get("hourly", {})
     except Exception as e:
         print(f"Erro API meteo: {e}")
         data_met = {}
     # requisição marinha
     try:
-        r_mar = requests.get("https://marine-api.open-meteo.com/v1/marine", params=marine_params)
+        r_mar = sessao.get("https://marine-api.open-meteo.com/v1/marine", params=marine_params, timeout=10)
         data_mar = r_mar.json().get("hourly", {})
     except Exception as e:
         print(f"Erro API marinha: {e}")
         data_mar = {}
+
 
     # busca índice do timestamp
     time_list = data_met.get("time", [])
