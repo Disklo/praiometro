@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import styles from './styles';
 import Fontisto from '@expo/vector-icons/Fontisto';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync, watchPositionAsync, LocationAccuracy } from 'expo-location';
@@ -104,10 +104,10 @@ return (
         <MapView
             style={styles.map}
             initialRegion={{
-                latitude: location?.coords?.latitude,
-                longitude: location?.coords?.longitude,
-                latitudeDelta: 0.005,
-                longitudeDelta: 0.005,
+                latitude: -22.907484,
+                longitude: -43.112033,
+                latitudeDelta: 0.15,
+                longitudeDelta: 0.15,
             }}
         >
             <Circle
@@ -147,33 +147,13 @@ return (
                         }}
                         title={beach.nome?.[0] || 'Praia'}
                         description={beach.specific_location?.[0] || ''}
-                        anchor={{ x: 0.5, y: 0.2 }}
-                    >
-                        <Entypo name="location-pin" size={32} color="#2ea5e4" />
-                        <Callout
-                            onPress={() => navigation.navigate('Praias', {
-                                screen: 'Praia',
-                                params: { id: beach.codigo }
-                            })}
-                        >
-                            <View
-                                style={{
-                                    backgroundColor: 'white',
-                                    borderRadius: 8,
-                                    width: 150,
-                                    alignItems: 'center',
-                                    elevation: 4,
-                                }}
-                            >
-                                <Text style={{ fontWeight: 'bold', color: '#2ea5e4', fontSize: 16, textAlign: 'center' }}>
-                                    {beach.nome?.[0] || 'Praia'}
-                                </Text>
-                                <Text style={{ color: '#666', fontSize: 13, textAlign: 'center' }}>
-                                    {beach.specific_location?.[0] || ''}
-                                </Text>
-                            </View>
-                        </Callout>
-                    </Marker>
+                        anchor={{ x: 0.5, y: 1 }}
+                        image={require('../../../assets/images/marcador.png')}
+                        onPress={() => navigation.navigate('Praias', {
+                            screen: 'Praia',
+                            params: { id: beach.codigo }
+                        })}
+                    />
                 ) : null
             )}
         </MapView>
