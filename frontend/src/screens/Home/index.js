@@ -10,6 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 import HomeHeader from '../../components/HomeHeader';
 
 export default function Home() {
+    const [zoomLevel, setZoomLevel] = useState(0.15);
     const [location, setLocation] = useState(null);
     const [beaches, setBeaches] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -109,7 +110,9 @@ return (
                 latitudeDelta: 0.15,
                 longitudeDelta: 0.15,
             }}
-        >
+            onRegionChangeComplete={(region) => {
+                setZoomLevel(region.latitudeDelta);
+            }}>
             <Circle
                 center={{
                     latitude: location.coords.latitude,
@@ -148,7 +151,7 @@ return (
                         title={beach.nome?.[0] || 'Praia'}
                         description={beach.specific_location?.[0] || ''}
                         anchor={{ x: 0.5, y: 1 }}
-                        image={require('../../../assets/images/marcador.png')}
+                        image={zoomLevel < 0.05 ? require('../../../assets/images/marcador.png') : require('../../../assets/images/marcador_peq.png')}
                         onPress={() => navigation.navigate('Praias', {
                             screen: 'Praia',
                             params: { id: beach.codigo }
