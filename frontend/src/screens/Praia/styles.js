@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 4,
         paddingTop: 10,
-        paddingBottom: 10,
+        paddingBottom: 20,
     },
     locationText: {
         color: '#FAFAFA',
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     scrollViewContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 16,
         gap: 16,
     },
     smallInfoRectanglesContainer: {
