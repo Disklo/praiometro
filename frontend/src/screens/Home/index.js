@@ -7,8 +7,38 @@ import { useNavigation } from '@react-navigation/native';
 import HomeHeader from '../../components/HomeHeader';
 
 export default function Home() {
-    const markerImg = require('../../../assets/images/marcador.png');
-    const markerPeqImg = require('../../../assets/images/marcador_peq.png');
+    const markerPeqImg = require('../../../assets/images/marcadores/marcador_peq.png');
+    const markerImages = {
+        'AD000': require('../../../assets/images/marcadores/AD000.png'),
+        'BV001': require('../../../assets/images/marcadores/BV001.png'),
+        'CH000': require('../../../assets/images/marcadores/CH000.png'),
+        'CH001': require('../../../assets/images/marcadores/CH001.png'),
+        'CH002': require('../../../assets/images/marcadores/CH002.png'),
+        'CM000': require('../../../assets/images/marcadores/CM000.png'),
+        'CM001': require('../../../assets/images/marcadores/CM001.png'),
+        'EA000': require('../../../assets/images/marcadores/EA000.png'),
+        'FC000': require('../../../assets/images/marcadores/FC000.png'),
+        'FC001': require('../../../assets/images/marcadores/FC001.png'),
+        'GR000': require('../../../assets/images/marcadores/GR000.png'),
+        'IA000': require('../../../assets/images/marcadores/IA000.png'),
+        'IA001': require('../../../assets/images/marcadores/IA001.png'),
+        'IC00': require('../../../assets/images/marcadores/IC00.png'),
+        'IC001': require('../../../assets/images/marcadores/IC001.png'),
+        'IC002': require('../../../assets/images/marcadores/IC002.png'),
+        'IC003': require('../../../assets/images/marcadores/IC003.png'),
+        'II000': require('../../../assets/images/marcadores/II000.png'),
+        'II001': require('../../../assets/images/marcadores/II001.png'),
+        'JR000': require('../../../assets/images/marcadores/JR000.png'),
+        'JR001': require('../../../assets/images/marcadores/JR001.png'),
+        'PR000': require('../../../assets/images/marcadores/PR000.png'),
+        'PR001': require('../../../assets/images/marcadores/PR001.png'),
+        'PR002': require('../../../assets/images/marcadores/PR002.png'),
+        'PR003': require('../../../assets/images/marcadores/PR003.png'),
+        'SF000': require('../../../assets/images/marcadores/SF000.png'),
+        'SF001': require('../../../assets/images/marcadores/SF001.png'),
+        'SF002': require('../../../assets/images/marcadores/SF002.png'),
+        'SG000': require('../../../assets/images/marcadores/SG000.png'),
+    };
     const [zoomLevel, setZoomLevel] = useState(0.15);
     const [beaches, setBeaches] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -79,7 +109,7 @@ return (
                             screen: 'Praia',
                             params: { id: beach.codigo }
                         })}
-                        image={zoomLevel < 0.05 ? markerImg : markerPeqImg}
+                        image={zoomLevel < 0.05 ? markerImages[beach.codigo] : markerPeqImg}
                     />
                 ) : null
             )}
