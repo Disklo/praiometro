@@ -17,7 +17,8 @@
         "buildType": "apk"
       },
       "env": {
-        "GOOGLE_MAPS_API_KEY": "INSERT_KEY_HERE"
+        "GOOGLE_MAPS_API_KEY": "INSERT_KEY_HERE",
+        "GOOGLE_CLIENT_ID": "YOUR_GOOGLE_WEB_CLIENT_ID"
       }
     }
   },

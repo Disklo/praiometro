@@ -22,7 +22,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import Feather from '@expo/vector-icons/Feather';
 import Fontisto from '@expo/vector-icons/Fontisto';
 import { useRoute } from '@react-navigation/native';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { api } from '../../api/api';
 import FeedbackSection from '../../components/FeedbackSection';
 import FeedbackModal from '../../components/FeedbackModal';
@@ -66,13 +66,6 @@ function getBeachImage(beachName) {
     }
 }
 
-function formatDateToDDMM(dateString) {
-    const date = new Date(dateString);
-    const dia = String(date.getDate()).padStart(2, '0');
-    const mes = String(date.getMonth() + 1).padStart(2, '0');
-    return `${dia}/${mes}`;
-}
-
 export default function Praia() {
     const route = useRoute();
     const { id } = route.params;
@@ -80,6 +73,27 @@ export default function Praia() {
     const [modalVisible, setModalVisible] = useState(false);
     const [error, setError] = useState(null);
     const [beach, setBeach] = useState(null);
+    const [averageRatings, setAverageRatings] = useState(null);
+
+    const fetchBeachData = useCallback(async () => {
+        try {
+            setLoading(true);
+            setError(null);
+            const response = await api.get(`/pontos/${id}`);
+            setBeach(response.data);
+            const avgResponse = await api.get(`/pontos/${id}/avaliacao`);
+            setAverageRatings(avgResponse.data.avaliacao_media);
+        } catch (error) {
+            console.error('Erro ao buscar dados da praia ou avaliações:', error);
+            setError('Erro ao tentar carregar a praia ou avaliações...');
+        } finally {
+            setLoading(false);
+        }
+    }, [id]);
+
+    useEffect(() => {
+        fetchBeachData();
+    }, [fetchBeachData]);
 
     function openInMaps() {
         if (!beach?.coordenadas_terra_decimais) return;
@@ -87,23 +101,6 @@ export default function Praia() {
         const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
         Linking.openURL(url);
     }
-
-    useEffect(() => {
-        const fetchBeach = async () => {
-            try {
-                setLoading(true);
-                setError(null);
-                const response = await api.get(`/pontos/${id}`);
-                setBeach(response.data);
-            } catch (error) {
-                console.error('Erro ao buscar praia:', error);
-                setError('Erro ao tentar carregar a praia...');
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchBeach();
-    }, [id]);
 
     if (loading) {
         return (
@@ -181,7 +178,7 @@ export default function Praia() {
                         <Feather name="wind" size={55} color="#015486" />
                     </SmallInfoRectangle>
                 </View>      
-                <FeedbackSection onPress={() => setModalVisible(true)}/>
+                <FeedbackSection averageRatings={averageRatings} onPress={() => setModalVisible(true)}/>
                 <TouchableOpacity
                     style={styles.mapsButton}
                     onPress={openInMaps}
@@ -196,7 +193,7 @@ export default function Praia() {
                 <Text style={styles.update}>
                     <MaterialCommunityIcons name="update" size={12} color="#e7e9edff" />{' '}
                     Atualizado dia {formatDate(beach.leitura_atual.timestamp)} às {formatHour(beach.leitura_atual.timestamp)}</Text>
-                <FeedbackModal visible={modalVisible} onClose={() => setModalVisible(false)} beachName={beach.nome?.[0] || 'Praia'} />
+                <FeedbackModal visible={modalVisible} onClose={() => setModalVisible(false)} beachName={beach.nome?.[0] || 'Praia'} beachId={id} onVoteSuccess={fetchBeachData} />
             </ScrollView>
         </View>
     );

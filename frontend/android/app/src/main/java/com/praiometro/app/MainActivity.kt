@@ -1,4 +1,4 @@
-package com.googleauth.android
+package com.praiometro.app
 
 import android.os.Build
 import android.os.Bundle

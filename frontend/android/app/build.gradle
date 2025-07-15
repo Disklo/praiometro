@@ -87,17 +87,13 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.googleauth.android'
+    namespace 'com.praiometro.app'
     defaultConfig {
-        applicationId 'com.googleauth.android'
+        applicationId 'com.praiometro.app'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName rootProject.ext.has('versionName') ? rootProject.ext.versionName : '1.0'
-        def googleMapsApiKey = project.findProperty('GOOGLE_MAPS_API_KEY') ?: System.getenv('GOOGLE_MAPS_API_KEY')
-        if (googleMapsApiKey) {
-            resValue "string", "google_maps_api_key", googleMapsApiKey
-        }
+        versionName "1.0.0"
     }
     signingConfigs {
         debug {
