@@ -100,7 +100,7 @@ return (
                 if (beach.coordenadas_terra && beach.coordenadas_terra.length === 2) {
                     const isLarge = zoomLevel < 0.08;
                     const imageSource = isLarge ? markerImages[beach.codigo] : markerPeqImg;
-                    const imageStyle = isLarge ? { width: 160, height: 160 } : { width: 100, height: 100 };
+                    const imageStyle = isLarge ? { width: 181, height: 70 } : { width: 50, height: 65 };
 
                     return (
                         <Marker
