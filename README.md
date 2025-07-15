@@ -21,17 +21,17 @@ yarn install
 Para que o aplicativo funcione corretamente, você precisa inserir sua chave da API do Google Maps.
 
 1.  Localize o arquivo `exemplo.env.base` na raiz do projeto.
-2.  Abra o arquivo e substitua `YOUR_GOOGLE_MAPS_API_KEY_HERE` pela sua chave da API do Google Maps.
-3.  Renomeie o arquivo `exemplo.env.base` para `.env`.
+2.  Abra o arquivo e substitua `INSERT_KEY_HERE` pela sua chave da API do Google Maps.
+3.  Renomeie o arquivo `exemplo.eas.json.base` para `eas.json`.
 
     ```bash
-    mv exemplo.env.base .env
+    mv exemplo.eas.json.base eas.json
     ```
 
     No Windows, você pode usar:
 
     ```bash
-    ren exemplo.env.base .env
+    ren exemplo.eas.json.base eas.json
     ```
 
 ### 3. Rodando o Aplicativo em Desenvolvimento
