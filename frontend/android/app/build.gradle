@@ -92,8 +92,12 @@ android {
         applicationId 'com.googleauth.android'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0.0"
+        versionCode safeExtGet('versionCode', 1)
+        versionName safeExtGet('versionName', '1.0')
+        def googleMapsApiKey = project.findProperty('GOOGLE_MAPS_API_KEY') ?: System.getenv('GOOGLE_MAPS_API_KEY')
+        if (googleMapsApiKey) {
+            resValue "string", "google_maps_api_key", googleMapsApiKey
+        }
     }
     signingConfigs {
         debug {

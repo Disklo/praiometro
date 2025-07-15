@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Praiômetro",
-    "slug": "Praiômetro",
+    "slug": "Praiometro",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/logo.jpg",
@@ -29,24 +29,11 @@
     },
     "plugins": [
       "expo-font",
-      [
-        "@react-native-google-signin/google-signin",
-        {
-          "iosUrlScheme": "com.googleusercontent.apps.576057804831-uarlbbc4f48185jr40t4jq2mjhdett9u "
-        }
-      ]
+      "@react-native-google-signin/google-signin"
     ],
     "experimental": {
       "fabric": false
     },
-    "extra": {
-      "eas": {
-        "projectId": "9026eb07-0260-4076-9f46-6eceebcabc16"
-      }
-    },
-    "runtimeVersion": "1.0.0",
-    "updates": {
-      "url": "https://u.expo.dev/9026eb07-0260-4076-9f46-6eceebcabc16"
-    }
+    "runtimeVersion": "1.0.0"
   }
 }

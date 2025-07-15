@@ -96,23 +96,35 @@ return (
             onRegionChangeComplete={(region) => {
                 setZoomLevel(region.latitudeDelta);
             }}>
-            {beaches.map((beach) =>
-                beach.coordenadas_terra && beach.coordenadas_terra.length === 2 ? (
-                    <Marker
-                        key={`${beach.codigo}-${zoomLevel < 0.05 ? 'large' : 'small'}`}
-                        coordinate={{
-                            latitude: beach.coordenadas_terra[0],
-                            longitude: beach.coordenadas_terra[1],
-                        }}
-                        anchor={{ x: 0.5, y: 1 }}
-                        onPress={() => navigation.navigate('Praias', {
-                            screen: 'Praia',
-                            params: { id: beach.codigo }
-                        })}
-                        image={zoomLevel < 0.05 ? markerImages[beach.codigo] : markerPeqImg}
-                    />
-                ) : null
-            )}
+            {beaches.map((beach) => {
+                if (beach.coordenadas_terra && beach.coordenadas_terra.length === 2) {
+                    const isLarge = zoomLevel < 0.08;
+                    const imageSource = isLarge ? markerImages[beach.codigo] : markerPeqImg;
+                    const imageStyle = isLarge ? { width: 160, height: 160 } : { width: 100, height: 100 };
+
+                    return (
+                        <Marker
+                            key={beach.codigo}
+                            coordinate={{
+                                latitude: beach.coordenadas_terra[0],
+                                longitude: beach.coordenadas_terra[1],
+                            }}
+                            anchor={{ x: 0.5, y: 1 }}
+                            onPress={() => navigation.navigate('Praias', {
+                                screen: 'Praia',
+                                params: { id: beach.codigo }
+                            })}
+                        >
+                            <Image
+                                source={imageSource}
+                                style={imageStyle}
+                                resizeMode="contain"
+                            />
+                        </Marker>
+                    );
+                }
+                return null;
+            })}
         </MapView>
     </View>
 );

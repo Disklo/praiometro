@@ -1,0 +1,345 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+Experimente a nova plataforma cruzada PowerShell https://aka.ms/pscore6
+
+O carregamento de perfis pessoais e do sistema levou 925ms.
+┏[Disklo]
+┖[~]> adb logcat -c
+┏[Disklo]
+┖[~]> adb logcat *:E
+--------- beginning of main
+07-14 20:25:02.541 10619 10619 E gleauth.android: Not starting debugger since process cannot load the jdwp agent.
+07-14 20:25:02.814 10619 10634 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+07-14 20:25:03.557 10619 10650 E dev.expo.updates: {"timestamp":1752524703556,"message":"Remote update request not successful","code":"UpdateFailedToLoad","level":"error","stacktrace":["expo.modules.updates.loader.FileDownloader$downloadRemoteUpdate$1.onResponse(FileDownloader.kt:433)","expo.modules.updates.loader.FileDownloader$downloadData$1.onResponse(FileDownloader.kt:511)","okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)","java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)","java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)","java.lang.Thread.run(Thread.java:1119)"]}
+07-14 20:25:03.558 10619 10650 E dev.expo.updates: {"timestamp":1752524703558,"message":"Load error","code":"UpdateFailedToLoad","level":"error","stacktrace":["expo.modules.updates.loader.FileDownloader$downloadRemoteUpdate$1.onResponse(FileDownloader.kt:435)","expo.modules.updates.loader.FileDownloader$downloadData$1.onResponse(FileDownloader.kt:511)","okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)","java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)","java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)","java.lang.Thread.run(Thread.java:1119)"]}
+07-14 20:25:03.559 10619 10650 E dev.expo.updates: {"timestamp":1752524703559,"message":"UpdatesController onBackgroundUpdateFinished","code":"Unknown","level":"error","stacktrace":["expo.modules.updates.loader.FileDownloader$downloadRemoteUpdate$1.onResponse(FileDownloader.kt:435)","expo.modules.updates.loader.FileDownloader$downloadData$1.onResponse(FileDownloader.kt:511)","okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)","java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)","java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)","java.lang.Thread.run(Thread.java:1119)"]}
+07-14 20:25:03.588 10619 10650 E dev.expo.updates: {"timestamp":1752524703588,"message":"Failed to download remote update","code":"UpdateFailedToLoad","level":"error","stacktrace":["expo.modules.updates.loader.FileDownloader$downloadRemoteUpdate$1.onResponse(FileDownloader.kt:435)","expo.modules.updates.loader.FileDownloader$downloadData$1.onResponse(FileDownloader.kt:511)","okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)","java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)","java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)","java.lang.Thread.run(Thread.java:1119)"]}
+07-14 20:25:04.039 10619 10679 E chromium: [0714/202504.037380:ERROR:variations_seed_loader.cc(39)] Seed missing signature.
+07-14 20:25:04.225 10619 10657 E ReactNativeJNI: Unsupported FontWeight value: semibold
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: caught exception, displaying mount state
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: java.lang.IllegalStateException: API key not found.  Check that <meta-data android:name="com.google.android.geo.API_KEY" android:value="your API key"/> is in the <application> element of AndroidManifest.xml
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.google.maps.api.android.lib6.common.c.b(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:117)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.google.android.gms.maps.internal.CreatorImpl.c(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:914)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.google.android.gms.maps.internal.CreatorImpl.newMapViewDelegate(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:23)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.google.android.gms.maps.internal.h.bt(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:311)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at m.axe.onTransact(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:21)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at android.os.Binder.transact(Binder.java:1273)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.google.android.gms.internal.maps.zza.zzJ(com.google.android.gms:play-services-maps@@18.2.0:2)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.google.android.gms.maps.internal.zze.zzg(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.google.android.gms.maps.zzai.zzb(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.google.android.gms.maps.zzai.createDelegate(com.google.android.gms:play-services-maps@@18.2.0:1)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.google.android.gms.dynamic.DeferredLifecycleHelper.zaf(com.google.android.gms:play-services-base@@18.2.0:6)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.google.android.gms.dynamic.DeferredLifecycleHelper.onCreate(com.google.android.gms:play-services-base@@18.2.0:1)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.google.android.gms.maps.MapView.onCreate(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.rnmaps.maps.MapView.<init>(MapView.java:180)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:78)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:33)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.uimanager.ViewManager.createViewInstance(ViewManager.java:213)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:108)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:33)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.uimanager.ViewManager.createView(ViewManager.java:145)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.fabric.mounting.SurfaceMountingManager.createViewUnsafe(SurfaceMountingManager.java:674)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.fabric.mounting.SurfaceMountingManager.createView(SurfaceMountingManager.java:635)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.fabric.mounting.mountitems.IntBufferBatchMountItem.execute(IntBufferBatchMountItem.java:129)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.fabric.mounting.MountItemDispatcher.executeOrEnqueue(MountItemDispatcher.java:370)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.fabric.mounting.MountItemDispatcher.dispatchMountItems(MountItemDispatcher.java:265)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.fabric.mounting.MountItemDispatcher.tryDispatchMountItems(MountItemDispatcher.java:122)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.fabric.FabricUIManager$DispatchUIFrameCallback.doFrameGuarded(FabricUIManager.java:1396)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.uimanager.GuardedFrameCallback.doFrame(GuardedFrameCallback.kt:25)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.modules.core.ReactChoreographer.frameCallback$lambda$1(ReactChoreographer.kt:59)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.modules.core.ReactChoreographer.$r8$lambda$nSkFhrr5T7rop_XKwzlLov4NLLw(Unknown Source:0)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.facebook.react.modules.core.ReactChoreographer$$ExternalSyntheticLambda0.doFrame(D8$$SyntheticClass:0)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1568)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1579)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at android.view.Choreographer.doCallbacks(Choreographer.java:1179)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at android.view.Choreographer.doFrame(Choreographer.java:1104)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:1553)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at android.os.Handler.handleCallback(Handler.java:995)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at android.os.Handler.dispatchMessage(Handler.java:103)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at android.os.Looper.loopOnce(Looper.java:248)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at android.os.Looper.loop(Looper.java:338)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at android.app.ActivityThread.main(ActivityThread.java:9067)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at java.lang.reflect.Method.invoke(Native Method)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher:   at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: next mountItem triggered exception!
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: IntBufferBatchMountItem [surface:11]:
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: REMOVE [10]->[16] @0
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: CREATE [136] - layoutable:1 - AIRMap
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: INSERT [132]->[134] @0
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: INSERT [136]->[16] @1
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: INSERT [134]->[16] @2
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: UPDATE STATE [132]: <hidden>
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: UPDATE LAYOUT [134]->[132]: x:396 y:118 w:287 h:65 displayType:1 layoutDirection: 1
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: UPDATE LAYOUT [16]->[136]: x:0 y:341 w:1080 h:1886 displayType:1 layoutDirection: 1
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: UPDATE LAYOUT [16]->[134]: x:0 y:341 w:1080 h:302 displayType:1 layoutDirection: 1
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: UPDATE EVENTEMITTER [132]
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: UPDATE EVENTEMITTER [136]
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: UPDATE EVENTEMITTER [134]
+07-14 20:25:04.563 10619 10619 E unknown:MountItemDispatcher: dispatchMountItems: mountItem: DELETE [10]
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: Views created for surface {11}:
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: <RCTText id=128 parentTag=62 isRoot=false />
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: <RCTImageView id=2 parentTag=6 isRoot=false />
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=4 parentTag=6 isRoot=false />
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=68 parentTag=76 isRoot=false />
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: <RCTText id=132 parentTag=null isRoot=false />
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=6 parentTag=16 isRoot=false />
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=134 parentTag=null isRoot=false />
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: <null id=136 parentTag=null isRoot=false />
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: <RCTText id=10 parentTag=null isRoot=false />
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: <RootView id=11 parentTag=16908290 isRoot=true />
+07-14 20:25:04.563 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=76 parentTag=82 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=16 parentTag=18 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RNSScreen id=18 parentTag=-1 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=82 parentTag=86 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RNSScreenContainer id=20 parentTag=86 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=22 parentTag=82 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RNSScreenContentWrapper id=86 parentTag=90 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RNSScreenStackHeaderConfig id=88 parentTag=90 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RNSScreen id=90 parentTag=-1 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RNSScreenStack id=92 parentTag=94 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=30 parentTag=34 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RNCSafeAreaProvider id=94 parentTag=11 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=34 parentTag=82 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTText id=100 parentTag=34 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=40 parentTag=48 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTText id=104 parentTag=30 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTText id=108 parentTag=68 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=48 parentTag=82 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTText id=112 parentTag=76 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTText id=116 parentTag=40 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=54 parentTag=62 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTText id=120 parentTag=48 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTText id=124 parentTag=54 isRoot=false />
+07-14 20:25:04.564 10619 10619 E unknown:SurfaceMountingManager: <RCTView id=62 parentTag=82 isRoot=false />
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager: Exception thrown when executing UIFrameGuarded
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager: java.lang.IllegalStateException: API key not found.  Check that <meta-data android:name="com.google.android.geo.API_KEY" android:value="your API key"/> is in the <application> element of AndroidManifest.xml
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.google.maps.api.android.lib6.common.c.b(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:117)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.google.android.gms.maps.internal.CreatorImpl.c(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:914)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.google.android.gms.maps.internal.CreatorImpl.newMapViewDelegate(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:23)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.google.android.gms.maps.internal.h.bt(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:311)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at m.axe.onTransact(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:21)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at android.os.Binder.transact(Binder.java:1273)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.google.android.gms.internal.maps.zza.zzJ(com.google.android.gms:play-services-maps@@18.2.0:2)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.google.android.gms.maps.internal.zze.zzg(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.google.android.gms.maps.zzai.zzb(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.google.android.gms.maps.zzai.createDelegate(com.google.android.gms:play-services-maps@@18.2.0:1)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.google.android.gms.dynamic.DeferredLifecycleHelper.zaf(com.google.android.gms:play-services-base@@18.2.0:6)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.google.android.gms.dynamic.DeferredLifecycleHelper.onCreate(com.google.android.gms:play-services-base@@18.2.0:1)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.google.android.gms.maps.MapView.onCreate(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.rnmaps.maps.MapView.<init>(MapView.java:180)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:78)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:33)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.uimanager.ViewManager.createViewInstance(ViewManager.java:213)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:108)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:33)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.uimanager.ViewManager.createView(ViewManager.java:145)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.fabric.mounting.SurfaceMountingManager.createViewUnsafe(SurfaceMountingManager.java:674)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.fabric.mounting.SurfaceMountingManager.createView(SurfaceMountingManager.java:635)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.fabric.mounting.mountitems.IntBufferBatchMountItem.execute(IntBufferBatchMountItem.java:129)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.fabric.mounting.MountItemDispatcher.executeOrEnqueue(MountItemDispatcher.java:370)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.fabric.mounting.MountItemDispatcher.dispatchMountItems(MountItemDispatcher.java:265)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.fabric.mounting.MountItemDispatcher.tryDispatchMountItems(MountItemDispatcher.java:122)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.fabric.FabricUIManager$DispatchUIFrameCallback.doFrameGuarded(FabricUIManager.java:1396)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.uimanager.GuardedFrameCallback.doFrame(GuardedFrameCallback.kt:25)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.modules.core.ReactChoreographer.frameCallback$lambda$1(ReactChoreographer.kt:59)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.modules.core.ReactChoreographer.$r8$lambda$nSkFhrr5T7rop_XKwzlLov4NLLw(Unknown Source:0)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.facebook.react.modules.core.ReactChoreographer$$ExternalSyntheticLambda0.doFrame(D8$$SyntheticClass:0)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1568)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1579)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at android.view.Choreographer.doCallbacks(Choreographer.java:1179)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at android.view.Choreographer.doFrame(Choreographer.java:1104)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:1553)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at android.os.Handler.handleCallback(Handler.java:995)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at android.os.Handler.dispatchMessage(Handler.java:103)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at android.os.Looper.loopOnce(Looper.java:248)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at android.os.Looper.loop(Looper.java:338)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at android.app.ActivityThread.main(ActivityThread.java:9067)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at java.lang.reflect.Method.invoke(Native Method)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+07-14 20:25:04.565 10619 10619 E unknown:FabricUIManager:       at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+07-14 20:25:04.566 10619 10619 E dev.expo.updates: {"timestamp":1752524704566,"message":"ErrorRecovery: exception encountered: Exception thrown when executing UIFrameGuarded","code":"Unknown","level":"error","stacktrace":["com.facebook.react.fabric.FabricUIManager$DispatchUIFrameCallback.doFrameGuarded(FabricUIManager.java:1400)","com.facebook.react.uimanager.GuardedFrameCallback.doFrame(GuardedFrameCallback.kt:25)","com.facebook.react.modules.core.ReactChoreographer.frameCallback$lambda$1(ReactChoreographer.kt:59)","com.facebook.react.modules.core.ReactChoreographer.$r8$lambda$nSkFhrr5T7rop_XKwzlLov4NLLw(Unknown Source:0)","com.facebook.react.modules.core.ReactChoreographer$$ExternalSyntheticLambda0.doFrame(D8$$SyntheticClass:0)","android.view.Choreographer$CallbackRecord.run(Choreographer.java:1568)","android.view.Choreographer$CallbackRecord.run(Choreographer.java:1579)","android.view.Choreographer.doCallbacks(Choreographer.java:1179)","android.view.Choreographer.doFrame(Choreographer.java:1104)","android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:1553)","android.os.Handler.handleCallback(Handler.java:995)","android.os.Handler.dispatchMessage(Handler.java:103)","android.os.Looper.loopOnce(Looper.java:248)","android.os.Looper.loop(Looper.java:338)","android.app.ActivityThread.main(ActivityThread.java:9067)","java.lang.reflect.Method.invoke(Native Method)","com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)","com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)"]}
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost: Unhandled SoftException
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost: com.facebook.react.bridge.ReactNoCrashSoftException: raiseSoftException(getOrCreateDestroyTask()): handleHostException(message = "Exception thrown when executing UIFrameGuarded")
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.java:1025)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl.getOrCreateDestroyTask(ReactHostImpl.java:1625)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl.lambda$destroy$7(ReactHostImpl.java:615)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl.$r8$lambda$uso21_D6dCZdcf-JomVD56kdG4c(Unknown Source:0)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl$$ExternalSyntheticLambda35.call(D8$$SyntheticClass:0)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.internal.bolts.Task$2.run(Task.java:240)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at java.lang.Thread.run(Thread.java:1119)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost: Caused by: java.lang.RuntimeException: Exception thrown when executing UIFrameGuarded
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.fabric.FabricUIManager$DispatchUIFrameCallback.doFrameGuarded(FabricUIManager.java:1400)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.uimanager.GuardedFrameCallback.doFrame(GuardedFrameCallback.kt:25)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.modules.core.ReactChoreographer.frameCallback$lambda$1(ReactChoreographer.kt:59)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.modules.core.ReactChoreographer.$r8$lambda$nSkFhrr5T7rop_XKwzlLov4NLLw(Unknown Source:0)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.modules.core.ReactChoreographer$$ExternalSyntheticLambda0.doFrame(D8$$SyntheticClass:0)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1568)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1579)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at android.view.Choreographer.doCallbacks(Choreographer.java:1179)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at android.view.Choreographer.doFrame(Choreographer.java:1104)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:1553)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at android.os.Handler.handleCallback(Handler.java:995)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at android.os.Handler.dispatchMessage(Handler.java:103)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at android.os.Looper.loopOnce(Looper.java:248)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at android.os.Looper.loop(Looper.java:338)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at android.app.ActivityThread.main(ActivityThread.java:9067)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at java.lang.reflect.Method.invoke(Native Method)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost: Caused by: java.lang.IllegalStateException: API key not found.  Check that <meta-data android:name="com.google.android.geo.API_KEY" android:value="your API key"/> is in the <application> element of AndroidManifest.xml
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.google.maps.api.android.lib6.common.c.b(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:117)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.google.android.gms.maps.internal.CreatorImpl.c(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:914)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.google.android.gms.maps.internal.CreatorImpl.newMapViewDelegate(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:23)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.google.android.gms.maps.internal.h.bt(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:311)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at m.axe.onTransact(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:21)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at android.os.Binder.transact(Binder.java:1273)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.google.android.gms.internal.maps.zza.zzJ(com.google.android.gms:play-services-maps@@18.2.0:2)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.google.android.gms.maps.internal.zze.zzg(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.google.android.gms.maps.zzai.zzb(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.google.android.gms.maps.zzai.createDelegate(com.google.android.gms:play-services-maps@@18.2.0:1)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.google.android.gms.dynamic.DeferredLifecycleHelper.zaf(com.google.android.gms:play-services-base@@18.2.0:6)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.google.android.gms.dynamic.DeferredLifecycleHelper.onCreate(com.google.android.gms:play-services-base@@18.2.0:1)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.google.android.gms.maps.MapView.onCreate(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.rnmaps.maps.MapView.<init>(MapView.java:180)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:78)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:33)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.uimanager.ViewManager.createViewInstance(ViewManager.java:213)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:108)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:33)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.uimanager.ViewManager.createView(ViewManager.java:145)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.fabric.mounting.SurfaceMountingManager.createViewUnsafe(SurfaceMountingManager.java:674)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.fabric.mounting.SurfaceMountingManager.createView(SurfaceMountingManager.java:635)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.fabric.mounting.mountitems.IntBufferBatchMountItem.execute(IntBufferBatchMountItem.java:129)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.fabric.mounting.MountItemDispatcher.executeOrEnqueue(MountItemDispatcher.java:370)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.fabric.mounting.MountItemDispatcher.dispatchMountItems(MountItemDispatcher.java:265)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.fabric.mounting.MountItemDispatcher.tryDispatchMountItems(MountItemDispatcher.java:122)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     at com.facebook.react.fabric.FabricUIManager$DispatchUIFrameCallback.doFrameGuarded(FabricUIManager.java:1396)
+07-14 20:25:04.568 10619 10656 E unknown:ReactHost:     ... 17 more
+07-14 20:25:04.572 10619 10619 E unknown:ReactNative: Tried to remove non-existent frame callback
+07-14 20:25:04.576 10619 10619 E unknown:ReactNative: Tried to remove non-existent frame callback
+07-14 20:25:04.577 10619 10656 E unknown:SurfaceMountingManager: Stopping surface [11]
+07-14 20:25:04.578 10619 10619 E unknown:SurfaceMountingManager: Surface [11] was stopped on SurfaceMountingManager.
+07-14 20:25:04.583 10619 10656 E unknown:ReactNative: Tried to remove non-existent frame callback
+07-14 20:25:04.745 10619 10650 E dev.expo.updates: {"timestamp":1752524704745,"message":"Remote update request not successful","code":"UpdateFailedToLoad","level":"error","stacktrace":["expo.modules.updates.loader.FileDownloader$downloadRemoteUpdate$1.onResponse(FileDownloader.kt:433)","expo.modules.updates.loader.FileDownloader$downloadData$1.onResponse(FileDownloader.kt:511)","okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)","java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)","java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)","java.lang.Thread.run(Thread.java:1119)"]}
+07-14 20:25:04.745 10619 10650 E dev.expo.updates: {"timestamp":1752524704745,"message":"Load error","code":"UpdateFailedToLoad","level":"error","stacktrace":["expo.modules.updates.loader.FileDownloader$downloadRemoteUpdate$1.onResponse(FileDownloader.kt:435)","expo.modules.updates.loader.FileDownloader$downloadData$1.onResponse(FileDownloader.kt:511)","okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)","java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)","java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)","java.lang.Thread.run(Thread.java:1119)"]}
+07-14 20:25:04.745 10619 10650 E dev.expo.updates: {"timestamp":1752524704745,"message":"UpdatesController loadRemoteUpdate onFailure","code":"UpdateFailedToLoad","level":"error","updateId":"1df20d37-f865-4ef9-97d6-19864285c438","stacktrace":["expo.modules.updates.loader.FileDownloader$downloadRemoteUpdate$1.onResponse(FileDownloader.kt:435)","expo.modules.updates.loader.FileDownloader$downloadData$1.onResponse(FileDownloader.kt:511)","okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)","java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)","java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)","java.lang.Thread.run(Thread.java:1119)"]}
+07-14 20:25:04.746 10619 10646 E dev.expo.updates: {"timestamp":1752524704746,"message":"UpdatesErrorRecovery: could not recover from error, crashing","code":"Unknown","level":"error","stacktrace":["com.facebook.react.fabric.FabricUIManager$DispatchUIFrameCallback.doFrameGuarded(FabricUIManager.java:1400)","com.facebook.react.uimanager.GuardedFrameCallback.doFrame(GuardedFrameCallback.kt:25)","com.facebook.react.modules.core.ReactChoreographer.frameCallback$lambda$1(ReactChoreographer.kt:59)","com.facebook.react.modules.core.ReactChoreographer.$r8$lambda$nSkFhrr5T7rop_XKwzlLov4NLLw(Unknown Source:0)","com.facebook.react.modules.core.ReactChoreographer$$ExternalSyntheticLambda0.doFrame(D8$$SyntheticClass:0)","android.view.Choreographer$CallbackRecord.run(Choreographer.java:1568)","android.view.Choreographer$CallbackRecord.run(Choreographer.java:1579)","android.view.Choreographer.doCallbacks(Choreographer.java:1179)","android.view.Choreographer.doFrame(Choreographer.java:1104)","android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:1553)","android.os.Handler.handleCallback(Handler.java:995)","android.os.Handler.dispatchMessage(Handler.java:103)","android.os.Looper.loopOnce(Looper.java:248)","android.os.Looper.loop(Looper.java:338)","android.app.ActivityThread.main(ActivityThread.java:9067)","java.lang.reflect.Method.invoke(Native Method)","com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)","com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)"]}
+--------- beginning of crash
+07-14 20:25:04.749 10619 10646 E AndroidRuntime: FATAL EXCEPTION: expo-updates-error-recovery
+07-14 20:25:04.749 10619 10646 E AndroidRuntime: Process: com.googleauth.android, PID: 10619
+07-14 20:25:04.749 10619 10646 E AndroidRuntime: java.lang.RuntimeException: Exception thrown when executing UIFrameGuarded
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.facebook.react.fabric.FabricUIManager$DispatchUIFrameCallback.doFrameGuarded(FabricUIManager.java:1400)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.facebook.react.uimanager.GuardedFrameCallback.doFrame(GuardedFrameCallback.kt:25)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.facebook.react.modules.core.ReactChoreographer.frameCallback$lambda$1(ReactChoreographer.kt:59)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.facebook.react.modules.core.ReactChoreographer.$r8$lambda$nSkFhrr5T7rop_XKwzlLov4NLLw(Unknown Source:0)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.facebook.react.modules.core.ReactChoreographer$$ExternalSyntheticLambda0.doFrame(D8$$SyntheticClass:0)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1568)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1579)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at android.view.Choreographer.doCallbacks(Choreographer.java:1179)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at android.view.Choreographer.doFrame(Choreographer.java:1104)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:1553)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at android.os.Handler.handleCallback(Handler.java:995)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at android.os.Handler.dispatchMessage(Handler.java:103)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at android.os.Looper.loopOnce(Looper.java:248)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at android.os.Looper.loop(Looper.java:338)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at android.app.ActivityThread.main(ActivityThread.java:9067)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at java.lang.reflect.Method.invoke(Native Method)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime: Caused by: java.lang.IllegalStateException: API key not found.  Check that <meta-data android:name="com.google.android.geo.API_KEY" android:value="your API key"/> is in the <application> element of AndroidManifest.xml
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.google.maps.api.android.lib6.common.c.b(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:117)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.google.android.gms.maps.internal.CreatorImpl.c(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:914)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.google.android.gms.maps.internal.CreatorImpl.newMapViewDelegate(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:23)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.google.android.gms.maps.internal.h.bt(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:311)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at m.axe.onTransact(:com.google.android.gms.policy_maps_core_dynamite@250625407@250625402032.745714853.745714853:21)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at android.os.Binder.transact(Binder.java:1273)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.google.android.gms.internal.maps.zza.zzJ(com.google.android.gms:play-services-maps@@18.2.0:2)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.google.android.gms.maps.internal.zze.zzg(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.google.android.gms.maps.zzai.zzb(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.google.android.gms.maps.zzai.createDelegate(com.google.android.gms:play-services-maps@@18.2.0:1)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.google.android.gms.dynamic.DeferredLifecycleHelper.zaf(com.google.android.gms:play-services-base@@18.2.0:6)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.google.android.gms.dynamic.DeferredLifecycleHelper.onCreate(com.google.android.gms:play-services-base@@18.2.0:1)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.google.android.gms.maps.MapView.onCreate(com.google.android.gms:play-services-maps@@18.2.0:4)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.rnmaps.maps.MapView.<init>(MapView.java:180)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:78)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:33)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.facebook.react.uimanager.ViewManager.createViewInstance(ViewManager.java:213)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:108)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.rnmaps.maps.MapManager.createViewInstance(MapManager.java:33)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.facebook.react.uimanager.ViewManager.createView(ViewManager.java:145)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.facebook.react.fabric.mounting.SurfaceMountingManager.createViewUnsafe(SurfaceMountingManager.java:674)
+07-14 20:25:04.749 10619 10646 E AndroidRuntime:        at com.facebook.react.fabric.mounting.SurfaceMountingManager.createView(SurfaceMountingManager.java:635)
+07-14 20:25:04.750 10619 10646 E AndroidRuntime:        at com.facebook.react.fabric.mounting.mountitems.IntBufferBatchMountItem.execute(IntBufferBatchMountItem.java:129)
+07-14 20:25:04.750 10619 10646 E AndroidRuntime:        at com.facebook.react.fabric.mounting.MountItemDispatcher.executeOrEnqueue(MountItemDispatcher.java:370)
+07-14 20:25:04.750 10619 10646 E AndroidRuntime:        at com.facebook.react.fabric.mounting.MountItemDispatcher.dispatchMountItems(MountItemDispatcher.java:265)
+07-14 20:25:04.750 10619 10646 E AndroidRuntime:        at com.facebook.react.fabric.mounting.MountItemDispatcher.tryDispatchMountItems(MountItemDispatcher.java:122)
+07-14 20:25:04.750 10619 10646 E AndroidRuntime:        at com.facebook.react.fabric.FabricUIManager$DispatchUIFrameCallback.doFrameGuarded(FabricUIManager.java:1396)
+07-14 20:25:04.750 10619 10646 E AndroidRuntime:        ... 17 more
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost: Unhandled SoftException
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost: com.facebook.react.bridge.ReactNoCrashSoftException: raiseSoftException(onWindowFocusChange(hasFocus = "false")): Tried to access onWindowFocusChange while context is not ready
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.java:1025)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.java:1018)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl.onWindowFocusChange(ReactHostImpl.java:790)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at com.facebook.react.ReactDelegate.onWindowFocusChanged(ReactDelegate.java:199)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at com.facebook.react.ReactActivityDelegate.onWindowFocusChanged(ReactActivityDelegate.java:216)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at expo.modules.ReactActivityDelegateWrapper$onWindowFocusChanged$1.invokeSuspend(ReactActivityDelegateWrapper.kt:353)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at expo.modules.ReactActivityDelegateWrapper$onWindowFocusChanged$1.invoke(Unknown Source:8)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at expo.modules.ReactActivityDelegateWrapper$onWindowFocusChanged$1.invoke(Unknown Source:4)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at expo.modules.ReactActivityDelegateWrapper$launchLifecycleScopeWithLock$1.invokeSuspend(ReactActivityDelegateWrapper.kt:485)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:367)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:30)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable$default(Cancellable.kt:25)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:110)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:126)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:56)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at kotlinx.coroutines.BuildersKt.launch(Unknown Source:1)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:47)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source:1)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at expo.modules.ReactActivityDelegateWrapper.launchLifecycleScopeWithLock(ReactActivityDelegateWrapper.kt:483)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at expo.modules.ReactActivityDelegateWrapper.launchLifecycleScopeWithLock$default(ReactActivityDelegateWrapper.kt:479)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at expo.modules.ReactActivityDelegateWrapper.onWindowFocusChanged(ReactActivityDelegateWrapper.kt:351)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at com.facebook.react.ReactActivity.onWindowFocusChanged(ReactActivity.java:138)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at androidx.appcompat.view.WindowCallbackWrapper.onWindowFocusChanged(WindowCallbackWrapper.java:124)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at com.android.internal.policy.DecorView.onWindowFocusChanged(DecorView.java:1818)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at android.view.View.dispatchWindowFocusChanged(View.java:16952)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at android.view.ViewGroup.dispatchWindowFocusChanged(ViewGroup.java:1530)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at android.view.ViewRootImpl.dispatchFocusEvent(ViewRootImpl.java:4873)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at android.view.ViewRootImpl.handleWindowFocusChanged(ViewRootImpl.java:4777)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at android.view.ViewRootImpl.-$$Nest$mhandleWindowFocusChanged(Unknown Source:0)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at android.view.ViewRootImpl$ViewRootHandler.handleMessageImpl(ViewRootImpl.java:7017)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at android.view.ViewRootImpl$ViewRootHandler.handleMessage(ViewRootImpl.java:6927)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at android.os.Handler.dispatchMessage(Handler.java:110)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at android.os.Looper.loopOnce(Looper.java:248)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at android.os.Looper.loop(Looper.java:338)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at android.app.ActivityThread.main(ActivityThread.java:9067)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at java.lang.reflect.Method.invoke(Native Method)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+07-14 20:25:04.819 10619 10619 E unknown:ReactHost:     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost: Unhandled SoftException
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost: com.facebook.react.bridge.ReactNoCrashSoftException: raiseSoftException(callWithExistingReactInstance(stopSurface(surfaceId = 11))): Execute: reactInstance is null. Dropping work.
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.java:1025)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.java:1018)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl.lambda$callWithExistingReactInstance$16(ReactHostImpl.java:1046)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl.$r8$lambda$v_wsWn1AM15FUeMv5__nLvaLvTQ(Unknown Source:0)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.ReactHostImpl$$ExternalSyntheticLambda18.then(D8$$SyntheticClass:0)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.internal.bolts.Task$7.run(Task.java:423)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.internal.bolts.Executors$ImmediateExecutor.execute(Executors.kt:41)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.internal.bolts.Task.completeImmediately(Task.java:418)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.internal.bolts.Task.continueWith(Task.java:288)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.internal.bolts.Task.continueWith(Task.java:299)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.internal.bolts.Task$5.then(Task.java:354)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.internal.bolts.Task$5.then(Task.java:346)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at com.facebook.react.runtime.internal.bolts.Task$8.run(Task.java:460)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+07-14 20:25:05.205 10619 10656 E unknown:ReactHost:     at java.lang.Thread.run(Thread.java:1119)
+07-14 20:25:05.520   484 10621 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
+--------- beginning of system
+07-14 20:25:05.862   729  4155 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+┏[Disklo][x-1073741510]
+┖[~]>
