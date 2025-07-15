@@ -36,7 +36,7 @@ Para que o aplicativo funcione corretamente, você precisa inserir sua chave da 
 
 ### 3. Renomear app.json
 
-`app.json`, apesar de não conter informações críticas, é único para cada usuário Expo, e por isso está incluso no `.gitignore`.
+`app.json`, apesar de não conter informações críticas, é único para cada usuário Expo, e por isso está incluso no `.gitignore`. Após renomear não é preciso inserir nenhuma informação adicional manualmente porque ela será inserida numa etapa futura (o comando `eas init`).
 
 1.  Renomeie o arquivo `exemplo.app.json.base` para `app.json`.
 
