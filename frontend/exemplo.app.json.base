@@ -1,39 +1,27 @@
 {
-  "expo": {
-    "name": "Praiômetro",
-    "slug": "Praiometro",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/logo.jpg",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/logo_semfundo.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+  "cli": {
+    "version": ">= 16.15.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
     },
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.googleauth.ios"
+    "preview": {
+      "distribution": "internal"
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/logo_semfundo.png",
-        "backgroundColor": "#ffffff"
+    "production": {
+      "autoIncrement": true,
+      "android": {
+        "buildType": "apk"
       },
-      "edgeToEdgeEnabled": true,
-      "package": "com.googleauth.android"
-    },
-    "web": {
-      "favicon": "./assets/logo.jpg"
-    },
-    "plugins": [
-      "expo-font",
-      "@react-native-google-signin/google-signin"
-    ],
-    "experimental": {
-      "fabric": false
-    },
-    "runtimeVersion": "1.0.0"
+      "env": {
+        "GOOGLE_MAPS_API_KEY": "INSERT_KEY_HERE"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
   }
 }
