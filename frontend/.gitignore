@@ -10,6 +10,7 @@
 .DS_Store
 .env
 .web/
+app.json
 
 # metro
 /metro-cache
