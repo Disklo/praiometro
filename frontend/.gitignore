@@ -11,6 +11,7 @@
 .env
 .web/
 app.json
+eas.json
 
 # metro
 /metro-cache
