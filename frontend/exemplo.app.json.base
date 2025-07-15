@@ -1,5 +1,32 @@
 {
   "expo": {
+    "name": "Praiômetro",
+    "slug": "praiometro",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo.jpg",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/logo.jpg",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logo.jpg",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.praiometro.app"
+    },
+    "web": {
+      "favicon": "./assets/logo.jpg"
+    },
     "runtimeVersion": "1.0.0"
   },
   "cli": {
