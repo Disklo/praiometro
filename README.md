@@ -34,7 +34,23 @@ Para que o aplicativo funcione corretamente, você precisa inserir sua chave da 
     ren exemplo.eas.json.base eas.json
     ```
 
-### 3. Rodando o Aplicativo em Desenvolvimento
+### 3. Renomear app.json
+
+`app.json`, apesar de não conter informações críticas, é único para cada usuário Expo, e por isso está incluso no `.gitignore`.
+
+1.  Renomeie o arquivo `exemplo.app.json.base` para `app.json`.
+
+    ```bash
+    mv exemplo.app.json.base app.json
+    ```
+
+    No Windows, você pode usar:
+
+    ```bash
+    ren exemplo.app.json.base app.json
+    ```
+
+### 4. Rodando o Aplicativo em Desenvolvimento
 
 Para iniciar o aplicativo em modo de desenvolvimento:
 
