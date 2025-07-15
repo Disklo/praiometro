@@ -6,10 +6,18 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "GOOGLE_MAPS_API_KEY": "INSERT_KEY_HERE,
+        "GOOGLE_CLIENT_ID": "INSERT_ID_HERE"
+      }
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "GOOGLE_MAPS_API_KEY": "INSERT_KEY_HERE,
+        "GOOGLE_CLIENT_ID": "INSERT_ID_HERE"
+      }
     },
     "production": {
       "autoIncrement": true,
@@ -17,8 +25,8 @@
         "buildType": "apk"
       },
       "env": {
-        "GOOGLE_MAPS_API_KEY": "INSERT_KEY_HERE",
-        "GOOGLE_CLIENT_ID": "YOUR_GOOGLE_WEB_CLIENT_ID"
+        "GOOGLE_MAPS_API_KEY": "INSERT_KEY_HERE,
+        "GOOGLE_CLIENT_ID": "INSERT_ID_HERE"
       }
     }
   },

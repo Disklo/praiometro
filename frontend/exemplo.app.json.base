@@ -27,7 +27,10 @@
     "web": {
       "favicon": "./assets/logo.jpg"
     },
-    "runtimeVersion": "1.0.0"
+    "runtimeVersion": "1.0.0",
+    "extra": {
+      "GOOGLE_CLIENT_ID": "INSERT_ID_HERE",
+    }
   },
   "cli": {
     "version": ">= 16.15.0",
