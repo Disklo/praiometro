@@ -1,4 +1,7 @@
 {
+  "expo": {
+    "runtimeVersion": "1.0.0"
+  },
   "cli": {
     "version": ">= 16.15.0",
     "appVersionSource": "remote"

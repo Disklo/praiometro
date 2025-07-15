@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Platform, Dimensions } from 'react-native';
 import styles from './styles';
 import { useEffect, useState } from 'react';
 import MapView, { Marker } from 'react-native-maps';
@@ -39,11 +39,33 @@ export default function Home() {
         'SF002': require('../../../assets/images/marcadores/SF002.png'),
         'SG000': require('../../../assets/images/marcadores/SG000.png'),
     };
+
     const [zoomLevel, setZoomLevel] = useState(0.15);
     const [beaches, setBeaches] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const navigation = useNavigation();
+
+    // Obter dimensões da tela para calcular tamanhos proporcionais
+    const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
+    
+    // Calcular tamanhos dos marcadores baseados na tela
+    const getMarkerSize = (isLarge) => {
+        const baseWidth = screenWidth * 0.08; // 8% da largura da tela
+        const baseHeight = screenHeight * 0.04; // 4% da altura da tela
+        
+        if (isLarge) {
+            return {
+                width: baseWidth * 1.5,
+                height: baseHeight * 1.5
+            };
+        } else {
+            return {
+                width: baseWidth * 0.7,
+                height: baseHeight * 0.7
+            };
+        }
+    };
 
     useEffect(() => {
         const fetchBeaches = async () => {
@@ -82,29 +104,31 @@ export default function Home() {
         return null;
     }
 
-return (
-    <View style={styles.container}>
-        <HomeHeader />
-        <MapView
-            style={styles.map}
-            initialRegion={{
-                latitude: -22.907484,
-                longitude: -43.112033,
-                latitudeDelta: 0.15,
-                longitudeDelta: 0.15,
-            }}
-            onRegionChangeComplete={(region) => {
-                setZoomLevel(region.latitudeDelta);
-            }}>
-            {beaches.map((beach) => {
-                if (beach.coordenadas_terra && beach.coordenadas_terra.length === 2) {
-                    const isLarge = zoomLevel < 0.08;
-                    const imageSource = isLarge ? markerImages[beach.codigo] : markerPeqImg;
-                    const imageStyle = isLarge ? { width: 181, height: 70 } : { width: 50, height: 65 };
+    return (
+        <View style={styles.container}>
+            <HomeHeader />
+            <MapView
+                style={styles.map}
+                initialRegion={{
+                    latitude: -22.907484,
+                    longitude: -43.112033,
+                    latitudeDelta: 0.15,
+                    longitudeDelta: 0.15,
+                }}
+                onRegionChangeComplete={(region) => {
+                    setZoomLevel(region.latitudeDelta);
+                }}>
+                {beaches.map((beach) => {
+                    if (!beach.coordenadas_terra || beach.coordenadas_terra.length !== 2) {
+                        return null;
+                    }
+
+                    const isLargeMarker = zoomLevel < 0.05;
+                    const markerSize = getMarkerSize(isLargeMarker);
 
                     return (
                         <Marker
-                            key={beach.codigo}
+                            key={`${beach.codigo}-${isLargeMarker ? 'large' : 'small'}`}
                             coordinate={{
                                 latitude: beach.coordenadas_terra[0],
                                 longitude: beach.coordenadas_terra[1],
@@ -116,16 +140,17 @@ return (
                             })}
                         >
                             <Image
-                                source={imageSource}
-                                style={imageStyle}
-                                resizeMode="contain"
+                                source={isLargeMarker ? markerImages[beach.codigo] : markerPeqImg}
+                                style={{
+                                    width: markerSize.width,
+                                    height: markerSize.height,
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </Marker>
                     );
-                }
-                return null;
-            })}
-        </MapView>
-    </View>
-);
+                })}
+            </MapView>
+        </View>
+    );
 }
