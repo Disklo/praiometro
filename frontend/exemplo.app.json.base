@@ -22,14 +22,19 @@
         "foregroundImage": "./assets/logo.jpg",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.praiometro.app"
+      "package": "com.praiometro.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "INSERT_KEY_HERE"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/logo.jpg"
     },
     "runtimeVersion": "1.0.0",
     "extra": {
-      "GOOGLE_CLIENT_ID": "INSERT_ID_HERE",
+      "GOOGLE_CLIENT_ID": "INSERT_ID_HERE"
     }
   },
   "cli": {
@@ -50,7 +55,6 @@
         "buildType": "apk"
       },
       "env": {
-        "GOOGLE_MAPS_API_KEY": "INSERT_KEY_HERE"
       }
     }
   },
