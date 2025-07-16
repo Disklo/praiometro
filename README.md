@@ -91,7 +91,7 @@ eas build --platform android --profile production
 
 Após a conclusão da construção, você receberá um link para baixar o arquivo APK.
 
-### 4. Rodando o Aplicativo em Desenvolvimento
+## Rodando o Aplicativo em Desenvolvimento
 
 Para iniciar o aplicativo em modo de desenvolvimento:
 
