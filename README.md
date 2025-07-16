@@ -68,7 +68,13 @@ eas init
 
 ### 3. Rodando o Aplicativo em Desenvolvimento (Caso só queira buildar o APK, pule esta etapa)
 
-Para iniciar o aplicativo em modo de desenvolvimento:
+Na pasta-raíz do projeto, rode o script Python para adicionar o IP de sua máquina nas configurações de rede do app:
+
+```bash
+python get_ip.py
+```
+
+Para iniciar o aplicativo em modo de desenvolvimento, volte para a pasta do frontend e rode:
 
 ```bash
 npx expo run:android
