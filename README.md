@@ -46,7 +46,7 @@ Para evitar que você sem querer apague os templates de app.json e eas.json num 
     git restore android\app\src\main\exemplo.AndroidManifest.xml
 ```
 
-## Como Gerar um APK (Android)
+## Como Gerar um APK ou rodar em modo de desenvolvimento (prebuild)
 
 Para gerar um arquivo APK para distribuição, você pode usar o Expo Application Services (EAS).
 
