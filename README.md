@@ -20,9 +20,9 @@ yarn install
 
 Para que o aplicativo funcione corretamente, você precisa inserir sua chave da API do Google Maps.
 
-1.  Localize o arquivo `exemplo.env.base` na raiz do projeto.
-2.  Abra o arquivo e substitua `INSERT_KEY_HERE` pela sua chave da API do Google Maps.
-3.  Renomeie o arquivo `exemplo.eas.json.base` para `eas.json`.
+1.  Localize o arquivo `exemplo.env.base` na pasta do frontend.
+2.  Abra o arquivo e substitua TODAS instâncias `INSERT_KEY_HERE` pela sua chave da API do Google Maps. Faça o mesmo para o Web Client ID. 
+4.  Renomeie o arquivo `exemplo.eas.json.base` para `eas.json`.
 
     ```bash
     mv exemplo.eas.json.base eas.json
@@ -36,7 +36,9 @@ Para que o aplicativo funcione corretamente, você precisa inserir sua chave da 
 
 ### 3. Renomear app.json
 
-`app.json`, apesar de não conter informações críticas, é único para cada usuário Expo, e por isso está incluso no `.gitignore`. Após renomear não é preciso inserir nenhuma informação adicional manualmente porque ela será inserida numa etapa futura (o comando `eas init`).
+1.  Localize o arquivo `exemplo.app.base` na pasta do frontend.
+2.  Abra o arquivo e substitua TODAS instâncias `INSERT_KEY_HERE` pela sua chave da API do Google Maps. Faça o mesmo para o Web Client ID. 
+4.  Renomeie o arquivo `exemplo.app.json.base` para `eas.json`.
 
 1.  Renomeie o arquivo `exemplo.app.json.base` para `app.json`.
 
@@ -50,17 +52,14 @@ Para que o aplicativo funcione corretamente, você precisa inserir sua chave da 
     ren exemplo.app.json.base app.json
     ```
 
-### 4. Rodando o Aplicativo em Desenvolvimento
+### 4. Fazer git restore de ambos arquivos
 
-Para iniciar o aplicativo em modo de desenvolvimento:
+Para evitar que você sem querer apague os templates de app.json e eas.json num commit, faça git restore de ambos
 
-```bash
-npm start
-# ou
-yarn start
-```
-
-Isso geralmente abrirá o Expo Developer Tools em seu navegador, onde você pode escolher rodar o aplicativo em um emulador, dispositivo físico ou no navegador.
+    ```bash
+    git restore exemplo.app.json.base
+    git restore exemplo.eas.json.base
+    ```
 
 ## Como Gerar um APK (Android)
 
@@ -91,3 +90,15 @@ eas build --platform android --profile production
 ```
 
 Após a conclusão da construção, você receberá um link para baixar o arquivo APK.
+
+### 4. Rodando o Aplicativo em Desenvolvimento
+
+Para iniciar o aplicativo em modo de desenvolvimento:
+
+```bash
+npx expo start
+# ou
+npm start
+# ou
+yarn start
+```
