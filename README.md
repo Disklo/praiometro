@@ -92,3 +92,13 @@ eas build --platform android --profile production
 ```
 
 Após a conclusão, você receberá um link para baixar o arquivo APK. 
+
+### 6. Executando APK no emulador
+
+Após buildar o APK, execute o seguinte comando para executá-lo no emulador:
+
+```bash
+eas build:run --platform android
+```
+
+O comando vai retornar uma lista das builds que vocCê fez, então escolha a mais recente. Você precisa ter Android Studio instalado, e também precisa ter `ANDROID_HOME` e `ANDROID_SDK_ROOT` nas suas variáveis de ambiente.
