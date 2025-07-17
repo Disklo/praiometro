@@ -90,6 +90,7 @@ npx expo run:android
 Isso abrirá um app para se conectar ao servidor de desenvolvimento, mas antes disso você precisa logar na sua conta Expo (clicando no ícone de pessoa no canto superior direito da tela). Após conectar na sua conta, selecione o servidor de desenvolvimento para entrar na prebuild do app.
 > [!IMPORTANT]
 > No app, ao invés de selecionar o servidor, escreva o endereço manualmente, substituindo "localhost" pelo endereço da sua máquina na LAN (`get_ip.py` na raíz do projeto imprime o IP, assim como `config_script.py`). A porta deve ser a mesma que a mostrada, então fica assim: `http://IP:PORTA`.
+> [!WARNING]
 > Caso você tenha mudado de rede desde a última vez que executou `npx expo run:android`, rode `get_ip.py` e execute `npx expo run:android` novamente. 
 
 ### 5. Gerar o APK
