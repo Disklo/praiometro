@@ -4,17 +4,9 @@ Este projeto é o frontend do aplicativo Praiômetro.
 
 ## Como Configurar e Rodar o Projeto
 
-Siga os passos abaixo para configurar e rodar o projeto em seu ambiente de desenvolvimento.
+**IMPORTANTE**: Você pode executar `config_script.py` para configurar automaticamente e pular para **"Como Gerar um APK ou rodar em modo de desenvolvimento"**. No entanto, caso queira configurar manualmente, eis as etapas:
 
-### 1. Instalação das Dependências
-
-Certifique-se de ter o Node.js e o npm instalados. Em seguida, instale as dependências do projeto:
-
-```bash
-npm install
-```
-
-### 2. Configuração da Chave da API do Google Maps
+### 1. Configuração da Chave da API do Google Maps
 
 Para que o aplicativo funcione corretamente, você precisa inserir sua chave da API do Google Maps.
 
@@ -22,14 +14,14 @@ Para que o aplicativo funcione corretamente, você precisa inserir sua chave da 
 2.  Abra o arquivo e substitua TODAS instâncias `INSERT_KEY_HERE` pela sua chave da API do Google Maps. Faça o mesmo para o Web Client ID. 
 4.  Renomeie o arquivo `exemplo.eas.json.base` para `eas.json`.
 
-### 3. Renomear app.json
+### 2. Renomear app.json
 
 1.  Localize o arquivo `exemplo.app.base` na pasta do frontend.
 2.  Abra o arquivo e substitua TODAS instâncias `INSERT_KEY_HERE` pela sua chave da API do Google Maps. Faça o mesmo para o Web Client ID. 
 3.  Renomeie o arquivo `exemplo.app.json.base` para `eas.json`.
 
 
-### 4. Renomear exemplo.AndroidManifest.xml
+### 3. Renomear exemplo.AndroidManifest.xml
 
 1.  Localize o arquivo `exemplo.AndroidManifest.xml` na pasta frontend\android\app\src\main.
 2.  Caso você vá fazer uma prebuild, substitua `@string/google_maps_api_key` pela sua key da API do Google Maps. Caso vá fazer build com `eas build`, mantenha do jeito que está. Lembre-se de mudar esse valor a depender de se você vai fazer build do APK ou prebuild.
@@ -58,7 +50,15 @@ Se você ainda não tem o EAS CLI instalado globalmente, instale-o:
 npm install -g eas-cli
 ```
 
-### 2. Inicializar o Projeto EAS
+### 2. Instalação das Dependências
+
+Certifique-se de ter o Node.js e o npm instalados. Em seguida, instale as dependências do projeto:
+
+```bash
+npm install
+```
+
+### 3. Inicializar o Projeto EAS
 
 Se esta for a primeira vez que você está usando o EAS neste projeto, você precisará inicializá-lo. Siga as instruções no terminal:
 
@@ -66,7 +66,7 @@ Se esta for a primeira vez que você está usando o EAS neste projeto, você pre
 eas init
 ```
 
-### 3. Rodando o Aplicativo em Desenvolvimento (Caso só queira buildar o APK, pule esta etapa)
+### 4. Rodando o Aplicativo em Desenvolvimento (Caso só queira buildar o APK, pule esta etapa)
 
 Na pasta-raíz do projeto, rode o script Python `get_ip.py` para adicionar o IP de sua máquina nas configurações de rede do app:
 
@@ -81,9 +81,9 @@ npx expo run:android
 ```
 
 Isso abrirá um app para se conectar ao servidor de desenvolvimento, mas antes disso você precisa logar na sua conta Expo (clicando no ícone de pessoa no canto superior direito da tela). Após conectar na sua conta, selecione o servidor de desenvolvimento para entrar na prebuild do app.
-IMPORTANTE: No app, ao invés de selecionar o servidor, escreva o endereço manualmente, substituindo "localhost" pelo endereço da sua máquina na LAN (`get_ip.py` imprime o IP). A porta deve ser a mesma que a mostrada, então fica assim: `http://IP:PORTA`
+**IMPORTANTE**: No app, ao invés de selecionar o servidor, escreva o endereço manualmente, substituindo "localhost" pelo endereço da sua máquina na LAN (`get_ip.py` na raíz do projeto imprime o IP, assim como `config_script.py`). A porta deve ser a mesma que a mostrada, então fica assim: `http://IP:PORTA`
 
-### 4. Gerar o APK
+### 5. Gerar o APK
 
 Antes de executar esse comando, lembre-se de verificar se a key da API do Google Maps em `AndroidManifest.xml` está escrita como `@string/google_maps_api_ke`. Este comando enviará seu projeto para os servidores da Expo para a build:
 
