@@ -40,19 +40,18 @@ export default function FeedbackModal({ visible, onClose, beachName, beachId, on
 
             await GoogleSignin.hasPlayServices();
             const userInfo = await GoogleSignin.signIn();
-            const idToken = userInfo.idToken;
+            const idToken = userInfo.data.idToken;
 
             if (!idToken) {
                 Alert.alert('Erro', 'Não foi possível obter o token de autenticação do Google.');
                 return;
             }
 
-            const response = await api.post('/votar', null, {
+            const response = await api.post('/votar', feedback, {
                 params: {
                     token: idToken,
                     praia_id: beachId,
                 },
-                data: feedback,
             });
 
             if (response.data.votou) {
@@ -63,6 +62,7 @@ export default function FeedbackModal({ visible, onClose, beachName, beachId, on
             }
             onClose();
         } catch (error) {
+            console.error("Erro ao enviar avaliação:", JSON.stringify(error));
             console.error('Erro ao enviar feedback:', error);
             if (error.code === 'SIGN_IN_CANCELLED') {
                 Alert.alert('Cancelado', 'Login com Google cancelado.');

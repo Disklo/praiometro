@@ -7,7 +7,6 @@ export default function App() {
     useEffect(() => {
         GoogleSignin.configure({
             webClientId: Constants.expoConfig.extra.GOOGLE_CLIENT_ID,
-            offlineAccess: true,
         });
     }, []);
 
