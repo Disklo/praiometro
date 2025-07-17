@@ -9,6 +9,7 @@ Este projeto é o frontend do aplicativo Praiômetro.
 
 <details>
     <summary>Configuração manual</summary>
+    
     ### 1. Configuração da Chave da API do Google Maps
     
     Para que o aplicativo funcione corretamente, você precisa inserir sua chave da API do Google Maps.
