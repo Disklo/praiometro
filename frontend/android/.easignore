@@ -1,5 +1,0 @@
-# Ignore build files
-build/
-.gradle/
-app/build/
-app/.cxx/
