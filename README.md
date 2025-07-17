@@ -99,6 +99,9 @@ eas build --platform android --profile production
 
 Após a conclusão, você receberá um link para baixar o arquivo APK. 
 
+> [!TIP]
+> Você pode executar `config_script.py` para reverter o campo da key em Android `AndroidManifest.xml`
+
 ### 6. Executando APK no emulador
 
 Após buildar o APK, execute o seguinte comando para executá-lo no emulador:
