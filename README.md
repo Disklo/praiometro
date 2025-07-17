@@ -4,7 +4,8 @@ Este projeto é o frontend do aplicativo Praiômetro.
 
 ## Como Configurar e Rodar o Projeto
 
-**IMPORTANTE**: Você pode executar `config_script.py` para configurar automaticamente e pular para **"Como Gerar um APK ou rodar em modo de desenvolvimento"**. No entanto, caso queira configurar manualmente, eis as etapas:
+> [!TIP]
+> Você pode executar `config_script.py` para configurar automaticamente e pular para **"Como Gerar um APK ou rodar em modo de desenvolvimento"**. No entanto, caso queira configurar manualmente, siga as etapas a seguir.
 
 ### 1. Configuração da Chave da API do Google Maps
 
@@ -81,7 +82,8 @@ npx expo run:android
 ```
 
 Isso abrirá um app para se conectar ao servidor de desenvolvimento, mas antes disso você precisa logar na sua conta Expo (clicando no ícone de pessoa no canto superior direito da tela). Após conectar na sua conta, selecione o servidor de desenvolvimento para entrar na prebuild do app.
-**IMPORTANTE**: No app, ao invés de selecionar o servidor, escreva o endereço manualmente, substituindo "localhost" pelo endereço da sua máquina na LAN (`get_ip.py` na raíz do projeto imprime o IP, assim como `config_script.py`). A porta deve ser a mesma que a mostrada, então fica assim: `http://IP:PORTA`
+> [!IMPORTANT]
+> No app, ao invés de selecionar o servidor, escreva o endereço manualmente, substituindo "localhost" pelo endereço da sua máquina na LAN (`get_ip.py` na raíz do projeto imprime o IP, assim como `config_script.py`). A porta deve ser a mesma que a mostrada, então fica assim: `http://IP:PORTA`
 
 ### 5. Gerar o APK
 
