@@ -156,34 +156,57 @@ def buscar_dados(lat, lon):
         print(f"Hora {key} não encontrada nos dados.")
         return {"timestamp": key}
 
-# Tarefa agendada: atualizar pontos.json
 def atualizar():
     # carrega pontos estáticos e balneabilidade
     pontos = carregar_pontos()
     bal = extrair_balneabilidade()
+
+    # carrega pontos antigos para fallback
+    try:
+        with open(CAMINHO_PONTOS, "r", encoding="utf-8") as f:
+            pontos_anteriores = json.load(f)
+    except Exception:
+        pontos_anteriores = {}
 
     # prepara saída
     out = {}
     for codigo, info in pontos.items():
         lat, lon = info.get("coordenadas_decimais", [None, None])
         leitura = buscar_dados(lat, lon)
-        leitura["balneabilidade"] = bal.get(codigo)
-        # une informações estáticas + leitura
-        out[codigo] = {
-            **info,
-            "leitura_atual": leitura
-        }
+
+        # checar se a leitura falhou: pode usar uma métrica como `temperature_2m is None`
+        if leitura.get("temperature_2m") is None:
+            print(f"Falha na leitura para {codigo}, mantendo dados anteriores.")
+            if codigo in pontos_anteriores:
+                out[codigo] = pontos_anteriores[codigo]
+            else:
+                # se não houver anterior, salva com leitura mínima
+                leitura["balneabilidade"] = bal.get(codigo)
+                out[codigo] = {
+                    **info,
+                    "leitura_atual": leitura
+                }
+        else:
+            leitura["balneabilidade"] = bal.get(codigo)
+            out[codigo] = {
+                **info,
+                "leitura_atual": leitura
+            }
+
     # salva resultado
     with open(CAMINHO_PONTOS, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=4)
+
     br_timezone = datetime.timezone(datetime.timedelta(hours=-3))
     print(f"Atualização realizada em {datetime.datetime.now(br_timezone).isoformat()}")
+
     # notificar API após atualização do pontos.json
     try:
         resposta = requests.post("http://localhost:8000/notificar-atualizacao")  # Altere se necessário
         print("Notificação enviada:", resposta.json())
     except Exception as e:
         print("Erro ao notificar API:", e)
+
 
 # Executa atualização imediata ao iniciar
 atualizar()
