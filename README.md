@@ -68,7 +68,7 @@ eas init
 
 ### 3. Rodando o Aplicativo em Desenvolvimento (Caso só queira buildar o APK, pule esta etapa)
 
-Na pasta-raíz do projeto, rode o script Python para adicionar o IP de sua máquina nas configurações de rede do app:
+Na pasta-raíz do projeto, rode o script Python `get_ip.py` para adicionar o IP de sua máquina nas configurações de rede do app:
 
 ```bash
 python get_ip.py
@@ -81,13 +81,14 @@ npx expo run:android
 ```
 
 Isso abrirá um app para se conectar ao servidor de desenvolvimento, mas antes disso você precisa logar na sua conta Expo (clicando no ícone de pessoa no canto superior direito da tela). Após conectar na sua conta, selecione o servidor de desenvolvimento para entrar na prebuild do app.
+IMPORTANTE: No app, ao invés de selecionar o servidor, escreva o endereço manualmente, substituindo "localhost" pelo endereço da sua máquina na LAN (`get_ip.py` imprime o IP). A porta deve ser a mesma que a mostrada, então fica assim: `http://IP:PORTA`
 
 ### 4. Gerar o APK
 
-Após a inicialização do EAS, você pode construir o APK. Este comando enviará seu projeto para os servidores da Expo para a construção:
+Antes de executar esse comando, lembre-se de verificar se a key da API do Google Maps em `AndroidManifest.xml` está escrita como `@string/google_maps_api_ke`. Este comando enviará seu projeto para os servidores da Expo para a build:
 
 ```bash
 eas build --platform android --profile production
 ```
 
-Após a conclusão, você receberá um link para baixar o arquivo APK.
+Após a conclusão, você receberá um link para baixar o arquivo APK. 
