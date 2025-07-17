@@ -65,12 +65,23 @@ def main():
     else:
         print("eas.json já existe.")
 
-    # Segundo: Criar AndroidManifest.xml se não existir
+    # Segundo: Criar AndroidManifest.xml e network_security_config.xml se não existirem
     if not os.path.exists(android_manifest_path):
         shutil.copy(os.path.join(frontend_dir, "android", "app", "src", "main", "exemplo.AndroidManifest.xml"), android_manifest_path)
         print("AndroidManifest.xml criado.")
     else:
         print("AndroidManifest.xml já existe.")
+
+    network_security_config_path = os.path.join(frontend_dir, "android", "app", "src", "main", "res", "xml", "network_security_config.xml")
+    if not os.path.exists(network_security_config_path):
+        exemplo_path = os.path.join(frontend_dir, "android", "app", "src", "main", "res", "xml", "exemplo.network_security_config.xml")
+        if os.path.exists(exemplo_path):
+            shutil.copy(exemplo_path, network_security_config_path)
+            print("network_security_config.xml criado.")
+        else:
+            print(f"Arquivo de exemplo não encontrado em {exemplo_path}, pulando a criação de network_security_config.xml.")
+    else:
+        print("network_security_config.xml já existe.")
 
     # Terceiro: Verificar e pedir as chaves se necessário
     with open(app_json_path, 'r+') as f:
@@ -122,22 +133,32 @@ def main():
     with open(android_manifest_path, 'r') as f:
         manifest_content = f.read()
 
-    if '@string/google_maps_api_key' in manifest_content:
-        resposta = input("Deseja substituir '@string/google_maps_api_key' pela chave da API em AndroidManifest.xml? (s/n): ")
+    api_key_placeholder = '@string/google_maps_api_key'
+    meta_data_line = '<meta-data\n                android:name="com.google.android.geo.API_KEY"\n                android:value="@string/google_maps_api_key" />'
+
+    if api_key_placeholder in manifest_content:
+        resposta = input(f"Deseja substituir '{api_key_placeholder}' pela chave da API em AndroidManifest.xml? (s/n): ")
         if resposta.lower() == 's':
             if not api_key:
                 api_key = input("Por favor, insira a chave da API do Google Maps para o AndroidManifest.xml: ")
-            manifest_content = manifest_content.replace('@string/google_maps_api_key', api_key)
+            manifest_content = manifest_content.replace(api_key_placeholder, api_key)
             with open(android_manifest_path, 'w') as f:
                 f.write(manifest_content)
             print("AndroidManifest.xml atualizado.")
     else:
         resposta = input("A chave da API já está em AndroidManifest.xml. Deseja reverter para '@string/google_maps_api_key'? (s/n): ")
         if resposta.lower() == 's':
-            manifest_content = manifest_content.replace(api_key, '@string/google_maps_api_key')
-            with open(android_manifest_path, 'w') as f:
-                f.write(manifest_content)
-            print("AndroidManifest.xml revertido.")
+            # Encontra a linha do meta-data e extrai a chave atual
+            import re
+            match = re.search(r'android:value="(.*?)"', manifest_content)
+            if match:
+                current_api_key = match.group(1)
+                manifest_content = manifest_content.replace(current_api_key, api_key_placeholder)
+                with open(android_manifest_path, 'w') as f:
+                    f.write(manifest_content)
+                print("AndroidManifest.xml revertido.")
+            else:
+                print("Não foi possível encontrar a chave da API no AndroidManifest.xml para reverter.")
 
 
     # Sexto: Lembrar o usuário sobre npm install e eas init
