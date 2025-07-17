@@ -74,7 +74,7 @@ def main():
 
     network_security_config_path = os.path.join(frontend_dir, "android", "app", "src", "main", "res", "xml", "network_security_config.xml")
     if not os.path.exists(network_security_config_path):
-        exemplo_path = os.path.join(frontend_dir, "android", "app", "src", "main", "res", "xml", "exemplo.network_security_config.xml")
+        exemplo_path = os.path.join(frontend_dir, "android", "app", "src", "main", "res", "xml", "exemplo_network_security_config.xml")
         if os.path.exists(exemplo_path):
             shutil.copy(exemplo_path, network_security_config_path)
             print("network_security_config.xml criado.")
