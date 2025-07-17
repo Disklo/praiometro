@@ -41,6 +41,14 @@ Este projeto é o frontend do aplicativo Praiômetro.
         git restore exemplo.eas.json.base
         git restore android\app\src\main\exemplo.AndroidManifest.xml
     ```
+
+    ### 5. Colocar o IP da máquina nas configurações de rede.
+
+    Na pasta-raíz do projeto, rode o script Python `get_ip.py` para adicionar o IP de sua máquina nas configurações de rede do app:
+
+    ```bash
+    python get_ip.py
+    ```
 </details>
 
 ## Como Gerar um APK ou rodar em modo de desenvolvimento (prebuild)
@@ -72,12 +80,6 @@ eas init
 ```
 
 ### 4. Rodando o Aplicativo em Desenvolvimento (Caso só queira buildar o APK, pule esta etapa)
-
-Na pasta-raíz do projeto, rode o script Python `get_ip.py` para adicionar o IP de sua máquina nas configurações de rede do app:
-
-```bash
-python get_ip.py
-```
 
 Para iniciar o aplicativo em modo de desenvolvimento, volte para a pasta do frontend e rode:
 
