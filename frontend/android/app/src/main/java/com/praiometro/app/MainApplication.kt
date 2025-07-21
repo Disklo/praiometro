@@ -1,4 +1,4 @@
-package com.googleauth.android
+package com.praiometro.app
 
 import android.app.Application
 import android.content.res.Configuration
