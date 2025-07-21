@@ -8,7 +8,19 @@ Este projeto fez parte da disciplina Computação e Meio Ambiente ministrada pel
 
 ## Como Configurar e Rodar o Projeto
 
-Assume-se que você possui Python 3, JDK 17, Android Studio, Node-JS e NPM instalados.
+Para o front-end, assume-se que você possui Python 3, JDK 17, Android Studio, Node-JS e NPM instalados. Para o back-end, assume-se que você possui Python 3 e MongoDB instalados.
+
+### Back-end
+
+1. Instale as dependências com `pip install -r requirements.txt`
+2. Na máquina que deseja usar como servidor, rode o script `start_mongo.bat` (Windows) ou `start_mongo.sh` (Linux).
+3. Rode `api_praiometro.py`
+4. Rode `praiometro_hourly.py`
+5. Rode `avaliador.py`
+6. No front-end, altere `frontend/src/api/api.js` com o IP da máquina que usará como servidor.
+7. No front-end, altere `frontend/android/app/src/main/res/xml/network_security_config.xml` para incluir o IP da máquina que será usada como servidor.
+
+### Front-end
 
 > [!TIP]
 > Você pode executar `config_script.py` para configurar automaticamente e pular para **"Como Gerar um APK ou rodar em modo de desenvolvimento"**. No entanto, caso queira configurar manualmente, abra a aba **"Configuração manual"** a seguir.
@@ -57,11 +69,11 @@ Assume-se que você possui Python 3, JDK 17, Android Studio, Node-JS e NPM insta
     ```
 </details>
 
-## Como Gerar um APK ou rodar em modo de desenvolvimento (prebuild)
+### Como Gerar um APK ou rodar em modo de desenvolvimento (prebuild)
 
 Para gerar um arquivo APK para distribuição, você pode usar o Expo Application Services (EAS).
 
-### 1. Instalar o EAS CLI
+#### 1. Instalar o EAS CLI
 
 Se você ainda não tem o EAS CLI instalado globalmente, instale-o:
 
@@ -69,7 +81,7 @@ Se você ainda não tem o EAS CLI instalado globalmente, instale-o:
 npm install -g eas-cli
 ```
 
-### 2. Instalação das Dependências
+#### 2. Instalação das Dependências
 
 Certifique-se de ter o Node.js e o npm instalados. Em seguida, instale as dependências do projeto:
 
@@ -77,7 +89,7 @@ Certifique-se de ter o Node.js e o npm instalados. Em seguida, instale as depend
 npm install
 ```
 
-### 3. Inicializar o Projeto EAS
+#### 3. Inicializar o Projeto EAS
 
 Se esta for a primeira vez que você está usando o EAS neste projeto, você precisará inicializá-lo. Siga as instruções no terminal:
 
@@ -85,7 +97,7 @@ Se esta for a primeira vez que você está usando o EAS neste projeto, você pre
 eas init
 ```
 
-### 4. Rodando o Aplicativo em Desenvolvimento (Caso só queira buildar o APK, pule esta etapa)
+#### 4. Rodando o Aplicativo em Desenvolvimento (Caso só queira buildar o APK, pule esta etapa)
 
 Para iniciar o aplicativo em modo de desenvolvimento, volte para a pasta do frontend e rode:
 
@@ -100,7 +112,7 @@ Isso abrirá um app para se conectar ao servidor de desenvolvimento, mas antes d
 > [!WARNING]
 > Caso você tenha mudado de rede desde a última vez que executou `npx expo run:android`, rode `get_ip.py` e execute `npx expo run:android` novamente. 
 
-### 5. Gerar o APK
+#### 5. Gerar o APK
 
 Antes de executar esse comando, lembre-se de verificar se a key da API do Google Maps em `AndroidManifest.xml` está escrita como `@string/google_maps_api_ke`. Este comando enviará seu projeto para os servidores da Expo para a build:
 
@@ -113,7 +125,7 @@ Após a conclusão, você receberá um link para baixar o arquivo APK.
 > [!TIP]
 > Você pode executar `config_script.py` para reverter o campo da key em Android `AndroidManifest.xml`
 
-### 6. Executando APK no emulador
+#### 6. Executando APK no emulador
 
 Após buildar o APK, execute o seguinte comando para executá-lo no emulador:
 
