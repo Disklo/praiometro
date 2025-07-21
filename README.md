@@ -1,6 +1,8 @@
 # Praiômetro - Frontend
 
-Este projeto é o frontend do aplicativo Praiômetro.
+https://youtu.be/DLOMGoQEr1I
+
+Este projeto é o frontend do aplicativo Praiômetro. Assume-se que você possui Python 3, JDK 17, Android Studio, Node-JS e NPM instalados.
 
 ## Como Configurar e Rodar o Projeto
 
