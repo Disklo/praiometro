@@ -1,5 +1,7 @@
 # <img width="1189" height="452" alt="praiometro" src="https://github.com/user-attachments/assets/13010574-ca6a-40fe-9dfd-db9b9e97063b" />
 
+https://github.com/user-attachments/assets/b718cb31-5ac5-40ae-a22f-d65cb5077dcb
+
 https://youtu.be/DLOMGoQEr1I
 
 Este projeto fez parte da disciplina Computação e Meio Ambiente ministrada pelo professor José Raphael Bokehi na Universidade Federal Fluminense (UFF).
