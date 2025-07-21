@@ -132,7 +132,7 @@ Criado por:
       <a href="https://github.com/Disklo" title="Rafael Lucio">
         <img src="https://avatars.githubusercontent.com/u/24628410?v=4" width="100px;" alt="Foto de perfil de Rafael"/><br>
         <sub>
-          <b>Rafael Lucio</b>
+          <b>Disklo (Rafael Lucio)</b>
         </sub>
       </a>
     </td>
@@ -140,7 +140,7 @@ Criado por:
       <a href="https://github.com/joaopiller" title="João Piller">
         <img src="https://avatars.githubusercontent.com/u/174753035?v=4" width="100px;" alt="Foto de João"/><br>
         <sub>
-          <b>Caioffnascimento (Caio Nascimento)</b>
+          <b>joaopiller (João Pille)r</b>
         </sub>
       </a>
     </td>
@@ -148,7 +148,7 @@ Criado por:
       <a href="https://github.com/lucasilvr" title="Lucas Silveira">
         <img src="https://avatars.githubusercontent.com/u/128090148?v=4" width="100px;" alt="Foto de Lucas"/><br>
         <sub>
-          <b>Marcovisc (Marcos Junior)</b>
+          <b>lucasilvr (Lucas Silveira)/b>
         </sub>
       </a>
     </td>
@@ -157,7 +157,7 @@ Criado por:
       <a href="https://github.com/azevedxpam" title="Pâmella de Azevedo">
         <img src="https://avatars.githubusercontent.com/u/198846109?v=4" width="100px;" alt="Foto de Pâmella"/><br>
         <sub>
-          <b>Marcovisc (Marcos Junior)</b>
+          <b>azevedxpam (Pâmella de Azevedo)</b>
         </sub>
       </a>
     </td>
