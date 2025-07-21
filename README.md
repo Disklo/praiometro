@@ -140,7 +140,7 @@ Criado por:
       <a href="https://github.com/joaopiller" title="João Piller">
         <img src="https://avatars.githubusercontent.com/u/174753035?v=4" width="100px;" alt="Foto de João"/><br>
         <sub>
-          <b>joaopiller (João Pille)r</b>
+          <b>joaopiller (João Piller)</b>
         </sub>
       </a>
     </td>
@@ -148,7 +148,7 @@ Criado por:
       <a href="https://github.com/lucasilvr" title="Lucas Silveira">
         <img src="https://avatars.githubusercontent.com/u/128090148?v=4" width="100px;" alt="Foto de Lucas"/><br>
         <sub>
-          <b>lucasilvr (Lucas Silveira)/b>
+          <b>lucasilvr (Lucas Silveira)</b>
         </sub>
       </a>
     </td>
