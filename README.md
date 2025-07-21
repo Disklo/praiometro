@@ -1,4 +1,4 @@
-# Praiômetro - Frontend
+# <img width="1189" height="452" alt="praiometro" src="https://github.com/user-attachments/assets/13010574-ca6a-40fe-9dfd-db9b9e97063b" />
 
 https://youtu.be/DLOMGoQEr1I
 
