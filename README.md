@@ -122,3 +122,47 @@ eas build:run --platform android
 ```
 
 O comando vai retornar uma lista das builds que vocCê fez, então escolha a mais recente. Você precisa ter Android Studio instalado, e também precisa ter `ANDROID_HOME` e `ANDROID_SDK_ROOT` nas suas variáveis de ambiente.
+
+## Autoria
+Criado por:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Disklo" title="Rafael Lucio">
+        <img src="https://avatars.githubusercontent.com/u/24628410?v=4" width="100px;" alt="Foto de perfil de Rafael"/><br>
+        <sub>
+          <b>Rafael Lucio</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/joaopiller" title="João Piller">
+        <img src="https://avatars.githubusercontent.com/u/174753035?v=4" width="100px;" alt="Foto de João"/><br>
+        <sub>
+          <b>Caioffnascimento (Caio Nascimento)</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/lucasilvr" title="Lucas Silveira">
+        <img src="https://avatars.githubusercontent.com/u/128090148?v=4" width="100px;" alt="Foto de Lucas"/><br>
+        <sub>
+          <b>Marcovisc (Marcos Junior)</b>
+        </sub>
+      </a>
+    </td>
+    </td>
+    <td align="center">
+      <a href="https://github.com/azevedxpam" title="Pâmella de Azevedo">
+        <img src="https://avatars.githubusercontent.com/u/198846109?v=4" width="100px;" alt="Foto de Pâmella"/><br>
+        <sub>
+          <b>Marcovisc (Marcos Junior)</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+## Licença
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
