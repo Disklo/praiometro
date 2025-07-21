@@ -7,6 +7,7 @@ import pdfplumber
 import schedule
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+from bs4 import BeautifulSoup
 
 # Arquivos de configuração
 CAMINHO_PONTOS = "pontos.json"          # arquivo de pontos estáticos
@@ -42,6 +43,41 @@ def carregar_pontos(caminho=CAMINHO_PONTOS):
         print(f"Erro ao carregar pontos: {e}")
         sys.exit(1)
 
+def baixar_relatorio_inea(caminho_pdf=CAMINHO_PDF):
+    url_pagina = "https://www.inea.rj.gov.br/niteroi/"
+    sessao = criar_sessao_com_retries()
+    
+    try:
+        resposta = sessao.get(url_pagina, timeout=10)
+        resposta.raise_for_status()
+        soup = BeautifulSoup(resposta.text, "html.parser")
+
+        # encontra link que contém o texto do último boletim
+        link = soup.find("a", string=lambda t: t and "último boletim" in t.lower())
+        if not link:
+            print("Link do boletim não encontrado.")
+            return
+        
+        url_pdf = link.get("href")
+        print(f"URL do boletim mais recente: {url_pdf}")
+
+        # baixar PDF
+        for tentativa in range(5):
+            try:
+                resposta_pdf = sessao.get(url_pdf, timeout=10)
+                resposta_pdf.raise_for_status()
+                with open(caminho_pdf, "wb") as f:
+                    f.write(resposta_pdf.content)
+                print(f"Boletim salvo como {caminho_pdf}")
+                return
+            except Exception as e:
+                print(f"Tentativa {tentativa+1} falhou: {e}")
+                time.sleep(2 * (tentativa + 1))
+        print("Falha ao baixar boletim após 5 tentativas.")
+
+    except Exception as e:
+        print(f"Erro ao acessar a página do INEA: {e}")
+
 # Extrai status de balneabilidade mais recente do PDF
 def extrair_balneabilidade(caminho_pdf=CAMINHO_PDF):
     resultado = {}
@@ -64,6 +100,7 @@ def extrair_balneabilidade(caminho_pdf=CAMINHO_PDF):
         print(f"Aviso: PDF '{caminho_pdf}' não encontrado.")
     except Exception as e:
         print(f"Erro ao processar PDF: {e}")
+    print(resultado)
     return resultado
 
 # Função que busca dados meteorológicos e marinhos para uma coordenada
@@ -159,6 +196,7 @@ def buscar_dados(lat, lon):
 def atualizar():
     # carrega pontos estáticos e balneabilidade
     pontos = carregar_pontos()
+    baixar_relatorio_inea()
     bal = extrair_balneabilidade()
 
     # carrega pontos antigos para fallback
