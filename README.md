@@ -2,9 +2,11 @@
 
 https://youtu.be/DLOMGoQEr1I
 
-Este projeto é o frontend do aplicativo Praiômetro. Assume-se que você possui Python 3, JDK 17, Android Studio, Node-JS e NPM instalados.
+Este projeto fez parte da disciplina Computação e Meio Ambiente ministrada pelo professor José Raphael Bokehi na Universidade Federal Fluminense (UFF).
 
 ## Como Configurar e Rodar o Projeto
+
+Assume-se que você possui Python 3, JDK 17, Android Studio, Node-JS e NPM instalados.
 
 > [!TIP]
 > Você pode executar `config_script.py` para configurar automaticamente e pular para **"Como Gerar um APK ou rodar em modo de desenvolvimento"**. No entanto, caso queira configurar manualmente, abra a aba **"Configuração manual"** a seguir.
