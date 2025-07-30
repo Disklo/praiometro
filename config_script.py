@@ -44,6 +44,11 @@ def update_network_security_config(ip_address, config_file_path):
 
 def handle_api_ip(frontend_dir):
     api_js_path = os.path.join(frontend_dir, "src", "api", "api.js")
+    exemplo_api_js_path = os.path.join(frontend_dir, "src", "api", "exemplo_api.js")
+
+    if not os.path.exists(api_js_path) and os.path.exists(exemplo_api_js_path):
+        shutil.copy(exemplo_api_js_path, api_js_path)
+        print(f"'{os.path.basename(exemplo_api_js_path)}' foi copiado para '{os.path.basename(api_js_path)}'")
     
     try:
         with open(api_js_path, 'r') as f:
@@ -58,7 +63,7 @@ def handle_api_ip(frontend_dir):
         ip_to_use = current_ip
         
         should_ask_for_ip = False
-        if current_ip == "INSIRA_IP_DA_API_AQUI":
+        if current_ip in ["INSIRA_IP_DA_API_AQUI", "INSIRA_IP_DA_API_DO_BACKEND_AQUI"]:
             print("O IP da API do backend ainda não foi configurado.")
             should_ask_for_ip = True
         else:
@@ -79,7 +84,7 @@ def handle_api_ip(frontend_dir):
             print(f"O arquivo 'api.js' foi atualizado com o IP: {new_ip}")
             ip_to_use = new_ip
 
-        if ip_to_use == "INSIRA_IP_DA_API_AQUI":
+        if ip_to_use in ["INSIRA_IP_DA_API_AQUI", "INSIRA_IP_DA_API_DO_BACKEND_AQUI"]:
             return None
         
         return ip_to_use
