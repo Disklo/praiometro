@@ -3,6 +3,7 @@ import os
 import shutil
 import json
 import socket
+import re
 
 def obter_ip_lan():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -40,6 +41,55 @@ def update_network_security_config(ip_address, config_file_path):
         print(f"Erro: {config_file_path} não encontrado.")
     except Exception as e:
         print(f"Um erro inesperado ocorreu: {e}")
+
+def handle_api_ip(frontend_dir):
+    api_js_path = os.path.join(frontend_dir, "src", "api", "api.js")
+    
+    try:
+        with open(api_js_path, 'r') as f:
+            content = f.read()
+
+        match = re.search(r"const API_URL = 'http://([^:]+):8000';", content)
+        if not match:
+            print("Não foi possível encontrar o padrão de URL da API em api.js.")
+            return None
+        
+        current_ip = match.group(1)
+        ip_to_use = current_ip
+        
+        should_ask_for_ip = False
+        if current_ip == "INSIRA_IP_DA_API_AQUI":
+            print("O IP da API do backend ainda não foi configurado.")
+            should_ask_for_ip = True
+        else:
+            change_ip_response = input(f"O IP da API está configurado como '{current_ip}'. Deseja alterá-lo? (s/n): ")
+            if change_ip_response.lower() == 's':
+                should_ask_for_ip = True
+
+        if should_ask_for_ip:
+            ip_input = input('Por favor, insira o IP da API do backend (ou digite "local" para usar o IP da LAN): ')
+            if ip_input.lower() == 'local':
+                new_ip = obter_ip_lan()
+            else:
+                new_ip = ip_input
+            
+            new_content = content.replace(current_ip, new_ip)
+            with open(api_js_path, 'w') as f:
+                f.write(new_content)
+            print(f"O arquivo 'api.js' foi atualizado com o IP: {new_ip}")
+            ip_to_use = new_ip
+
+        if ip_to_use == "INSIRA_IP_DA_API_AQUI":
+            return None
+        
+        return ip_to_use
+
+    except FileNotFoundError:
+        print(f"Erro: {api_js_path} não encontrado.")
+        return None
+    except Exception as e:
+        print(f"Um erro inesperado ocorreu ao manusear api.js: {e}")
+        return None
 
 def main():
     frontend_dir = "frontend"
@@ -83,7 +133,23 @@ def main():
     else:
         print("network_security_config.xml já existe.")
 
-    # Terceiro: Verificar e pedir as chaves se necessário
+    # Terceiro: Lida com o IP da API e atualiza os arquivos necessários
+    api_ip = handle_api_ip(frontend_dir)
+    config_file = os.path.join(frontend_dir, "android", "app", "src", "main", "res", "xml", "network_security_config.xml")
+
+    if not os.path.exists(config_file):
+        print(f"Arquivo de configuração de segurança de rede não encontrado em {config_file}, pulando a atualização.")
+    else:
+        if api_ip:
+            print(f"Endereço de IP da API a ser usado: {api_ip}")
+            update_network_security_config(api_ip, config_file)
+        
+        lan_ip = obter_ip_lan()
+        print(f"Endereço de IP da LAN obtido: {lan_ip}")
+        update_network_security_config(lan_ip, config_file)
+
+
+    # Quarto: Verificar e pedir as chaves se necessário
     with open(app_json_path, 'r+') as f:
         app_json = json.load(f)
         if app_json["expo"]["android"]["config"]["googleMaps"]["apiKey"] == "INSERT_KEY_HERE":
@@ -120,15 +186,6 @@ def main():
             f.truncate()
             print("eas.json atualizado.")
 
-    # Quarto: Roda a mesma função que get_ip.py
-    ip = obter_ip_lan()
-    print(f"Endereço de IP obtido: {ip}")
-    config_file = os.path.join(frontend_dir, "android", "app", "src", "main", "res", "xml", "network_security_config.xml")
-    if not os.path.exists(config_file):
-        print(f"Arquivo de configuração de segurança de rede não encontrado em {config_file}, pulando a atualização.")
-    else:
-        update_network_security_config(ip, config_file)
-
     # Quinto: Pergunta sobre o AndroidManifest.xml
     with open(android_manifest_path, 'r') as f:
         manifest_content = f.read()
@@ -149,7 +206,6 @@ def main():
         resposta = input("A chave da API já está em AndroidManifest.xml. Deseja reverter para '@string/google_maps_api_key'? (s/n): ")
         if resposta.lower() == 's':
             # Encontra a linha do meta-data e extrai a chave atual
-            import re
             match = re.search(r'android:value="(.*?)"', manifest_content)
             if match:
                 current_api_key = match.group(1)
