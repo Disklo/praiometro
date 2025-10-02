@@ -22,12 +22,7 @@
         "foregroundImage": "./assets/logo.jpg",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.praiometro.app",
-      "config": {
-        "googleMaps": {
-          "apiKey": "INSERT_KEY_HERE"
-        }
-      }
+      "package": "com.praiometro.app"
     },
     "web": {
       "favicon": "./assets/logo.jpg"

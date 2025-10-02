@@ -4,18 +4,14 @@
     "appVersionSource": "remote"
   },
   "build": {
-    "development": {
-      "developmentClient": true,
       "distribution": "internal",
       "env": {
-        "GOOGLE_MAPS_API_KEY": "INSERT_KEY_HERE",
         "GOOGLE_CLIENT_ID": "INSERT_ID_HERE"
       }
     },
     "preview": {
       "distribution": "internal",
       "env": {
-        "GOOGLE_MAPS_API_KEY": "INSERT_KEY_HERE",
         "GOOGLE_CLIENT_ID": "INSERT_ID_HERE"
       }
     },
@@ -25,7 +21,6 @@
         "buildType": "apk"
       },
       "env": {
-        "GOOGLE_MAPS_API_KEY": "INSERT_KEY_HERE",
         "GOOGLE_CLIENT_ID": "INSERT_ID_HERE"
       }
     }

@@ -2,11 +2,13 @@ import { View, Text } from 'react-native';
 import styles from './styles';
 import Fontisto from '@expo/vector-icons/Fontisto';
 import { useEffect, useState } from 'react';
-import MapView, { Callout, Marker } from 'react-native-maps';
+import MapLibreGL from '@maplibre/maplibre-react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import { api } from '../../api/api';
 import { useNavigation } from '@react-navigation/native';
 import HomeHeader from '../../components/HomeHeader';
+
+MapLibreGL.setAccessToken(null);
 
 export default function Home() {
     const [beaches, setBeaches] = useState([]);
@@ -55,55 +57,34 @@ export default function Home() {
 return (
     <View style={styles.container}>
         <HomeHeader />
-        <MapView
+        <MapLibreGL.MapView
             style={styles.map}
-            initialRegion={{
-                latitude: -22.907484,
-                longitude: -43.112033,
-                latitudeDelta: 0.15,
-                longitudeDelta: 0.15,
-            }}
+            styleURL="https://tiles.openfreemap.org/styles/osm-bright/style.json"
         >
+            <MapLibreGL.Camera
+                centerCoordinate={[-43.112033, -22.907484]}
+                zoomLevel={11}
+            />
             {beaches.map((beach) =>
                 beach.coordenadas_terra && beach.coordenadas_terra.length === 2 ? (
-                    <Marker
+                    <MapLibreGL.PointAnnotation
                         key={beach.codigo}
-                        coordinate={{
-                            latitude: beach.coordenadas_terra[0],
-                            longitude: beach.coordenadas_terra[1],
-                        }}
+                        id={beach.codigo}
+                        coordinate={[beach.coordenadas_terra[1], beach.coordenadas_terra[0]]}
                         title={beach.nome?.[0] || 'Praia'}
-                        description={beach.specific_location?.[0] || ''}
-                        anchor={{ x: 0.5, y: 0.2 }}
                     >
                         <Entypo name="location-pin" size={32} color="#2ea5e4" />
-                        <Callout
+                        <MapLibreGL.Callout
+                            title={beach.nome?.[0] || 'Praia'}
                             onPress={() => navigation.navigate('Praias', {
                                 screen: 'Praia',
                                 params: { id: beach.codigo }
                             })}
-                        >
-                            <View
-                                style={{
-                                    backgroundColor: 'white',
-                                    borderRadius: 8,
-                                    width: 150,
-                                    alignItems: 'center',
-                                    elevation: 4,
-                                }}
-                            >
-                                <Text style={{ fontWeight: 'bold', color: '#2ea5e4', fontSize: 16, textAlign: 'center' }}>
-                                    {beach.nome?.[0] || 'Praia'}
-                                </Text>
-                                <Text style={{ color: '#666', fontSize: 13, textAlign: 'center' }}>
-                                    {beach.specific_location?.[0] || ''}
-                                </Text>
-                            </View>
-                        </Callout>
-                    </Marker>
+                        />
+                    </MapLibreGL.PointAnnotation>
                 ) : null
             )}
-        </MapView>
+        </MapLibreGL.MapView>
     </View>
 );
 }

@@ -48,7 +48,6 @@ def main():
     android_manifest_path = os.path.join(frontend_dir, "android", "app", "src", "main", "AndroidManifest.xml")
 
     eas_json_created = False
-    api_key = None
     client_id = None
 
     # Primeiro: Criar app.json e eas.json se não existirem
@@ -86,14 +85,11 @@ def main():
     # Terceiro: Verificar e pedir as chaves se necessário
     with open(app_json_path, 'r+') as f:
         app_json = json.load(f)
-        if app_json["expo"]["android"]["config"]["googleMaps"]["apiKey"] == "INSERT_KEY_HERE":
-            api_key = input("Por favor, insira a chave da API do Google Maps: ")
-            app_json["expo"]["android"]["config"]["googleMaps"]["apiKey"] = api_key
         if app_json["expo"]["extra"]["GOOGLE_CLIENT_ID"] == "INSERT_ID_HERE":
             client_id = input("Por favor, insira o Web Client ID: ")
             app_json["expo"]["extra"]["GOOGLE_CLIENT_ID"] = client_id
         
-        if api_key or client_id:
+        if client_id:
             f.seek(0)
             json.dump(app_json, f, indent=2)
             f.truncate()
@@ -104,11 +100,6 @@ def main():
         needs_update = False
         for build_profile in eas_json["build"]:
             if "env" in eas_json["build"][build_profile]:
-                if eas_json["build"][build_profile]["env"]["GOOGLE_MAPS_API_KEY"] == "INSERT_KEY_HERE":
-                    if not api_key:
-                        api_key = input("Por favor, insira a chave da API do Google Maps: ")
-                    eas_json["build"][build_profile]["env"]["GOOGLE_MAPS_API_KEY"] = api_key
-                    needs_update = True
                 if eas_json["build"][build_profile]["env"]["GOOGLE_CLIENT_ID"] == "INSERT_ID_HERE":
                     if not client_id:
                         client_id = input("Por favor, insira o Web Client ID: ")
@@ -159,7 +150,6 @@ def main():
                 print("AndroidManifest.xml revertido.")
             else:
                 print("Não foi possível encontrar a chave da API no AndroidManifest.xml para reverter.")
-
 
     # Sexto: Lembrar o usuário sobre npm install e eas init
     if eas_json_created:
