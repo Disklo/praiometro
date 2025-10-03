@@ -181,37 +181,7 @@ def main():
             f.truncate()
             print("eas.json atualizado.")
 
-    # Quinto: Pergunta sobre o AndroidManifest.xml
-    with open(android_manifest_path, 'r', encoding='utf-8-sig') as f:
-        manifest_content = f.read()
-
-    api_key_placeholder = '@string/google_maps_api_key'
-    meta_data_line = '<meta-data\n                android:name="com.google.android.geo.API_KEY"\n                android:value="@string/google_maps_api_key" />'
-
-    if api_key_placeholder in manifest_content:
-        resposta = input(f"Deseja substituir '{api_key_placeholder}' pela chave da API em AndroidManifest.xml? (s/n): ")
-        if resposta.lower() == 's':
-            if not api_key:
-                api_key = input("Por favor, insira a chave da API do Google Maps para o AndroidManifest.xml: ")
-            manifest_content = manifest_content.replace(api_key_placeholder, api_key)
-            with open(android_manifest_path, 'w', encoding='utf-8-sig') as f:
-                f.write(manifest_content)
-            print("AndroidManifest.xml atualizado.")
-    else:
-        resposta = input("A chave da API já está em AndroidManifest.xml. Deseja reverter para '@string/google_maps_api_key'? (s/n): ")
-        if resposta.lower() == 's':
-            # Encontra a linha do meta-data e extrai a chave atual
-            match = re.search(r'android:value="(.*?)"', manifest_content)
-            if match:
-                current_api_key = match.group(1)
-                manifest_content = manifest_content.replace(current_api_key, api_key_placeholder)
-                with open(android_manifest_path, 'w', encoding='utf-8-sig') as f:
-                    f.write(manifest_content)
-                print("AndroidManifest.xml revertido.")
-            else:
-                print("Não foi possível encontrar a chave da API no AndroidManifest.xml para reverter.")
-
-    # Sexto: Lembrar o usuário sobre npm install e eas init
+    # Quinto: Lembrar o usuário sobre npm install e eas init
     if eas_json_created:
         print("\nLembrete: execute 'npm install' e 'eas init' dentro da pasta frontend.")
 
