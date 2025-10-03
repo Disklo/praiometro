@@ -4,6 +4,7 @@
     "appVersionSource": "remote"
   },
   "build": {
+    "development": {
       "distribution": "internal",
       "env": {
         "GOOGLE_CLIENT_ID": "INSERT_ID_HERE"

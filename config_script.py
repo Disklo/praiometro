@@ -1,4 +1,3 @@
-
 import os
 import shutil
 import json
@@ -17,7 +16,7 @@ def obter_ip_lan():
 
 def update_network_security_config(ip_address, config_file_path):
     try:
-        with open(config_file_path, 'r') as f:
+        with open(config_file_path, 'r', encoding='utf-8-sig') as f:
             content = f.read()
 
         if f'<domain includeSubdomains="true">{ip_address}</domain>' in content:
@@ -32,7 +31,7 @@ def update_network_security_config(ip_address, config_file_path):
         new_domain_entry = f"        <domain includeSubdomains=\"true\">{ip_address}</domain>\n"
         modified_content = content.replace(closing_tag_with_indent, new_domain_entry + closing_tag_with_indent)
 
-        with open(config_file_path, 'w') as f:
+        with open(config_file_path, 'w', encoding='utf-8-sig') as f:
             f.write(modified_content)
         
         print(f"Sucesso ao adicionar {ip_address} em {config_file_path}")
@@ -51,7 +50,7 @@ def handle_api_ip(frontend_dir):
         print(f"'{os.path.basename(exemplo_api_js_path)}' foi copiado para '{os.path.basename(api_js_path)}'")
     
     try:
-        with open(api_js_path, 'r') as f:
+        with open(api_js_path, 'r', encoding='utf-8-sig') as f:
             content = f.read()
 
         match = re.search(r"const API_URL = 'http://([^:]+):8000';", content)
@@ -79,7 +78,7 @@ def handle_api_ip(frontend_dir):
                 new_ip = ip_input
             
             new_content = content.replace(current_ip, new_ip)
-            with open(api_js_path, 'w') as f:
+            with open(api_js_path, 'w', encoding='utf-8-sig') as f:
                 f.write(new_content)
             print(f"O arquivo 'api.js' foi atualizado com o IP: {new_ip}")
             ip_to_use = new_ip
@@ -154,7 +153,7 @@ def main():
 
 
     # Quarto: Verificar e pedir as chaves se necessário
-    with open(app_json_path, 'r+') as f:
+    with open(app_json_path, 'r+', encoding='utf-8-sig') as f:
         app_json = json.load(f)
         if app_json["expo"]["extra"]["GOOGLE_CLIENT_ID"] == "INSERT_ID_HERE":
             client_id = input("Por favor, insira o Web Client ID: ")
@@ -166,7 +165,7 @@ def main():
             f.truncate()
             print("app.json atualizado.")
 
-    with open(eas_json_path, 'r+') as f:
+    with open(eas_json_path, 'r+', encoding='utf-8-sig') as f:
         eas_json = json.load(f)
         needs_update = False
         for build_profile in eas_json["build"]:
@@ -183,7 +182,7 @@ def main():
             print("eas.json atualizado.")
 
     # Quinto: Pergunta sobre o AndroidManifest.xml
-    with open(android_manifest_path, 'r') as f:
+    with open(android_manifest_path, 'r', encoding='utf-8-sig') as f:
         manifest_content = f.read()
 
     api_key_placeholder = '@string/google_maps_api_key'
@@ -195,7 +194,7 @@ def main():
             if not api_key:
                 api_key = input("Por favor, insira a chave da API do Google Maps para o AndroidManifest.xml: ")
             manifest_content = manifest_content.replace(api_key_placeholder, api_key)
-            with open(android_manifest_path, 'w') as f:
+            with open(android_manifest_path, 'w', encoding='utf-8-sig') as f:
                 f.write(manifest_content)
             print("AndroidManifest.xml atualizado.")
     else:
@@ -206,7 +205,7 @@ def main():
             if match:
                 current_api_key = match.group(1)
                 manifest_content = manifest_content.replace(current_api_key, api_key_placeholder)
-                with open(android_manifest_path, 'w') as f:
+                with open(android_manifest_path, 'w', encoding='utf-8-sig') as f:
                     f.write(manifest_content)
                 print("AndroidManifest.xml revertido.")
             else:
