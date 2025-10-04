@@ -59,7 +59,9 @@ return (
         <HomeHeader />
         <MapLibreGL.MapView
             style={styles.map}
-            styleURL="https://tiles.openfreemap.org/styles/osm-bright/style.json"
+            mapStyle="https://tiles.openfreemap.org/styles/liberty"
+            attributionEnabled={false}
+            logoEnabled={false}
         >
             <MapLibreGL.Camera
                 centerCoordinate={[-43.112033, -22.907484]}
