@@ -139,15 +139,12 @@ return (
                         id={beach.codigo}
                         coordinate={[beach.coordenadas_terra[1], beach.coordenadas_terra[0]]}
                         anchor={{ x: 0.5, y: 1 }}
+                        onSelected={() => navigation.navigate('Praias', {
+                            screen: 'Praia',
+                            params: { id: beach.codigo }
+                        })}
                     >
                         <BeachMarker beachCode={beach.codigo} zoomLevel={zoomLevel} />
-                        <MapLibreGL.Callout
-                            title={beach.nome?.[0] || 'Praia'}
-                            onPress={() => navigation.navigate('Praias', {
-                                screen: 'Praia',
-                                params: { id: beach.codigo }
-                            })}
-                        />
                     </MapLibreGL.PointAnnotation>
                 ) : null
             )}
