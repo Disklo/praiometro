@@ -1,4 +1,3 @@
-
 import os
 import shutil
 import json
@@ -17,7 +16,7 @@ def obter_ip_lan():
 
 def update_network_security_config(ip_address, config_file_path):
     try:
-        with open(config_file_path, 'r') as f:
+        with open(config_file_path, 'r', encoding='utf-8-sig') as f:
             content = f.read()
 
         if f'<domain includeSubdomains="true">{ip_address}</domain>' in content:
@@ -32,7 +31,7 @@ def update_network_security_config(ip_address, config_file_path):
         new_domain_entry = f"        <domain includeSubdomains=\"true\">{ip_address}</domain>\n"
         modified_content = content.replace(closing_tag_with_indent, new_domain_entry + closing_tag_with_indent)
 
-        with open(config_file_path, 'w') as f:
+        with open(config_file_path, 'w', encoding='utf-8-sig') as f:
             f.write(modified_content)
         
         print(f"Sucesso ao adicionar {ip_address} em {config_file_path}")
@@ -51,7 +50,7 @@ def handle_api_ip(frontend_dir):
         print(f"'{os.path.basename(exemplo_api_js_path)}' foi copiado para '{os.path.basename(api_js_path)}'")
     
     try:
-        with open(api_js_path, 'r') as f:
+        with open(api_js_path, 'r', encoding='utf-8-sig') as f:
             content = f.read()
 
         match = re.search(r"const API_URL = 'http://([^:]+):8000';", content)
@@ -79,7 +78,7 @@ def handle_api_ip(frontend_dir):
                 new_ip = ip_input
             
             new_content = content.replace(current_ip, new_ip)
-            with open(api_js_path, 'w') as f:
+            with open(api_js_path, 'w', encoding='utf-8-sig') as f:
                 f.write(new_content)
             print(f"O arquivo 'api.js' foi atualizado com o IP: {new_ip}")
             ip_to_use = new_ip
@@ -103,7 +102,6 @@ def main():
     android_manifest_path = os.path.join(frontend_dir, "android", "app", "src", "main", "AndroidManifest.xml")
 
     eas_json_created = False
-    api_key = None
     client_id = None
 
     # Primeiro: Criar app.json e eas.json se não existirem
@@ -155,31 +153,23 @@ def main():
 
 
     # Quarto: Verificar e pedir as chaves se necessário
-    with open(app_json_path, 'r+') as f:
+    with open(app_json_path, 'r+', encoding='utf-8-sig') as f:
         app_json = json.load(f)
-        if app_json["expo"]["android"]["config"]["googleMaps"]["apiKey"] == "INSERT_KEY_HERE":
-            api_key = input("Por favor, insira a chave da API do Google Maps: ")
-            app_json["expo"]["android"]["config"]["googleMaps"]["apiKey"] = api_key
         if app_json["expo"]["extra"]["GOOGLE_CLIENT_ID"] == "INSERT_ID_HERE":
             client_id = input("Por favor, insira o Web Client ID: ")
             app_json["expo"]["extra"]["GOOGLE_CLIENT_ID"] = client_id
         
-        if api_key or client_id:
+        if client_id:
             f.seek(0)
             json.dump(app_json, f, indent=2)
             f.truncate()
             print("app.json atualizado.")
 
-    with open(eas_json_path, 'r+') as f:
+    with open(eas_json_path, 'r+', encoding='utf-8-sig') as f:
         eas_json = json.load(f)
         needs_update = False
         for build_profile in eas_json["build"]:
             if "env" in eas_json["build"][build_profile]:
-                if eas_json["build"][build_profile]["env"]["GOOGLE_MAPS_API_KEY"] == "INSERT_KEY_HERE":
-                    if not api_key:
-                        api_key = input("Por favor, insira a chave da API do Google Maps: ")
-                    eas_json["build"][build_profile]["env"]["GOOGLE_MAPS_API_KEY"] = api_key
-                    needs_update = True
                 if eas_json["build"][build_profile]["env"]["GOOGLE_CLIENT_ID"] == "INSERT_ID_HERE":
                     if not client_id:
                         client_id = input("Por favor, insira o Web Client ID: ")
@@ -191,38 +181,7 @@ def main():
             f.truncate()
             print("eas.json atualizado.")
 
-    # Quinto: Pergunta sobre o AndroidManifest.xml
-    with open(android_manifest_path, 'r') as f:
-        manifest_content = f.read()
-
-    api_key_placeholder = '@string/google_maps_api_key'
-    meta_data_line = '<meta-data\n                android:name="com.google.android.geo.API_KEY"\n                android:value="@string/google_maps_api_key" />'
-
-    if api_key_placeholder in manifest_content:
-        resposta = input(f"Deseja substituir '{api_key_placeholder}' pela chave da API em AndroidManifest.xml? (s/n): ")
-        if resposta.lower() == 's':
-            if not api_key:
-                api_key = input("Por favor, insira a chave da API do Google Maps para o AndroidManifest.xml: ")
-            manifest_content = manifest_content.replace(api_key_placeholder, api_key)
-            with open(android_manifest_path, 'w') as f:
-                f.write(manifest_content)
-            print("AndroidManifest.xml atualizado.")
-    else:
-        resposta = input("A chave da API já está em AndroidManifest.xml. Deseja reverter para '@string/google_maps_api_key'? (s/n): ")
-        if resposta.lower() == 's':
-            # Encontra a linha do meta-data e extrai a chave atual
-            match = re.search(r'android:value="(.*?)"', manifest_content)
-            if match:
-                current_api_key = match.group(1)
-                manifest_content = manifest_content.replace(current_api_key, api_key_placeholder)
-                with open(android_manifest_path, 'w') as f:
-                    f.write(manifest_content)
-                print("AndroidManifest.xml revertido.")
-            else:
-                print("Não foi possível encontrar a chave da API no AndroidManifest.xml para reverter.")
-
-
-    # Sexto: Lembrar o usuário sobre npm install e eas init
+    # Quinto: Lembrar o usuário sobre npm install e eas init
     if eas_json_created:
         print("\nLembrete: execute 'npm install' e 'eas init' dentro da pasta frontend.")
 

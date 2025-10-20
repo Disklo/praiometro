@@ -3,7 +3,7 @@ import adaoeva from '../../../assets/images/praias/adaoeva.jpg';
 import boaviagem from '../../../assets/images/praias/boaviagem.jpg';
 import camboinhas from '../../../assets/images/praias/camboinhas.jpg';
 import charitas from '../../../assets/images/praias/charitas.jpg';
-import flechas from '../../../assets/images/praias/flechas.webp';
+import flechas from '../../../assets/images/praias/flechas.jpg';
 import gragoata from '../../../assets/images/praias/gragoata.jpg';
 import icarai from '../../../assets/images/praias/icarai.webp';
 import saofrancisco from '../../../assets/images/praias/saofrancisco.jpg';
@@ -61,6 +61,40 @@ function getBeachImage(beachName) {
             return itaipu;
         case "Praia de Itacoatiara":
             return itacoatiara;
+        default:
+            return null; 
+    }
+}
+
+function getBeachImageCredit(beachName) {
+    switch (beachName) {
+        case "Praia de Eva":
+        case "Praia de Adão":
+            return "Caroline Stabenow via Wikimedia Commons (CC BY-SA 3.0)";
+        case "Praia de Camboinhas":
+            return "Rodrigo Padula via Wikimedia Commons (CC BY-SA 4.0)";
+        case "Praia de São Charitas":
+            return "Tatanya123 via Wikimedia Commons (CC BY-SA 4.0)";
+        case "Praia das Flechas":
+            return "Rafael Lucio Carvalho (CC BY 4.0)";
+        case "Praia de Gragoatá":
+            return "Rafael Lucio Carvalho (CC BY 4.0)";
+        case "Praia de Boa Viagem":
+            return "Rafael Lucio Carvalho (CC BY 4.0)";
+        case "Praia de Icaraí":
+            return "João Piller (CC BY 4.0)";
+        case "Praia de São Francisco":  
+            return "Marinelson Almeida via Wikimedia Commons (CC BY 2.0)";
+        case "Praia de Jurujuba":
+            return "Marinelson Almeida via Wikimedia Commons (CC BY 2.0)";
+        case "Praia de Piratininga":
+            return "Marinelson Almeida via Wikimedia Commons (CC BY 2.0)";
+        case "Praia do Sossego":
+            return "Carlos Lopes via Wikimedia Commons (CC BY 2.0)";
+        case "Praia de Itaipu":
+            return "Maria Fátima Leite via Wikimedia Commons (CC BY-SA 4.0)";
+        case "Praia de Itacoatiara":
+            return "Arleyramos via Wikimedia Commons (CC BY-SA 3.0)";
         default:
             return null; 
     }
@@ -193,6 +227,9 @@ export default function Praia() {
                 <Text style={styles.update}>
                     <MaterialCommunityIcons name="update" size={12} color="#e7e9edff" />{' '}
                     Atualizado dia {formatDate(beach.leitura_atual.timestamp)} às {formatHour(beach.leitura_atual.timestamp)}</Text>
+                <Text style={{color: '#e7e9edff', fontSize: 10, textAlign: 'center', marginTop: 4, marginBottom: 10, paddingHorizontal: 20}}>
+                    Créditos da imagem: {getBeachImageCredit(beach.nome?.[0])}
+                </Text>
                 <FeedbackModal visible={modalVisible} onClose={() => setModalVisible(false)} beachName={beach.nome?.[0] || 'Praia'} beachId={id} onVoteSuccess={fetchBeachData} />
             </ScrollView>
         </View>

@@ -27,6 +27,7 @@ export default function SobreNos() {
                     <Text style={styles.emailButtonText}>Email</Text>
                 </TouchableOpacity>
             </View>
+            <Text style={styles.attributionText}>Mapa fornecido por MapLibre e OpenFreeMap</Text>
         </View>
     );
 }

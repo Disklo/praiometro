@@ -60,4 +60,10 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         color: '#015486',
     },
+    attributionText: {
+        fontSize: 12,
+        color: '#fff',
+        textAlign: 'center',
+        marginTop: 20,
+    },
 });

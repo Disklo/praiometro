@@ -33,5 +33,16 @@ allprojects {
   }
 }
 
+subprojects {
+  project.configurations.all {
+    resolutionStrategy.eachDependency { details ->
+      if (details.requested.group == 'com.facebook.react' && details.requested.name == 'react-native') {
+        details.useVersion(details.requested.version)
+      }
+    }
+  }
+}
+
+
 apply plugin: "expo-root-project"
 apply plugin: "com.facebook.react.rootproject"
