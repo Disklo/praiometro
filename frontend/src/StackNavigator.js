@@ -62,7 +62,16 @@ function MainTabs() {
       })}
     >
       <Tab.Screen name='Home' component={Home} />
-      <Tab.Screen name='Praias' component={PraiasStackScreen} />
+      <Tab.Screen
+        name='Praias'
+        component={PraiasStackScreen}
+        listeners={({ navigation }) => ({
+          tabPress: (e) => {
+            e.preventDefault();
+            navigation.navigate('Praias', { screen: 'Praias' });
+          },
+        })}
+      />
       <Tab.Screen name='Clima' component={Clima} />
       <Tab.Screen name='SobreNos' component={SobreNos} />
     </Tab.Navigator>
