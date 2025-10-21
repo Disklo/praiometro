@@ -10,6 +10,7 @@ import Praia from './screens/Praia';
 import Clima from './screens/Clima';
 import CustomHeader from './components/CustomHeader';
 import SobreNos from './screens/SobreNos';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -37,11 +38,12 @@ function PraiasStackScreen() {
 }
 
 function MainTabs() {
+  const insets = useSafeAreaInsets();
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         header: (props) => <CustomHeader {...props} />,
-        tabBarStyle: { backgroundColor: '#015486', height: 75, paddingTop: 10, borderColor: '#015486' },
+        tabBarStyle: { backgroundColor: '#015486', height: 60 + insets.bottom, paddingTop: 10, borderColor: '#015486' },
         tabBarActiveTintColor: '#fff',
         tabBarInactiveTintColor: '#98A4AE',
         tabBarShowLabel: false,
